@@ -2,138 +2,168 @@
 title: 2019 Data Release Log
 ---
 
-# 2019 Data Release Log
 
 <Update label="December 2019" description="Holiday Maintenance Release" tags={["Data Update"]}>
-### Light Release Month
+  ### Light Release Month
 
-Holiday season and ongoing projects — few changes this month.
+  Holiday season and ongoing projects — few changes this month.
 
-### New Sources
+  ### New Sources
 
-- 4 Business data sources
+  - 4 Business data sources
 
-### Fixes
+  ### Fixes
 
-- Removed rightmove.co.uk data due to data gathering app issue
-- Changed all "Not For Sale" to "Off Market" and added "Pending" status for Property data
-- Updated 3 Business, 1 Property, 2 Product sources
+  - Removed rightmove.co.uk data due to data gathering app issue
+
+  - Changed all "Not For Sale" to "Off Market" and added "Pending" status for Property data
+
+  - Updated 3 Business, 1 Property, 2 Product sources
 </Update>
 
-<Update label="November 2019" description="Merging Logic Overhaul" tags={["Schema Change", "Completed"]}>
-### Merging Logic Overhauled
+<Update label="November 2019" description="Merging Logic Overhaul" tags={["Schema Change","Completed"]}>
+  ### Merging Logic Overhauled
 
-Merging logic now includes field weighting — certain fields override others if present, reducing unnecessary or invalid merging between sources.
+  Merging logic now includes field weighting — certain fields override others if present, reducing unnecessary or invalid merging between sources.
 
-### Multi-Month Schema Updates Completed
+  ### Multi-Month Schema Updates Completed
 
-- **Completed:** `crawlResultFiles` → `crawlIDs` transition
-- **Completed:** `geoLocation` for Business and Property data
-- **Completed:** `dateSeen` single-value transition
-- **Completed:** UPC/EAN/`gtins` field rollout
-- **Completed:** Bad seller ranking data removal from categories and features
+  - **Completed:** `crawlResultFiles` → `crawlIDs` transition
 
-### New Sources
+  - **Completed:** `geoLocation` for Business and Property data
 
-- 2 Business data sources
-- 1 Property data source
+  - **Completed:** `dateSeen` single-value transition
 
-### Fixes
+  - **Completed:** UPC/EAN/`gtins` field rollout
 
-- Fixed ASIN records to use lowercase key values
-- Updated 4 Property, 2 Product, 1 Business sources
+  - **Completed:** Bad seller ranking data removal from categories and features
+
+  ### New Sources
+
+  - 2 Business data sources
+
+  - 1 Property data source
+
+  ### Fixes
+
+  - Fixed ASIN records to use lowercase key values
+
+  - Updated 4 Property, 2 Product, 1 Business sources
 </Update>
 
-<Update label="October 2019" description="Database Tooling Overhaul Begins" tags={["Schema Change", "New Feature"]}>
-### Database Tooling Overhaul
+<Update label="October 2019" description="Database Tooling Overhaul Begins" tags={["Schema Change","New Feature"]}>
+  ### Database Tooling Overhaul
 
-Database change tooling overhaul began — future schema changes and fixes will roll out faster.
+  Database change tooling overhaul began — future schema changes and fixes will roll out faster.
 
-### Schema Changes
+  ### Schema Changes
 
-- Added `naics` data to People data
-- `mostRecentStatus` now source-dependent — individual domains provide status instead of deriving it
-- `gtins` check digit verification added to validate global product identifiers
-- In-progress: `crawlResultFiles` → `crawlIDs`, `geoLocation`, `dateSeen`, UPC/EAN/`gtins`
+  - Added `naics` data to People data
 
-### New Sources
+  - `mostRecentStatus` now source-dependent — individual domains provide status instead of deriving it
 
-- 4 Business data sources
+  - `gtins` check digit verification added to validate global product identifiers
 
-### Fixes
+  - In-progress: `crawlResultFiles` → `crawlIDs`, `geoLocation`, `dateSeen`, UPC/EAN/`gtins`
 
-- `mostRecentStatusDate` now collected from sources instead of derived from crawl timestamps
-- Address normalization to USPS values ongoing
-- Updated 6 Property, 2 Product, 1 Business sources
+  ### New Sources
+
+  - 4 Business data sources
+
+  ### Fixes
+
+  - `mostRecentStatusDate` now collected from sources instead of derived from crawl timestamps
+
+  - Address normalization to USPS values ongoing
+
+  - Updated 6 Property, 2 Product, 1 Business sources
 </Update>
 
-<Update label="September 2019" description="Property Schema Updates" tags={["Schema Change", "New Feature"]}>
-### New Property Fields
+<Update label="September 2019" description="Property Schema Updates" tags={["Schema Change","New Feature"]}>
+  ### New Property Fields
 
-- `mostRecentStatusDate` — Date a status took place
-- `statuses.date` — Nested field describing the date a status occurred
+  - `mostRecentStatusDate` — Date a status took place
 
-### Schema Updates
+  - `statuses.date` — Nested field describing the date a status occurred
 
-- `imageURLs` now retains only the most recent links per domain instead of compiling over time
-- In-progress: `crawlResultFiles` → `crawlIDs` (Product remaining), `geoLocation`, `dateSeen`, UPC/EAN/`gtins`
+  ### Schema Updates
 
-### New Sources
+  - `imageURLs` now retains only the most recent links per domain instead of compiling over time
 
-- 2 Business data sources
-- 1 Product data source
-- 1 Property data source
+  - In-progress: `crawlResultFiles` → `crawlIDs` (Product remaining), `geoLocation`, `dateSeen`, UPC/EAN/`gtins`
 
-### Fixes
+  ### New Sources
 
-- Began normalizing addresses to USPS standard values for better searching
-- Updated 5 Business, 3 Property, 1 Product sources
+  - 2 Business data sources
+
+  - 1 Product data source
+
+  - 1 Property data source
+
+  ### Fixes
+
+  - Began normalizing addresses to USPS standard values for better searching
+
+  - Updated 5 Business, 3 Property, 1 Product sources
 </Update>
 
-<Update label="August 2019" description="Schema Revisions" tags={["Schema Change", "New Feature"]}>
-### New Product Fields
+<Update label="August 2019" description="Schema Revisions" tags={["Schema Change","New Feature"]}>
+  ### New Product Fields
 
-Added `upca`, `upce`, `ean13`, `ean8`, and `gtins` for better product search. Original `upc` and `ean` fields supported until deprecated.
+  Added `upca`, `upce`, `ean13`, `ean8`, and `gtins` for better product search. Original `upc` and `ean` fields supported until deprecated.
 
-### Schema Updates
+  ### Schema Updates
 
-- `dateSeen` in nested JSON objects now set to single latest-date value (future rename to `dateUpdated`)
-- Added `geoLocation` field to Business and Property data combining latitude and longitude for future distance queries
-- Continuing transition from `crawlResultFiles` to `crawlIDs`
+  - `dateSeen` in nested JSON objects now set to single latest-date value (future rename to `dateUpdated`)
 
-### New Sources
+  - Added `geoLocation` field to Business and Property data combining latitude and longitude for future distance queries
 
-- 3 Business data sources
-- 1 Product data source
+  - Continuing transition from `crawlResultFiles` to `crawlIDs`
 
-### Fixes
+  ### New Sources
 
-- Bad seller ranking data polluting categories and features — removal in-progress
-- Removed "Details about" prefix appearing in Product name field
-- Updated 1 Business, 4 Property, 2 Product sources
+  - 3 Business data sources
+
+  - 1 Product data source
+
+  ### Fixes
+
+  - Bad seller ranking data polluting categories and features — removal in-progress
+
+  - Removed "Details about" prefix appearing in Product name field
+
+  - Updated 1 Business, 4 Property, 2 Product sources
 </Update>
 
 <Update label="July 2019" description="Initial Release Log" tags={["Announcement"]}>
-### First Data Release Log
+  ### First Data Release Log
 
-Initial release log with the goal of tracking changes to the data — record count updates, new sources, schema changes, and fixes.
+  Initial release log with the goal of tracking changes to the data — record count updates, new sources, schema changes, and fixes.
 
-### Schema Changes
+  ### Schema Changes
 
-- Added `linkedinURL` to People data for LinkedIn profile URLs
-- Added `primaryImageURLs` to Product data to track the main image per domain
-- Began transition from `crawlResultFiles` to `crawlIDs`
+  - Added `linkedinURL` to People data for LinkedIn profile URLs
 
-### New Sources
+  - Added `primaryImageURLs` to Product data to track the main image per domain
 
-- 2 Business data sources
-- 1 Property data source
-- 2 Product data sources
+  - Began transition from `crawlResultFiles` to `crawlIDs`
 
-### Fixes
+  ### New Sources
 
-- Property `dateUpdated` now only changes when new source data is received, not on any modification
-- Removed spam URLs containing "doubleclick"
-- Removed "citymediagrid" API redirects and replaced with actual data URLs where possible
-- Updated 2 Property, 2 Product, 1 Business sources
+  - 2 Business data sources
+
+  - 1 Property data source
+
+  - 2 Product data sources
+
+  ### Fixes
+
+  - Property `dateUpdated` now only changes when new source data is received, not on any modification
+
+  - Removed spam URLs containing "doubleclick"
+
+  - Removed "citymediagrid" API redirects and replaced with actual data URLs where possible
+
+  - Updated 2 Property, 2 Product, 1 Business sources
 </Update>
+
