@@ -1,68 +1,83 @@
-# 2026 Data Release Log
+---
+title: 2026 Data Release Log
+---
 
-<Update label="March 2026" description="Profile Images & Developer Resources" tags={["New Feature", "Deprecation"]}>
-### New People Data Fields: Profile Images
 
-We've introduced two new fields to the People Data schema for professional profile enrichment:
+<Update label="March 2026" description="Profile Images & Developer Resources" tags={["New Feature","Deprecation"]}>
+  ### New People Data Fields: Profile Images
 
-- `profileImageURLs` — Professional profile image URL(s) associated with a person
-- `mostRecentProfileImageURL` — The most recently observed professional profile image URL
+  We've introduced two new fields to the People Data schema for professional profile enrichment:
 
-These fields are especially useful for lead enrichment workflows, recruiting and talent analytics, identity resolution models, and AI-driven profile scoring applications.
+  - `profileImageURLs` — Professional profile image URL(s) associated with a person
 
-### New Developer Resource: Use-Cases Repository
+  - `mostRecentProfileImageURL` — The most recently observed professional profile image URL
 
-We've published a new [Datafiniti Use-Cases repository](https://github.com/datafiniti/use-cases) designed to accelerate onboarding and provide runnable examples across all Datafiniti APIs — Property, Business, People, and Product.
+  These fields are especially useful for lead enrichment workflows, recruiting and talent analytics, identity resolution models, and AI-driven profile scoring applications.
 
-Includes real-world query examples, proven integration patterns, sample enrichment pipelines, and code examples for analytics and automation workflows.
+  ### New Developer Resource: Use-Cases Repository
 
-### Deprecation Reminder: Legacy `statuses` Fields
+  We've published a new [Datafiniti Use-Cases repository](https://github.com/datafiniti/use-cases) designed to accelerate onboarding and provide runnable examples across all Datafiniti APIs — Property, Business, People, and Product.
 
-Reinforcing the deprecation of legacy `statuses` fields in favor of `statusHistory`. The previous structure lacked consistent historical tracking and rental/sale logic created structural inconsistencies. We strongly recommend updating workflows to use `statusHistory`.
+  Includes real-world query examples, proven integration patterns, sample enrichment pipelines, and code examples for analytics and automation workflows.
 
-### Coming This Year
+  ### Deprecation Reminder: Legacy `statuses` Fields
 
-- **Redesigned docs.datafiniti.co** — Improved navigation, expanded code examples, AI-friendly documentation
-- **Improved Autotrace Feature** — Single API call for property owner contact information
-- **AI Platform Integration** — MCP integration and LLM-friendly tutorials
+  Reinforcing the deprecation of legacy `statuses` fields in favor of `statusHistory`. The previous structure lacked consistent historical tracking and rental/sale logic created structural inconsistencies. We strongly recommend updating workflows to use `statusHistory`.
+
+  ### Coming This Year
+
+  - **Redesigned docs.datafiniti.co** — Improved navigation, expanded code examples, AI-friendly documentation
+
+  - **Improved Autotrace Feature** — Single API call for property owner contact information
+
+  - **AI Platform Integration** — MCP integration and LLM-friendly tutorials
 </Update>
 
-<Update label="February 2026" description="Property Data Schema Update" tags={["New Feature", "Deprecation"]}>
-### New Field: `statusHistory`
+<Update label="February 2026" description="Property Data Schema Update" tags={["New Feature","Deprecation"]}>
+  ### New Field: `statusHistory`
 
-We've introduced a new field, **`statusHistory`**, to the Property Data schema. This field provides a clear, chronological view of a property's status over time, allowing you to track transitions such as *for-sale listings* and *off-market events* with greater precision and context.
+  We've introduced a new field, **`statusHistory`**, to the Property Data schema. This field provides a clear, chronological view of a property's status over time, allowing you to track transitions such as *for-sale listings* and *off-market events* with greater precision and context.
 
-Each `statusHistory` entry includes:
-- **Date** — The date the status change occurred
-- **DateSeen** — The date Datafiniti observed the status change
-- **sourceURLs** — The source URL associated with the status
-- **Type** — The type of sales listing associated with the status
+  Each `statusHistory` entry includes:
 
-### Deprecation Notice: Legacy `statuses` Fields
+  - **Date** — The date the status change occurred
 
-As part of this improvement, we are beginning the deprecation of legacy `statuses` fields in favor of **`statusHistory`**.
+  - **DateSeen** — The date Datafiniti observed the status change
 
-- Existing fields will continue to work for now
-- We strongly recommend updating your workflows to use `statusHistory`
-- Future schema updates will prioritize `statusHistory` as the source of truth
+  - **sourceURLs** — The source URL associated with the status
 
-### Coming This Year
+  - **Type** — The type of sales listing associated with the status
 
-- **Improved Autotrace Feature** — Redesigning to deliver a more intuitive experience with a single API call
-- **AI Platform Integration** — MCP integration, detailed code examples, and LLM-friendly tutorials
+  ### Deprecation Notice: Legacy `statuses` Fields
+
+  As part of this improvement, we are beginning the deprecation of legacy `statuses` fields in favor of **`statusHistory`**.
+
+  - Existing fields will continue to work for now
+
+  - We strongly recommend updating your workflows to use `statusHistory`
+
+  - Future schema updates will prioritize `statusHistory` as the source of truth
+
+  ### Coming This Year
+
+  - **Improved Autotrace Feature** — Redesigning to deliver a more intuitive experience with a single API call
+
+  - **AI Platform Integration** — MCP integration, detailed code examples, and LLM-friendly tutorials
 </Update>
 
 <Update label="January 2026" description="2026 Operating Priorities" tags={["Announcement"]}>
-### Our 2026 Operating Priorities
+  ### Our 2026 Operating Priorities
 
-**Reliability first.** We're committed to keeping our infrastructure running smoothly day in and day out—so your workflows stay uninterrupted and dependable at scale.
+  **Reliability first.** We're committed to keeping our infrastructure running smoothly day in and day out—so your workflows stay uninterrupted and dependable at scale.
 
-**Data quality you can trust.** Accuracy, freshness, and consistency remain non-negotiable. We continue to invest heavily in processes and tooling that ensure our data remains high-quality and up to date.
+  **Data quality you can trust.** Accuracy, freshness, and consistency remain non-negotiable. We continue to invest heavily in processes and tooling that ensure our data remains high-quality and up to date.
 
-**Designing for direct value.** Our customer-facing tools are guided by a simple principle: make them intuitive, actionable, and fast to value.
+  **Designing for direct value.** Our customer-facing tools are guided by a simple principle: make them intuitive, actionable, and fast to value.
 
-### Coming This Year
+  ### Coming This Year
 
-- **Improved Autotrace Feature** — Single API call for retrieving accurate contact information for property owners
-- **AI Platform Integration** — MCP integration and LLM-friendly documentation
+  - **Improved Autotrace Feature** — Single API call for retrieving accurate contact information for property owners
+
+  - **AI Platform Integration** — MCP integration and LLM-friendly documentation
 </Update>
+

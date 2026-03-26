@@ -1,218 +1,245 @@
-# 2023 Data Release Log
+---
+title: 2023 Data Release Log
+---
 
-<Update label="December 2023" description="DR5 Live — Standardization & Floor Plans" tags={["New Feature", "Schema Change"]}>
-### New Property Fields: `mostRecentBroker`
 
-- `mostRecentBrokerAgent`, `mostRecentBrokerCompany`, `mostRecentBrokerDateSeen`, `mostRecentBrokerEmails`, `mostRecentBrokerPhones`
+<Update label="December 2023" description="DR5 Live — Standardization & Floor Plans" tags={["New Feature","Schema Change"]}>
+  ### New Property Fields: `mostRecentBroker`
 
-### New Field: `parkingTypes`
+  - `mostRecentBrokerAgent`, `mostRecentBrokerCompany`, `mostRecentBrokerDateSeen`, `mostRecentBrokerEmails`, `mostRecentBrokerPhones`
 
-Array of parking types including RV Parking, Parking Lot, Street, Attached/Detached Garage, Driveway, and Carport.
+  ### New Field: `parkingTypes`
 
-### Standardization & Cleanup
+  Array of parking types including RV Parking, Parking Lot, Street, Attached/Detached Garage, Driveway, and Carport.
 
-- Elevating frequently requested feature fields into top-level fields
-- Pushing subdivision/community features into `neighborhoods`
-- Adding permits and zoning data from features
-- Merging "Rental Unit" with "Rental", "sqft" with "sq ft", "Manhattan" with "New York City"
+  ### Standardization & Cleanup
 
-### Property Source Updates
+  - Elevating frequently requested feature fields into top-level fields
 
-Added Landsearch, ForSaleByOwner.ca. Rebuilt 99acres. Updated Redfin, VRBO, Realestatebook, Remax.com, Apartments.com, ForRent.com, Loopnet, Century21, Realestate.com.au, Apartmentguide.com.
+  - Pushing subdivision/community features into `neighborhoods`
 
-### Product Source Updates
+  - Adding permits and zoning data from features
 
-Rebuilt DicksSportingGoods.com, Homepath. Updated BHPhotovideo.com.
+  - Merging "Rental Unit" with "Rental", "sqft" with "sq ft", "Manhattan" with "New York City"
+
+  ### Property Source Updates
+
+  Added Landsearch, ForSaleByOwner.ca. Rebuilt 99acres. Updated Redfin, VRBO, Realestatebook, Remax.com, Apartments.com, ForRent.com, Loopnet, Century21, Realestate.com.au, Apartmentguide.com.
+
+  ### Product Source Updates
+
+  Rebuilt DicksSportingGoods.com, Homepath. Updated BHPhotovideo.com.
 </Update>
 
-<Update label="November 2023" description="DR4 & DR5 — 31 New Property Fields" tags={["New Feature", "Schema Change"]}>
-### DR4: 31 New Property Schema Fields
+<Update label="November 2023" description="DR4 & DR5 — 31 New Property Fields" tags={["New Feature","Schema Change"]}>
+  ### DR4: 31 New Property Schema Fields
 
-Three new data sources added — MLS data, refinancing data, and commercial properties.
+  Three new data sources added — MLS data, refinancing data, and commercial properties.
 
-**MLS Data Fields:** `appliances`, `assessedValues` (with `improvementsAmount`, `landAmount`, `totalAmount`, `year`), `categories`, `estimatedPrices` (with `amountMax`, `amountMin`, `currency`, `dateSeen`, `pricePerSquareFoot`), `geoQuality`, `hvacTypes`, `price.status`, `roofing`, `subdivision`
+  **MLS Data Fields:** `appliances`, `assessedValues` (with `improvementsAmount`, `landAmount`, `totalAmount`, `year`), `categories`, `estimatedPrices` (with `amountMax`, `amountMin`, `currency`, `dateSeen`, `pricePerSquareFoot`), `geoQuality`, `hvacTypes`, `price.status`, `roofing`, `subdivision`
 
-**Parcel Data:** `parcelNumbers` (with `number`, `year`, `account`)
+  **Parcel Data:** `parcelNumbers` (with `number`, `year`, `account`)
 
-**Commercial Data:** `architecturalStyles`, `ownerOccupied`, `topographyCode`, `zoning`, `msaCode`, `msaName`, `cbsaCode`, `cbsaName`
+  **Commercial Data:** `architecturalStyles`, `ownerOccupied`, `topographyCode`, `zoning`, `msaCode`, `msaName`, `cbsaCode`, `cbsaName`
 
-**Refinance Data:** `taxExemptions`, `title`, `transactions.documentNumber`, `transactions.transactionID`, `trustDescription`
+  **Refinance Data:** `taxExemptions`, `title`, `transactions.documentNumber`, `transactions.transactionID`, `trustDescription`
 
-### DR5: Standardization
+  ### DR5: Standardization
 
-Standardizing field values, moving semi-structured data from features to top-level fields, and adding additional types to some fields.
+  Standardizing field values, moving semi-structured data from features to top-level fields, and adding additional types to some fields.
 
-### Bug Fixes
+  ### Bug Fixes
 
-- Converted all "sqft" to "sq ft" in unit values
-- Lowercased all emails; removed agent names with "non" from brokers
-- Added max limit to prices for price range functionality
-- Status and prices cleanup — ensured `firstDateSeen`/`lastDateSeen` filled out
-- Transactions now create status objects; converted "Rental Unit" to "Rental"
+  - Converted all "sqft" to "sq ft" in unit values
 
-### Source Updates
+  - Lowercased all emails; removed agent names with "non" from brokers
 
-Added Foreclosure.com, Land.com, Renthop.com, LA County tax records, California DRE people source. Changed BrightMLS to Nestfully.com. Rebuilt Apartmentguide.com. Updated 16+ existing crawlers.
+  - Added max limit to prices for price range functionality
+
+  - Status and prices cleanup — ensured `firstDateSeen`/`lastDateSeen` filled out
+
+  - Transactions now create status objects; converted "Rental Unit" to "Rental"
+
+  ### Source Updates
+
+  Added Foreclosure.com, Land.com, Renthop.com, LA County tax records, California DRE people source. Changed BrightMLS to Nestfully.com. Rebuilt Apartmentguide.com. Updated 16+ existing crawlers.
 </Update>
 
-<Update label="October 2023" description="Foreclosure Statuses & New Schema Fields" tags={["New Feature", "Schema Change"]}>
-### New Property Statuses
+<Update label="October 2023" description="Foreclosure Statuses & New Schema Fields" tags={["New Feature","Schema Change"]}>
+  ### New Property Statuses
 
-- **Auction** — Properties scheduled for auction
-- **Pre-Foreclosed** — Properties in pre-foreclosure
-- **Foreclosed** — Distressed/foreclosed assets
+  - **Auction** — Properties scheduled for auction
 
-### New Property Schema Fields
+  - **Pre-Foreclosed** — Properties in pre-foreclosure
 
-- `congressionalDistrictHouse` — Congressional district of the property
-- `legalRange` — Legal range of the property
-- `currentOwnerType` — Current owner type of the property
-- `instrumentNumber` — Instrument number of the property
+  - **Foreclosed** — Distressed/foreclosed assets
 
-### Source Updates
+  ### New Property Schema Fields
 
-Added new statuses to all crawler apps and weekly home buyer data to daily feed. Added MLSListings.com. Added foreclosure statuses to Homefinder and Realtytrac. Updated Weichert, Realtytrac, Movoto, Realtor.com, Coldwellbanker, Remax.ca, GetRentToOwn, CityRealty, Century21, VRBO, Cityfeet, BHGRE, Kijiji.ca, Homes.com.
+  - `congressionalDistrictHouse` — Congressional district of the property
+
+  - `legalRange` — Legal range of the property
+
+  - `currentOwnerType` — Current owner type of the property
+
+  - `instrumentNumber` — Instrument number of the property
+
+  ### Source Updates
+
+  Added new statuses to all crawler apps and weekly home buyer data to daily feed. Added MLSListings.com. Added foreclosure statuses to Homefinder and Realtytrac. Updated Weichert, Realtytrac, Movoto, Realtor.com, Coldwellbanker, Remax.ca, GetRentToOwn, CityRealty, Century21, VRBO, Cityfeet, BHGRE, Kijiji.ca, Homes.com.
 </Update>
 
 <Update label="September 2023" description="Owner Data in People & County Expansion" tags={["New Feature"]}>
-### Property Owner Data in People
+  ### Property Owner Data in People
 
-People from property `transactions` field now cross-referenced and added to the People database — enabling searching people in property data and vice versa.
+  People from property `transactions` field now cross-referenced and added to the People database — enabling searching people in property data and vice versa.
 
-### New Property Sources
+  ### New Property Sources
 
-- Added BrightMLShomes.com
-- Added county tax records: Denver County, Hartford County, Boulder County
-- Updated Showcase.com, Homefinder.com, Loopnet.com, Apartments.com, Airbnb, Homes.com
-- Fixed property data transactions field duplication bug
+  - Added BrightMLShomes.com
 
-### Business Data Updates
+  - Added county tax records: Denver County, Hartford County, Boulder County
 
-Updated Tripadvisor.com and Opentable.
+  - Updated Showcase.com, Homefinder.com, Loopnet.com, Apartments.com, Airbnb, Homes.com
 
-### Self-Service Subscription Management
+  - Fixed property data transactions field duplication bug
 
-Users can now manage their Datafiniti subscription on their own.
+  ### Business Data Updates
+
+  Updated Tripadvisor.com and Opentable.
+
+  ### Self-Service Subscription Management
+
+  Users can now manage their Datafiniti subscription on their own.
 </Update>
 
-<Update label="August 2023" description="Broker License Linking & People Schema" tags={["New Feature", "Schema Change"]}>
-### New Property Broker Sub-Field: `licenseType`
+<Update label="August 2023" description="Broker License Linking & People Schema" tags={["New Feature","Schema Change"]}>
+  ### New Property Broker Sub-Field: `licenseType`
 
-Added `licenseType` to brokers — enables direct link to People data via `licenseType` + `licenseNumber`.
+  Added `licenseType` to brokers — enables direct link to People data via `licenseType` + `licenseNumber`.
 
-### Property Source Updates
+  ### Property Source Updates
 
-Repaired Redfin status and `mostRecentStatus` issues. Implemented targeted templates for KDS areas. Added license extractors to TREC crawl. Increased Apartments.com refresh rate.
+  Repaired Redfin status and `mostRecentStatus` issues. Implemented targeted templates for KDS areas. Added license extractors to TREC crawl. Increased Apartments.com refresh rate.
 
-### People Data Cleanup
+  ### People Data Cleanup
 
-Cleaned 23,412 duplicate and fake records from the People database.
+  Cleaned 23,412 duplicate and fake records from the People database.
 
-### New People Schema Fields
+  ### New People Schema Fields
 
-- `industries`
-- `licenses` (with `type` and `value` sub-fields)
+  - `industries`
 
-### Portal Updates
+  - `licenses` (with `type` and `value` sub-fields)
 
-Data plans now display as separate cheaper tiers on the settings page.
+  ### Portal Updates
+
+  Data plans now display as separate cheaper tiers on the settings page.
 </Update>
 
-<Update label="July 2023" description="County/FIPS Fields & Portal Data Plans" tags={["New Feature", "Schema Change"]}>
-### New Property Schema Fields
+<Update label="July 2023" description="County/FIPS Fields & Portal Data Plans" tags={["New Feature","Schema Change"]}>
+  ### New Property Schema Fields
 
-- `county` — County name of the property
-- `countyFIPS` — FIPS code for the county
+  - `county` — County name of the property
 
-### Property Source Updates
+  - `countyFIPS` — FIPS code for the county
 
-Normalized `mostRecentStatusDate` across all property apps. Updated Redfin `mostRecentPriceAmount` fields and split "Latest Updates" sitemap into 51 separate templates. Updated Loopnet, Realestate.com.au, BHGRE, Showcase.com.
+  ### Property Source Updates
 
-### People Data Update
+  Normalized `mostRecentStatusDate` across all property apps. Updated Redfin `mostRecentPriceAmount` fields and split "Latest Updates" sitemap into 51 separate templates. Updated Loopnet, Realestate.com.au, BHGRE, Showcase.com.
 
-Updated Tripadvisor addresses.
+  ### People Data Update
 
-### Portal Updates
+  Updated Tripadvisor addresses.
 
-New signup and settings page allowing users to sign up with multiple data plans seamlessly.
+  ### Portal Updates
+
+  New signup and settings page allowing users to sign up with multiple data plans seamlessly.
 </Update>
 
-<Update label="June 2023" description="New Broker Source & Address Normalization" tags={["New Feature", "Bug Fix"]}>
-### New People Source: TREC.com
+<Update label="June 2023" description="New Broker Source & Address Normalization" tags={["New Feature","Bug Fix"]}>
+  ### New People Source: TREC.com
 
-First People crawl source — Texas Real Estate Commission data.
+  First People crawl source — Texas Real Estate Commission data.
 
-### Property Source Updates
+  ### Property Source Updates
 
-Updated Redfin.com with new page types, status improvements, and faster coverage. Improved "Unit" handling for addresses across Remax, Showmetherent, Compass, Apartments, and Redfin.
+  Updated Redfin.com with new page types, status improvements, and faster coverage. Improved "Unit" handling for addresses across Remax, Showmetherent, Compass, Apartments, and Redfin.
 
-### Datafiniti Website Updates
+  ### Datafiniti Website Updates
 
-Updated design and pricing plans at Datafiniti.co. Business, People, Products, and Property now available as separate data plans — portal selection in development.
+  Updated design and pricing plans at Datafiniti.co. Business, People, Products, and Property now available as separate data plans — portal selection in development.
 </Update>
 
 <Update label="May 2023" description="Home Sale Transactions & New Website" tags={["New Feature"]}>
-### Property Source Updates
+  ### Property Source Updates
 
-- Added Williamson County and Waller County tax record crawls
-- Updated Redfin.com, Apartments.com
-- Added delisted statuses to Compass.com and Estately.com
+  - Added Williamson County and Waller County tax record crawls
 
-### New Datafiniti Website
+  - Updated Redfin.com, Apartments.com
 
-Updated both the design and pricing plans of the Datafiniti.co website. Now splitting business, people, products, and property into separate data plans.
+  - Added delisted statuses to Compass.com and Estately.com
+
+  ### New Datafiniti Website
+
+  Updated both the design and pricing plans of the Datafiniti.co website. Now splitting business, people, products, and property into separate data plans.
 </Update>
 
-<Update label="April 2023" description="Commercial Property & Delisted Statuses" tags={["New Feature", "Schema Change"]}>
-### New Property Delisted Statuses
+<Update label="April 2023" description="Commercial Property & Delisted Statuses" tags={["New Feature","Schema Change"]}>
+  ### New Property Delisted Statuses
 
-- Delisted (Withdrawn), Delisted (Withdrawn - Terminated), Delisted (Withdrawn (Conditional))
-- Delisted (Withdrawn - Right to Re-List), Delisted (Temporarily No Showings)
-- Delisted (Temporarily Off-Market), Delisted (Expired), Delisted (Cancelled)
+  - Delisted (Withdrawn), Delisted (Withdrawn - Terminated), Delisted (Withdrawn (Conditional))
 
-### Property Source Updates
+  - Delisted (Withdrawn - Right to Re-List), Delisted (Temporarily No Showings)
 
-Updated Redfin, Loopnet.com, Remax.ca, Showcase.com. Added Crexi.com.
+  - Delisted (Temporarily Off-Market), Delisted (Expired), Delisted (Cancelled)
 
-### New People Data
+  ### Property Source Updates
 
-Commercial real estate job market professionals.
+  Updated Redfin, Loopnet.com, Remax.ca, Showcase.com. Added Crexi.com.
+
+  ### New People Data
+
+  Commercial real estate job market professionals.
 </Update>
 
-<Update label="February 2023" description="Commercial RE People & Faster Refresh" tags={["New Feature", "Bug Fix"]}>
-### Property Source Updates
+<Update label="February 2023" description="Commercial RE People & Faster Refresh" tags={["New Feature","Bug Fix"]}>
+  ### Property Source Updates
 
-- Harris County property tax — new source added
-- Updated BackCountry.com (Product) and Homefinder.com (Property)
-- Redfin refresh rate improved by **30%** for more up-to-date data
+  - Harris County property tax — new source added
 
-### New People Data
+  - Updated BackCountry.com (Product) and Homefinder.com (Property)
 
-Commercial real estate job market professionals.
+  - Redfin refresh rate improved by **30%** for more up-to-date data
 
-### Bug: Enrichment API
+  ### New People Data
 
-Found a bug with the enrichment API affecting address input for property and business — fix in progress.
+  Commercial real estate job market professionals.
+
+  ### Bug: Enrichment API
+
+  Found a bug with the enrichment API affecting address input for property and business — fix in progress.
 </Update>
 
-<Update label="January 2023" description="First County Crawler & People Import" tags={["New Feature", "Bug Fix"]}>
-### Product Source Updates
+<Update label="January 2023" description="First County Crawler & People Import" tags={["New Feature","Bug Fix"]}>
+  ### Product Source Updates
 
-Repaired Chloe.com, BestBuy.com, Gap.com, Tesco.com on UPC/gtin issues.
+  Repaired Chloe.com, BestBuy.com, Gap.com, Tesco.com on UPC/gtin issues.
 
-### Property Source Updates
+  ### Property Source Updates
 
-Updated Compass.com and Realestate.com for new broker data. Rebuilt Loopnet.com to match property data schema.
+  Updated Compass.com and Realestate.com for new broker data. Rebuilt Loopnet.com to match property data schema.
 
-### New People Data
+  ### New People Data
 
-US/Canadian real estate job market professionals.
+  US/Canadian real estate job market professionals.
 
-### First County Property Crawler
+  ### First County Property Crawler
 
-Added Harris County property data — tax assessments, tax records, and owner information.
+  Added Harris County property data — tax assessments, tax records, and owner information.
 
-### Bug Fix
+  ### Bug Fix
 
-Patched property record import issue from data crawler (identified Dec 18th, fixed Dec 20th).
+  Patched property record import issue from data crawler (identified Dec 18th, fixed Dec 20th).
 </Update>
+

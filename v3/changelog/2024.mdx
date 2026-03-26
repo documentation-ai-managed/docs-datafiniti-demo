@@ -1,95 +1,111 @@
-# 2024 Data Release Log
+---
+title: 2024 Data Release Log
+---
+
 
 <Update label="November 2024" description="Autotrace Launch & County Expansion" tags={["New Feature"]}>
-### Autotrace — New Property & People Data Feature
+  ### Autotrace — New Property & People Data Feature
 
-Seamlessly combine People Data and Property Data in a single API call using the `auto_trace` parameter with a specialized property record view. [Learn more](https://docs.datafiniti.co/docs/autotrace).
+  Seamlessly combine People Data and Property Data in a single API call using the `auto_trace` parameter with a specialized property record view. [Learn more](https://docs.datafiniti.co/docs/autotrace).
 
-### Newly Added County Assessor Data
+  ### Newly Added County Assessor Data
 
-- **Florida** — Lee County
-- **Georgia** — Dekalb County
-- **New Jersey** — Hudson County, Bergen County, Middlesex County
+  - **Florida** — Lee County
 
-### Improved APN / Parcel Number Data
+  - **Georgia** — Dekalb County
 
-Updated how APN/Parcel numbers are imported. Users can now query the `parcelNumbers` field directly with greater accuracy, including a new `year` subfield for date filtering.
+  - **New Jersey** — Hudson County, Bergen County, Middlesex County
 
-### New People Data Portal Design
+  ### Improved APN / Parcel Number Data
 
-Updated people data portal design matching the property data page format — auto search names, easy-to-use filters, and one-click common searches.
+  Updated how APN/Parcel numbers are imported. Users can now query the `parcelNumbers` field directly with greater accuracy, including a new `year` subfield for date filtering.
+
+  ### New People Data Portal Design
+
+  Updated people data portal design matching the property data page format — auto search names, easy-to-use filters, and one-click common searches.
 </Update>
 
 <Update label="September 2024" description="Realtor License Types & Portal Search" tags={["New Feature"]}>
-### Newly Added Realtor License Types
+  ### Newly Added Realtor License Types
 
-Query and identify realtor information based on state realty licenses:
+  Query and identify realtor information based on state realty licenses:
 
-- Delaware (DERED), Illinois (IDFPR), Vermont (VTREC), Wyoming (WYREC), Virginia (VADPOR)
-- New Jersey (NJDOBI), Hawaii (HDCCA), Oregon (OREA), Maryland (MDMREC), Wisconsin (WIDSPS)
+  - Delaware (DERED), Illinois (IDFPR), Vermont (VTREC), Wyoming (WYREC), Virginia (VADPOR)
 
-### Portal Improvements
+  - New Jersey (NJDOBI), Hawaii (HDCCA), Oregon (OREA), Maryland (MDMREC), Wisconsin (WIDSPS)
 
-- **Keyword Search** — New keyword search functionality added to property data filter list. Search via feature key, feature value, or descriptions.
-- **Sequential Downloads** — "Download All" button now downloads one file at a time to reduce browser clutter.
+  ### Portal Improvements
+
+  - **Keyword Search** — New keyword search functionality added to property data filter list. Search via feature key, feature value, or descriptions.
+
+  - **Sequential Downloads** — "Download All" button now downloads one file at a time to reduce browser clutter.
 </Update>
 
-<Update label="July 2024" description="1M+ New Properties & Rental Price Field" tags={["New Feature", "Schema Change"]}>
-### Newly Added: Our Largest Property Data Sources
+<Update label="July 2024" description="1M+ New Properties & Rental Price Field" tags={["New Feature","Schema Change"]}>
+  ### Newly Added: Our Largest Property Data Sources
 
-Multiple brand-new property data sources added, resulting in over 1 million new properties for greater coverage of daily market trends, changes, and analytical data.
+  Multiple brand-new property data sources added, resulting in over 1 million new properties for greater coverage of daily market trends, changes, and analytical data.
 
-### Newly Added Realtor License Types
+  ### Newly Added Realtor License Types
 
-- Connecticut (CTREC), Florida (FREC), Kentucky (KREAB), Louisiana (LREC), Utah (UTRED)
-- Oklahoma (OREC), New York (NYDOS), Arkansas (AREC), Nevada (NVRED), Kansas (KREC)
-- Ohio (ODREPL), West Virginia (WVREC), Maine (MEREC)
+  - Connecticut (CTREC), Florida (FREC), Kentucky (KREAB), Louisiana (LREC), Utah (UTRED)
 
-### New Property Data Field: `mostRecentRentalPriceAmount`
+  - Oklahoma (OREC), New York (NYDOS), Arkansas (AREC), Nevada (NVRED), Kansas (KREC)
 
-Separates all most recent rental prices from other status prices. Streamlines the process of parsing through the prices field for rental prices.
+  - Ohio (ODREPL), West Virginia (WVREC), Maine (MEREC)
 
-### New Datafiniti Sign Up Page
+  ### New Property Data Field: `mostRecentRentalPriceAmount`
 
-Streamlined sign-up process allowing selection of free, monthly, or annual plans.
+  Separates all most recent rental prices from other status prices. Streamlines the process of parsing through the prices field for rental prices.
 
-### Bug Fixes
+  ### New Datafiniti Sign Up Page
 
-Added more resources to handle larger daily volume of rental data for more consistent and reliable imports.
+  Streamlined sign-up process allowing selection of free, monthly, or annual plans.
+
+  ### Bug Fixes
+
+  Added more resources to handle larger daily volume of rental data for more consistent and reliable imports.
 </Update>
 
-<Update label="April 2024" description="County Assessor Expansion" tags={["New Feature", "Bug Fix"]}>
-### New Property Data Counties Added
+<Update label="April 2024" description="County Assessor Expansion" tags={["New Feature","Bug Fix"]}>
+  ### New Property Data Counties Added
 
-Added county assessor data providing homeowner info, tax information, and building/property type codes:
+  Added county assessor data providing homeowner info, tax information, and building/property type codes:
 
-- Clark County, Nevada
-- Cook County, Illinois
-- Savills County, California
-- Philadelphia County, Pennsylvania
+  - Clark County, Nevada
 
-### Bug Fix: Residential Delisted Status
+  - Cook County, Illinois
 
-Corrected an issue where a small edge case of delisted statuses were importing as "For Sale". All records updated to the correct status as of March 12th.
+  - Savills County, California
+
+  - Philadelphia County, Pennsylvania
+
+  ### Bug Fix: Residential Delisted Status
+
+  Corrected an issue where a small edge case of delisted statuses were importing as "For Sale". All records updated to the correct status as of March 12th.
 </Update>
 
-<Update label="February 2024" description="DR8 — Data Quality Improvements" tags={["Bug Fix", "Data Quality"]}>
-### Property Data Quality Improvements
+<Update label="February 2024" description="DR8 — Data Quality Improvements" tags={["Bug Fix","Data Quality"]}>
+  ### Property Data Quality Improvements
 
-- **Address Over-merging** — Resolved over-merging of brokers and people at specific building/rental unit addresses
-- **Standardized Address Prefixes** — Standardized "Street" address prefixes across the board
-- **Most Recent Broker Data** — Brokers' email addresses and phone numbers now accurately reflected
+  - **Address Over-merging** — Resolved over-merging of brokers and people at specific building/rental unit addresses
 
-### Property Bug Fixes
+  - **Standardized Address Prefixes** — Standardized "Street" address prefixes across the board
 
-- **Commercial Property Merging** — Resolved commercial properties merging with unrelated property records
-- **City Name Normalization** — Normalized "Saint Louis" to "St. Louis"
+  - **Most Recent Broker Data** — Brokers' email addresses and phone numbers now accurately reflected
 
-### Property Source Updates
+  ### Property Bug Fixes
 
-Updated Redfin, Kobo, Crexi, Zumper, Jefferson County tax records, Cityfeet, ForRent, Loopnet, Weichert, Showcase, Rightmove.co.uk
+  - **Commercial Property Merging** — Resolved commercial properties merging with unrelated property records
 
-### Product Source Updates
+  - **City Name Normalization** — Normalized "Saint Louis" to "St. Louis"
 
-Updated Bloomingdales, Target.com, Saksoff5th, Wayfair
+  ### Property Source Updates
+
+  Updated Redfin, Kobo, Crexi, Zumper, Jefferson County tax records, Cityfeet, ForRent, Loopnet, Weichert, Showcase, Rightmove.co.uk
+
+  ### Product Source Updates
+
+  Updated Bloomingdales, Target.com, Saksoff5th, Wayfair
 </Update>
+
