@@ -1,7 +1,6 @@
 ---
 title: Contact new home owners
 ---
-
 ## Introduction
 
 Datafiniti's property data can be used to generate lead lists for individuals or homes that have just purchased a new home. You can use our advanced query syntax to generate a targeted lists.
@@ -21,8 +20,9 @@ You may sub out the date range of `saleDate` to whatever time period that pertai
 
 This query is a little complex, so let's explain what's happening:
 
-* We're using a `buyerFirstName` wildcard to guarantee that the home owner is there.
-* `Transactions.saleDate` will show us only records with the start date until the current date.
+- We're using a `buyerFirstName` wildcard to guarantee that the home owner is there.
+
+- `Transactions.saleDate` will show us only records with the start date until the current date.
 
 ## Eliminating newly built houses from your search
 
@@ -57,19 +57,15 @@ Here is a sample of what this transactional data may look like.
 
 ## Find the people data record
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **Data Freshness Notice – Owner & Transaction Data**
 
   Homeowner contact details and transaction records are typically available within 2 weeks after a property is marked as sold. This brief processing window allows us to validate, normalize, and match deed and ownership updates to ensure accuracy and reduce false positives.
-
 </Callout>
-
-
 
 ## Using autotrace to combine people and property data
 
-A newer feature to Datafiniti is the ability to cross reference people found in the property data with our people data. This can be done using the property data's auto_trace feature. The auto_trace feature is a key generated and linked to a people data record key. Allow for a single API call to pull both property and people data for the homer in one record.
+A newer feature to Datafiniti is the ability to cross reference people found in the property data with our people data. This can be done using the property data's auto\_trace feature. The auto\_trace feature is a key generated and linked to a people data record key. Allow for a single API call to pull both property and people data for the homer in one record.
 
 ```json
 {
@@ -101,120 +97,6 @@ jMU48oUB5p3ULnC0Du3H	6780 QUEENS Way	NORTH ROYALTON	OH	44133	[{"saleDate":"2023-
 
 *Please note that this is a condensed view to show people data of home owner contact info.*
 
-
-<Request tabs="Shell,Python,C#">
-```bash
-curl --request POST \
-     --url https://api.datafiniti.co/v4/properties/search \
-     --header 'Authorization: Bearer <token>' \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '{
-  "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": true, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
-  "num_records": 10,
-  "query": "country:US AND people.title:owner",
-  "format": "json",
-  "auto_trace":true,
-  "only_traceable":true,
-  "download": false
-}'
-```
-```python
-import requests
-
-url = "https://api.datafiniti.co/v4/properties/search"
-
-payload = {
-    "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": True, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
-    "num_records": 10,
-    "query": "country:US AND people.title:owner",
-    "format": "json",
-    "auto_trace": True,
-    "only_traceable": True,
-    "download": False
-}
-headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer <token>",
-    "content-type": "application/json"
-}
-
-response = requests.post(url, json=payload, headers=headers)
-
-print(response.text)
-```
-```csharp
-using RestSharp;
-
-var options = new RestClientOptions("https://api.datafiniti.co/v4/properties/search");
-var client = new RestClient(options);
-var request = new RestRequest("");
-request.AddHeader("accept", "application/json");
-request.AddHeader("Authorization", "Bearer <token>");
-request.AddJsonBody(new
-{
-    view = new object[]
-    {
-        new { name = "address" },
-        new { name = "city" },
-        new { name = "province" },
-        new { name = "postalCode" },
-        new { name = "people" },
-        new { name = "transactions", flatten = true, sub_fields = new object[]
-            {
-                new { name = "saleDate" },
-                new { name = "buyerFirstName" },
-                new { name = "buyerLastName" }
-            }
-        }
-    },
-    num_records = 10,
-    query = "country:US AND people.title:owner",
-    format = "json",
-    auto_trace = true,
-    only_traceable = true,
-    download = false
-});
-var response = await client.PostAsync(request);
-
-Console.WriteLine("{0}", response.Content);
-```
-</Request>
-
-<Response tabs="200">
-```json
-{
-  "num_found": 10,
-  "total_cost": 10,
-  "records": ["data_content"]
-}
-```
-</Response>
-
 Presented here is a people data search for the same data of home owner contact.
 
 ```json
@@ -224,41 +106,35 @@ Presented here is a people data search for the same data of home owner contact.
 }
 ```
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **Autotrace people data**
 
-  For more information on our auto_trace feature, you can read more about it here: [Autotrace](/docs/autotrace)
-
+  For more information on our auto\_trace feature, you can read more about it here: [Autotrace](/docs/autotrace)
 </Callout>
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **Comparing buyer data to Datafiniti's people data**
 
   After compiling a list of records with first names, last names, and general locational geographics, you can query Datafiniti's people database to find out more info.
 
   Please visit our documentation on [gathering people contact information](/docs/gather-people-contact-information) to learn how to query people data. This will allow you to gather phones, emails, and other contact information for reaching out to new home buyers.
-
 </Callout>
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **Address normalization**
 
   Datafiniti uses standardized street name normalization. Converting `street` to `st`, `drive` to `dr`, etc. You can learn more about our address normalization here: [Normalized Property Addresses](/docs/normalized-address-data).
   If you wish to exactly match addresses to Datafiniti's property data, you will need to use this normalization method.
-
 </Callout>
 
 ## Example files
 
 Here are example bulk download files of our previous query:
 
-* [Multi-family & Land CSV](https://drive.google.com/file/d/1Fyf9LAG_7Omm_s1zafPzVp0Up_08RGvk/view?usp=sharing)
-* [Multi-family & Land JSON](https://drive.google.com/file/d/14W0E-ktyBZXkwLevLCIjEHcrv4A4Dk6R/view?usp=sharing)
+- [Multi-family & Land CSV](https://drive.google.com/file/d/1Fyf9LAG_7Omm_s1zafPzVp0Up_08RGvk/view?usp=sharing)
+
+- [Multi-family & Land JSON](https://drive.google.com/file/d/14W0E-ktyBZXkwLevLCIjEHcrv4A4Dk6R/view?usp=sharing)
 
 ## Conclusion
 
 With the knowledge of how to pull records with new homeowner data, you will have the capability to contact and create lead data. You can also further enhance this data with reference to Datafiniti's people data as well.
-
