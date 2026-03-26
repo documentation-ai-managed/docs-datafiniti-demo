@@ -1,7 +1,6 @@
 ---
-title: "Accessing owners, brokers, & other people data"
+title: 'Accessing owners, brokers, & other people data'
 ---
-
 Establishing connections between individuals and the properties they are associated with can unlock valuable insights for a wide range of business needs. Whether you're reaching out to new homeowners, identifying real estate professionals, or assessing risk, having this data is key. We will walk through how to use Datafiniti’s APIs to identify people linked to specific properties. Our goal is to help you enhance lead profiles, validate ownership details, and get the most out of your property data with people data.
 
 ## Locating people records in property data
@@ -41,8 +40,9 @@ Once you have the `people_key` for the person you wish to search the people data
 
 We can use Datafiniti's [People Data](/reference/people-data) search endpoint to enhance the results found from a property search. Providing more details about the specific homeowner you wish to know more about. This guide will provide you with the steps to bridge the gap between property & people data. If you would like a refresher on how to access homeowner data we recommend the following guides on how to find homeowner data.
 
-* [Contact new home owners](/docs/contact-new-home-owners)
-* [Find owners that need roofing work](/docs/contact-home-owners-that-need-roofing-work)
+- [Contact new home owners](/docs/contact-new-home-owners)
+
+- [Find owners that need roofing work](/docs/contact-home-owners-that-need-roofing-work)
 
 ### 1. Searching for property with linked owners
 
@@ -55,7 +55,7 @@ To start, we must first find property with homeowners that have been linked to o
 }
 ```
 
-### 2. Find the people_key within your response
+### 2. Find the people\_key within your response
 
 You will see the following response from which we can find your `people_key` of the owner:
 
@@ -78,14 +78,12 @@ You will see the following response from which we can find your `people_key` of 
 }
 ```
 
-### 3. Lookup the people record using your people_key
+### 3. Lookup the people record using your people\_key
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **People data searches**
 
   To use the [People Data](/docs/api-people-data) search endpoint requires a people data plan. Please check your [Settings](/docs/settings) page if you are unsure if you have people data credits to use for this search.
-
 </Callout>
 
 Now we will use the [People Data](/reference/people-data) search endpoint to cross reference the property data's `people_key` to the people data's `people_key`. Using the `mary/harris/us/fl/33919/1489charmontpl` `people_key` from earlier we can directly filter the `keys` field of our people data. You can use the following query to do so:
@@ -141,16 +139,19 @@ Your response will look something like this:
 
 When linking people data to property records, especially in the context of homeowners. Certain top-level fields in Datafiniti’s people data are particularly valuable.
 
-* `phoneNumberHighScoreLand` OR `phoneNumberHighScoreMobile` - This will be the highest likelihood contact phone number to call.
-* `primaryEmail` - the highest likely to reach email the person uses.
-* `phoneNumbers` - any phone number with a `bd_score` field will specific the likelihood of it being reachable. Higher score the better.
+- `phoneNumberHighScoreLand` OR `phoneNumberHighScoreMobile` - This will be the highest likelihood contact phone number to call.
+
+- `primaryEmail` - the highest likely to reach email the person uses.
+
+- `phoneNumbers` - any phone number with a `bd_score` field will specific the likelihood of it being reachable. Higher score the better.
 
 ## Accessing the broker data
 
 We can use Datafiniti's [People Data](/reference/people-data) search endpoint to enhance the results found from a property search. Providing more details about brokers contact info, currently listing, and more. This guide will provide you the steps to bridge the gap between property & people data. If you would like a refresher on how to access brokers data we recommend the following guides:
 
-* [Search broker listing property](/docs/search-broker-license-numbers)
-* [Generate a list of recent broker contacts](/docs/generate-a-list-of-recent-broker-contacts)
+- [Search broker listing property](/docs/search-broker-license-numbers)
+
+- [Generate a list of recent broker contacts](/docs/generate-a-list-of-recent-broker-contacts)
 
 ### 1. Searching for property with linked brokers
 
@@ -163,7 +164,7 @@ To start, we must first find property with brokers that have been linked to our 
 }
 ```
 
-### 2. Find the people_key within your response
+### 2. Find the people\_key within your response
 
 You will see the following response from which we can find your `people_key` of the owner:
 
@@ -181,14 +182,12 @@ You will see the following response from which we can find your `people_key` of 
                 },
 ```
 
-### 3. Lookup the broker record using your people_key
+### 3. Lookup the broker record using  your people\_key
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **People data searches**
 
   To use the [People Data](/docs/api-people-data) search endpoint requires a people data plan. Please check your [Settings](/docs/settings) page if you are unsure if you have people data credits to use for this search.
-
 </Callout>
 
 Now we will use the [People Data](/reference/people-data) search endpoint to cross reference the broker's `people_key` to the people data's `people_key`. Using the `everett/zimmerman/1531473490` `people_key` we can directly filter the `keys` field of our people data. You can use the following query to do so:
@@ -256,9 +255,11 @@ Your response will look something like this:
 
 When linking people data to property records—especially in the context of real estate brokers—certain top-level fields in Datafiniti’s people data are particularly valuable.
 
-* `businessCategories` - Common found for brokers is the "real estate" value, but in specific case you can see if your broker specializes in commercial, land acquisition, non-profit, etc.
-* `keys`  - Every key found here is tied to a unique property. These keys can be used to identify all For sale, and Sold properties from the broker.
-* `licenses` -This will show the license institution and/or number of the brokerage they work for.
+- `businessCategories` - Common found for brokers is the "real estate" value, but in specific case you can see if your broker specializes in commercial, land acquisition, non-profit, etc.
+
+- `keys`  - Every key found here is tied to a unique property. These keys can be used to identify all For sale, and Sold properties from the broker.
+
+- `licenses` -This will show the license institution and/or number of the brokerage they work for.
 
 Together, these fields enable a more complete and accurate connection between people and the properties they represent.
 
@@ -268,21 +269,21 @@ Owner data in property records will not include any contact information.  The st
 
 This section shows you how to use AutoTrace to uncover verified homeowner identities and contact details—starting from just a name or address. We will use the queries shown at [Track property status changes](/docs/track-property-status-changes) as a starting point to find homeowners that recently put their property up for sale.
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **When to use AutoTrace**
 
   AutoTrace is more useful for adding people data to property searches that return multiple records.
-
 </Callout>
 
 ### 1. Define the property search
 
 Let's say we're looking for properties with the followin criteria:
 
-* Properties in Houston, Texas
-* most recent status being "For Sale"
-* Were listed since March 1 2025
+- Properties in Houston, Texas
+
+- most recent status being "For Sale"
+
+- Were listed since March 1 2025
 
 ```json
 {
@@ -295,8 +296,9 @@ Let's say we're looking for properties with the followin criteria:
 
 Next, we set AutoTrace to `true` to import people data into the query results. We add the following:
 
-* `auto_trace` - to use reference any people titled as "owner" and import and linked data from our people database.
-* `only_traceable` - only return records that we can enhance with people data.
+- `auto_trace` - to use reference any people titled as "owner" and import and linked data from our people database.
+
+- `only_traceable` - only return records that we can enhance with people data.
 
 ```json
 {
@@ -1573,136 +1575,136 @@ Here's an example record:
         },
 ```
 
-<Callout kind="alert">
-
+<Callout kind="alert" collapsed="false">
   **People data plan**
 
-  Please note that Autotrace API requests require available property data credits and people data credits. Using an Autotrace-enabled search will charge 1 property data credit and 1 people data credit per num_found or set by num_records.
-
+  Please note that Autotrace API requests require available property data credits and people data credits. Using an Autotrace-enabled search will charge 1 property data credit and 1 people data credit per num\_found or set by num\_records.
 </Callout>
 
 For more information on how to integrate Autotrace into your current property data search, you can read more in the recipe below:
 
 Learn more about integrating Autotrace into your property data searches.
 
-
-<Request tabs="Shell,Python,C#">
-```bash
-curl --request POST \
-     --url https://api.datafiniti.co/v4/properties/search \
-     --header 'Authorization: Bearer <token>' \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '{
-  "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": true, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
-  "num_records": 10,
-  "query": "country:US AND people.title:owner",
-  "format": "json",
-  "auto_trace":true,
-  "only_traceable":true,
-  "download": false
-}'
-```
-```python
-import requests
-
-url = "https://api.datafiniti.co/v4/properties/search"
-
-payload = {
+<Request show-lines="true" tabs={[]}>
+  ```bash
+  curl --request POST \
+       --url https://api.datafiniti.co/v4/properties/search \
+       --header 'Authorization: Bearer <token>' \
+       --header 'accept: application/json' \
+       --header 'content-type: application/json' \
+       --data '{
     "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": True, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
+          {"name": "address"},
+          {"name": "city"},
+          {"name": "province"},
+          {"name": "postalCode"},
+          {"name": "people"},
+          {"name": "transactions","flatten": true, "sub_fields": [
+              {"name": "saleDate"},
+              {"name": "buyerFirstName"},
+              {"name": "buyerLastName"}
+            ]
+          }
+      ],
     "num_records": 10,
     "query": "country:US AND people.title:owner",
     "format": "json",
-    "auto_trace": True,
-    "only_traceable": True,
-    "download": False
-}
-headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer <token>",
-    "content-type": "application/json"
-}
+    "auto_trace":true,
+    "only_traceable":true,
+    "download": false
+  }'
+  ```
 
-response = requests.post(url, json=payload, headers=headers)
+  ```python
+  import requests
 
-print(response.text)
-```
-```csharp
-using RestSharp;
+  url = "https://api.datafiniti.co/v4/properties/search"
 
-var options = new RestClientOptions("https://api.datafiniti.co/v4/properties/search");
-var client = new RestClient(options);
-var request = new RestRequest("");
-request.AddHeader("accept", "application/json");
-request.AddHeader("Authorization", "Bearer <token>");
-request.AddJsonBody(new
-{
-    view = new object[]
-    {
-        new { name = "address" },
-        new { name = "city" },
-        new { name = "province" },
-        new { name = "postalCode" },
-        new { name = "people" },
-        new { name = "transactions", flatten = true, sub_fields = new object[]
-            {
-                new { name = "saleDate" },
-                new { name = "buyerFirstName" },
-                new { name = "buyerLastName" }
-            }
-        }
-    },
-    num_records = 10,
-    query = "country:US AND people.title:owner",
-    format = "json",
-    auto_trace = true,
-    only_traceable = true,
-    download = false
-});
-var response = await client.PostAsync(request);
+  payload = {
+      "view": [
+          {"name": "address"},
+          {"name": "city"},
+          {"name": "province"},
+          {"name": "postalCode"},
+          {"name": "people"},
+          {"name": "transactions","flatten": True, "sub_fields": [
+              {"name": "saleDate"},
+              {"name": "buyerFirstName"},
+              {"name": "buyerLastName"}
+            ]
+          }
+      ],
+      "num_records": 10,
+      "query": "country:US AND people.title:owner",
+      "format": "json",
+      "auto_trace": True,
+      "only_traceable": True,
+      "download": False
+  }
+  headers = {
+      "accept": "application/json",
+      "Authorization": "Bearer <token>",
+      "content-type": "application/json"
+  }
 
-Console.WriteLine("{0}", response.Content);
-```
+  response = requests.post(url, json=payload, headers=headers)
+
+  print(response.text)
+  ```
+
+  ```csharp
+  using RestSharp;
+
+  var options = new RestClientOptions("https://api.datafiniti.co/v4/properties/search");
+  var client = new RestClient(options);
+  var request = new RestRequest("");
+  request.AddHeader("accept", "application/json");
+  request.AddHeader("Authorization", "Bearer <token>");
+  request.AddJsonBody(new
+  {
+      view = new object[]
+      {
+          new { name = "address" },
+          new { name = "city" },
+          new { name = "province" },
+          new { name = "postalCode" },
+          new { name = "people" },
+          new { name = "transactions", flatten = true, sub_fields = new object[]
+              {
+                  new { name = "saleDate" },
+                  new { name = "buyerFirstName" },
+                  new { name = "buyerLastName" }
+              }
+          }
+      },
+      num_records = 10,
+      query = "country:US AND people.title:owner",
+      format = "json",
+      auto_trace = true,
+      only_traceable = true,
+      download = false
+  });
+  var response = await client.PostAsync(request);
+
+  Console.WriteLine("{0}", response.Content);
+  ```
 </Request>
 
-<Response tabs="200">
-```json
-{
-  "num_found": 10,
-  "total_cost": 10,
-  "records": ["data_content"]
-}
-```
+<Response show-lines="true" tabs={[]}>
+  ```json
+  {
+    "num_found": 10,
+    "total_cost": 10,
+    "records": ["data_content"]
+  }
+  ```
 </Response>
 
 ## Example Records
 
 Here are example bulk download AutoTrace files of our previous query:
 
-* [Combined Property & People Data CSV](https://drive.google.com/file/d/1Fyf9LAG_7Omm_s1zafPzVp0Up_08RGvk/view?usp=drive_link)
-* [Combined Property & People Data JSON](https://drive.google.com/file/d/14W0E-ktyBZXkwLevLCIjEHcrv4A4Dk6R/view?usp=drive_link)
+- [Combined Property & People Data CSV](https://drive.google.com/file/d/1Fyf9LAG_7Omm_s1zafPzVp0Up_08RGvk/view?usp=drive_link)
+
+- [Combined Property & People Data JSON](https://drive.google.com/file/d/14W0E-ktyBZXkwLevLCIjEHcrv4A4Dk6R/view?usp=drive_link)
 

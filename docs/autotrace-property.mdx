@@ -1,146 +1,32 @@
 ---
 title: Autotrace
 ---
-
 Autotrace with the Property Data API allows you to connect people and property data. This API call uses the regular property search endpoint with minor differences, notably the `auto_trace` parameter and a specific [view](/docs/property-data-views) for property records. This will allow you to directly pull property records, along with owner contact information, with just one API call.
 
 ## Endpoint
 
 POST [https://api.datafiniti.co/v4/properties/search](https://api.datafiniti.co/v4/properties/search)
 
-<Request tabs="Shell,Python,C#">
-```bash
-curl --request POST \
-     --url https://api.datafiniti.co/v4/properties/search \
-     --header 'Authorization: Bearer <token>' \
-     --header 'accept: application/json' \
-     --header 'content-type: application/json' \
-     --data '
-{
-  "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": true, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
-  "num_records": 10,
-  "query": "country:US AND people.title:owner",
-  "format": "json",
-  "auto_trace":true,
-  "only_traceable":true,
-  "download": false
-}'
-```
-```python
-import requests
-
-url = "https://api.datafiniti.co/v4/properties/search"
-
-payload = {
-    "view": [
-        {"name": "address"},
-        {"name": "city"},
-        {"name": "province"},
-        {"name": "postalCode"},
-        {"name": "people"},
-        {"name": "transactions","flatten": True, "sub_fields": [
-            {"name": "saleDate"},
-            {"name": "buyerFirstName"},
-            {"name": "buyerLastName"}
-          ]
-        }
-    ],
-    "num_records": 10,
-    "query": "country:US AND people.title:owner",
-    "format": "json",
-    "auto_trace": True,
-    "only_traceable": True,
-    "download": False
-}
-headers = {
-    "accept": "application/json",
-    "Authorization": "Bearer <token>",
-    "content-type": "application/json"
-}
-
-response = requests.post(url, json=payload, headers=headers)
-
-print(response.text)
-```
-```csharp
-using RestSharp;
-
-var options = new RestClientOptions("https://api.datafiniti.co/v4/properties/search");
-var client = new RestClient(options);
-var request = new RestRequest("");
-request.AddHeader("accept", "application/json");
-request.AddHeader("Authorization", "Bearer <token>");
-request.AddJsonBody(new
-{
-    view = new object[]
-    {
-        new { name = "address" },
-        new { name = "city" },
-        new { name = "province" },
-        new { name = "postalCode" },
-        new { name = "people" },
-        new { name = "transactions", flatten = true, sub_fields = new object[]
-            {
-                new { name = "saleDate" },
-                new { name = "buyerFirstName" },
-                new { name = "buyerLastName" }
-            }
-        }
-    },
-    num_records = 10,
-    query = "country:US AND people.title:owner",
-    format = "json",
-    auto_trace = true,
-    only_traceable = true,
-    download = false
-});
-var response = await client.PostAsync(request);
-
-Console.WriteLine("{0}", response.Content);
-```
-</Request>
-
-<Response tabs="200">
-```json
-{
-  "num_found": 10,
-  "total_cost": 10,
-  "records": [data_content]
-}
-```
-</Response>
-
-
-
 ### Input
 
 Users can run Autotrace searches without extra query modifications. It's recommended to test different search parameters before running Autotrace as it will only return property data for records with `people.title:owner`. The parameter should reflect the following structure:
 
-* `query` - This selects which records should be matched. It's the same format as our search endpoint.
-* `num_records` - The number of records matching the query you want to be updated. If this parameter is not specified, all matching records will be updated.
-* `download` - Set this to "true" OR "false" to download the records to a file.
-* `format` - Specify either "json" or "csv" for your file format.
-* `auto_trace` - Set this to "true" OR "false" for whether or not to autotrace the property records matched by your `query`.
-* `only_traceable` - Boolean "true" OR "false" for whether the records return must have people data in the dataset.
+- `query` - This selects which records should be matched. It's the same format as our search endpoint.
 
-<Callout kind="info">
+- `num_records` - The number of records matching the query you want to be updated. If this parameter is not specified, all matching records will be updated.
 
+- `download` - Set this to "true" OR "false" to download the records to a file.
+
+- `format` - Specify either "json" or "csv" for your file format.
+
+- `auto_trace` - Set this to "true" OR "false" for whether or not to autotrace the property records matched by your `query`.
+
+- `only_traceable` - Boolean "true" OR "false" for whether the records return must have people data in the dataset.
+
+<Callout kind="info" collapsed="false">
   **autotrace credits**
 
   Please note that autotrace API requests will require available property data credits and people data credits. Using an autotrace enabled search will charge 1 property data credit and 1 people data credit per `num_found` or set by `num_records`.
-
 </Callout>
 
 Your json and csv output will mimic the same response as a property data search API call, with one exception. Any data found in the property record's `people` field will be appended with the matching people record from the people database.
@@ -189,20 +75,16 @@ Example API with view:
 }
 ```
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **custom views**
 
   You can customize your view with as many or as little subfield as you would like. For more information you can read more about [Views](/docs/property-data-views).
-
 </Callout>
 
-<Callout kind="danger">
-
+<Callout kind="danger" collapsed="false">
   **People data & views**
 
   Please note that you can NOT flatten `people` data sub-fields. People data that is appended via autotrace is already flattened for your convenience. If the `people.keys` is NOT found within a custom view, you will receive an error.
-
 </Callout>
 
 ### Output
@@ -532,28 +414,28 @@ Example output - simplified view of people
 }
 ```
 
-<Callout kind="info">
-
+<Callout kind="info" collapsed="false">
   **Autotrace matches**
 
   Depending on your property search query, you may receive less autotrace values back than the `num_found`. This is expected, as not all property owners are found on an autotrace search. We estimate anywhere from 50%-80% of property records will have matching people records.
 
   In these cases, your `num_records` will act as an upper limit on how many records autotrace will match.
-
 </Callout>
 
 ### Common Errors
 
-<Callout kind="danger">
-
+<Callout kind="danger" collapsed="false">
   **Autotrace with Views**
 
   Please note that there a mandatory fields that must be called when using a custom view.
 
-  * `people.keys`
-  * `transactions.buyerFirstName`
-  * `transactions.buyerLastName`
-  * `transactions.saleDate`
+  - `people.keys`
+
+  - `transactions.buyerFirstName`
+
+  - `transactions.buyerLastName`
+
+  - `transactions.saleDate`
 
   Common error messages include:
 
@@ -565,11 +447,11 @@ Example output - simplified view of people
       "auto_trace view must contain transactions.saleDate"
   ]
   ```
-
 </Callout>
 
 ### Example use cases
 
-* [Contact new home owners](/docs/contact-new-home-owners)
-* [Contact home owners that need roofing work](/docs/contact-home-owners-that-need-roofing-work)
+- [Contact new home owners](/docs/contact-new-home-owners)
+
+- [Contact home owners that need roofing work](/docs/contact-home-owners-that-need-roofing-work)
 
