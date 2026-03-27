@@ -4,238 +4,238 @@ title: People Data Schema
 
 The people data schema below lists all available fields in a people record.  Note that actual people records may not have every field present.
 
-<ResponseField name="address" field-type="text">
+<ParamField body="address" param-type="text" showLocation="false">
   The current work address of this person.
 
   **Example:** `"address": "1125 Lancaster Avenue"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="birthDate" field-type="date">
+<ParamField body="birthDate" param-type="date" showLocation="false">
   The full date of birth of the person in `YYYY-MM-DD` format.
 
   **Example:** `"birthDate": "1977-10-02"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="birthYear" field-type="integer">
+<ParamField body="birthYear" param-type="integer" showLocation="false">
   The birth year of the person in `YYYY` format.
 
   **Example:** `"birthYear": "1977"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="businessCategories" field-type="text">
+<ParamField body="businessCategories" param-type="text" showLocation="false">
   A list of category keywords used for the business the person currently works in. Business Categories for people data can be found [here](/docs/possible-values-for-people-fields).
 
   **Example:** `"businessCategories": ["Advertising Agencies"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="businessName" field-type="text">
+<ParamField body="businessName" param-type="text" showLocation="false">
   The current business where this person works.
 
   **Example:** `"businessName": "International Direct Response Inc"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="city" field-type="text">
+<ParamField body="city" param-type="text" showLocation="false">
   The current city where this person works.
 
   **Example:** `"city": "Berwyn"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="country" field-type="text">
+<ParamField body="country" param-type="text" showLocation="false">
   The current country where this person works.
 
   **Example:** `"country": "US"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateAdded" field-type="date">
+<ParamField body="dateAdded" param-type="date" showLocation="false">
   The date this person was first added to the people database.
 
   **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateOfDeath" field-type="date">
+<ParamField body="dateOfDeath" param-type="date" showLocation="false">
   The date of death of the person.
 
   **Example:** `"dateOfDeath": "2020-07-27T00:00:00Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateUpdated" field-type="date">
+<ParamField body="dateUpdated" param-type="date" showLocation="false">
   The most recent date this person was updated or seen by our system.
 
   **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="deceased" field-type="boolean">
+<ParamField body="deceased" param-type="boolean" showLocation="false">
   The value to determine if the person is currently deseased.
 
   **Example:** `"deceased": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="domains" field-type="domain">
+<ParamField body="domains" param-type="domain" showLocation="false">
   A list of each unique domain found in the `sourceURLs` field.
 
   **Example:** `"domains": ["datafiniti.co"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="emails" field-type="text">
+<ParamField body="emails" param-type="text" showLocation="false">
   A list of emails associated with this person.
 
   **Example:** `"emails": ["doug@idronline.net"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="firstName" field-type="text">
+<ParamField body="firstName" param-type="text" showLocation="false">
   The person's first name.
 
   **Example:** `"firstName": "Doug"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="gender" field-type="text">
+<ParamField body="gender" param-type="text" showLocation="false">
   The person's gender.
 
   **Example:** `"gender": "male"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="industries" field-type="text">
+<ParamField body="industries" param-type="text" showLocation="false">
   A list of category keywords used for previous businesses in the person's experience. Industries for people data can be found [here](/docs/possible-values-for-people-fields).
 
   **Example:** `"industries": ["Advertising Agencies"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="interests" field-type="text">
+<ParamField body="interests" param-type="text" showLocation="false">
   The personal interests of the person.
 
   **Example:** `"interests": ["disaster and humanitarian relief", "politics", "human rights", "cooking", "startups"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="jobFunction" field-type="text">
+<ParamField body="jobFunction" param-type="text" showLocation="false">
   The person's current job function.  Job function values can be found [here](/docs/possible-values-for-people-fields).
 
   **Example:** `"jobFunction": "Marketing"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="jobLevel" field-type="text">
+<ParamField body="jobLevel" param-type="text" showLocation="false">
   The person's current job level.  Job level values can be found [here](/docs/possible-values-for-people-fields).
 
   **Example:** `"jobLevel": "C-Team"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="jobSkills" field-type="text">
+<ParamField body="jobSkills" param-type="text" showLocation="false">
   The person's job-related skills.
 
   **Example:** `"jobSkills": ["enterprise software", "start ups", "monetization", "product management", "agile methodologies"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="jobTitle" field-type="text">
+<ParamField body="jobTitle" param-type="text" showLocation="false">
   The person's current job title.
 
   **Example:** `"jobTitle": "President of New Business Development"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="keys" field-type="keyword">
+<ParamField body="keys" param-type="keyword" showLocation="false">
   A list of internal Datafiniti identifiers for people.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn more about how this works](https://datafiniti.co).
 
   **Example:** `"keys": ["dougidronlinenet"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="lastName" field-type="text">
+<ParamField body="lastName" param-type="text" showLocation="false">
   The person's last name.
 
   **Example:** `"lastName": "Guyer"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="licenses" field-type="nested">
+<ParamField body="licenses" param-type="nested" showLocation="false">
   A list of licenses associated with this person.
 
   **Example:** `"licenses": [{"type": "TREC", "value": "123456"}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="licenses.type" field-type="text">
+    <ParamField body="licenses.type" param-type="text" showLocation="false">
       The type of license the person value is identified by.
-    </ResponseField>
-    <ResponseField name="licenses.value" field-type="text">
+    </ParamField>
+    <ParamField body="licenses.value" param-type="text" showLocation="false">
       The string value of the license identified by the type.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="linkedinURL" field-type="keyword">
+<ParamField body="linkedinURL" param-type="keyword" showLocation="false">
   LinkedIn URL for this person.  [LinkedIn](https://www.linkedin.com/)
 
   **Example:** `"linkedinURL": "https://linkedin.com/in/some-person-7525231"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentProfileImageURL" field-type="text">
+<ParamField body="mostRecentProfileImageURL" param-type="text" showLocation="false">
   The person's most recent professional profile picture on their social network.
 
   **Example:** `"mostRecentProfileImageURL": "https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPropertyPurchaseDate" field-type="date">
+<ParamField body="mostRecentPropertyPurchaseDate" param-type="date" showLocation="false">
   The most recent purchase date of the owner of the property.
 
   **Example:** `"mostRecentPropertyPurchaseDate": "2024-12-04T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPropertyPurchaseKey" field-type="keyword">
+<ParamField body="mostRecentPropertyPurchaseKey" param-type="keyword" showLocation="false">
   The most recent matching property key to the Datafiniti property database.
 
   **Example:** `"mostRecentPropertyPurchaseKey": "us/az/phoenix/3327n18thave"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="maxRecentSoldPrice" field-type="float">
+<ParamField body="maxRecentSoldPrice" param-type="float" showLocation="false">
   The maximum most recently sold price of a property from the broker.
 
   **Example:** `"maxRecentSoldPrice": 700000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="minRecentSoldPrice" field-type="float">
+<ParamField body="minRecentSoldPrice" param-type="float" showLocation="false">
   The minimum most recently sold price of a property from the broker.
 
   **Example:** `"minRecentSoldPrice": 155000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numEmployeesMin" field-type="integer">
+<ParamField body="numEmployeesMin" param-type="integer" showLocation="false">
   The minimum number of employees at the business where this person currently works.
 
   **Example:** `"numEmployeesMin": 20`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numEmployeesMax" field-type="integer">
+<ParamField body="numEmployeesMax" param-type="integer" showLocation="false">
   The maximum number of employees at the business where this person currently works.
 
   **Example:** `"numEmployeesMax": 99`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="personalEmails" field-type="text">
+<ParamField body="personalEmails" param-type="text" showLocation="false">
   The personal email addresses of the person.
 
   **Example:** `"personalEmails": ["mesheldo@gmail.com"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phoneNumberHighScoreMobile" field-type="text">
+<ParamField body="phoneNumberHighScoreMobile" param-type="text" showLocation="false">
   The highest scored mobile phone from the phoneNumbers field.
 
   **Example:** `"phoneNumberHighScoreMobile": "+1 602-571-8454"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phoneNumberHighScoreMobileScore" field-type="integer">
+<ParamField body="phoneNumberHighScoreMobileScore" param-type="integer" showLocation="false">
   The highest score amount of a mobile phone from the phoneNumbers field.
 
   **Example:** `"phoneNumberHighScoreMobileScore": 90`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phoneNumberHighScoreLand" field-type="text">
+<ParamField body="phoneNumberHighScoreLand" param-type="text" showLocation="false">
   The highest bdscore land line phone from the phoneNumbers field.
 
   **Example:** `"phoneNumberHighScoreLand": "+1 440-238-1444"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phoneNumberHighScoreLandScore" field-type="integer">
+<ParamField body="phoneNumberHighScoreLandScore" param-type="integer" showLocation="false">
   The highest score amount of a land line phone from the phoneNumbers field.
 
   **Example:** `"phoneNumberHighScoreLandScore": 100`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phoneNumbers" field-type="nested">
+<ParamField body="phoneNumbers" param-type="nested" showLocation="false">
   A list of verified phone numbers where this person can be reached.
 
   **Example:**
@@ -252,69 +252,69 @@ The people data schema below lists all available fields in a people record.  Not
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="phoneNumbers.bdscore" field-type="float">
+    <ParamField body="phoneNumbers.bdscore" param-type="float" showLocation="false">
       0-100 (higher the better) score on how likely the person is to pick up the phone.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.carrier" field-type="text">
+    </ParamField>
+    <ParamField body="phoneNumbers.carrier" param-type="text" showLocation="false">
       Carrier of the phone number.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="phoneNumbers.lastDateSeen" param-type="date" showLocation="false">
       Last date seen of the phone number.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.number" field-type="text">
+    </ParamField>
+    <ParamField body="phoneNumbers.number" param-type="text" showLocation="false">
       The 10 digit plus country code phone number.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.reachableStatus" field-type="boolean">
+    </ParamField>
+    <ParamField body="phoneNumbers.reachableStatus" param-type="boolean" showLocation="false">
       If the person was reachable on this phone number.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.tested" field-type="boolean">
+    </ParamField>
+    <ParamField body="phoneNumbers.tested" param-type="boolean" showLocation="false">
       Tested status of the phone.
-    </ResponseField>
-    <ResponseField name="phoneNumbers.type" field-type="text">
+    </ParamField>
+    <ParamField body="phoneNumbers.type" param-type="text" showLocation="false">
       Land line or mobile phone.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="postalCode" field-type="keyword">
+<ParamField body="postalCode" param-type="keyword" showLocation="false">
   The current postal/zip code where this person works.
 
   **Example:** `"postalCode": "19312-1243"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="primaryEmail" field-type="text">
+<ParamField body="primaryEmail" param-type="text" showLocation="false">
   The person's current professional email address.
 
   **Example:** `"primaryEmail": "maggie.sheldon@hover.to"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="professionalEmails" field-type="text">
+<ParamField body="professionalEmails" param-type="text" showLocation="false">
   The person's professional email addresses.
 
   **Example:** `"professionalEmails": ["maggie.sheldon@hover.to", "msheldon@mavenlink.com"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="profileImageURLs" field-type="text">
+<ParamField body="profileImageURLs" param-type="text" showLocation="false">
   The person's professional profile picture on their social network.
 
   **Example:** `"profileImageURLs": "https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertyKeys" field-type="string">
+<ParamField body="propertyKeys" param-type="string" showLocation="false">
   The person's generated key from Datafiniti. Can be used to compare in the property search API endpoint.
 
   **Example:** `"propertyKeys": ["us/tx/sugarland/72grantslkcir"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertiesOwned" field-type="text" deprecated="true">
+<ParamField body="propertiesOwned" param-type="text" deprecated="true" showLocation="false">
   This field shows the property keys the person is connected to in Datafiniti's property database.
 
   Deprecated as of Jan 8th, 2026.
 
   **Example:** `"propertiesOwned": ["us/or/sisters/68885hurtleyrnchrd"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertiesOwnedHistory" field-type="nested">
+<ParamField body="propertiesOwnedHistory" param-type="nested" showLocation="false">
   A list of properties owned by this person with purchase and sale dates.
 
   **Example:**
@@ -333,50 +333,50 @@ The people data schema below lists all available fields in a people record.  Not
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="propertiesOwnedHistory.propertyKey" field-type="keyword">
+    <ParamField body="propertiesOwnedHistory.propertyKey" param-type="keyword" showLocation="false">
       The property data record that corresponds to the homeowner.
-    </ResponseField>
-    <ResponseField name="propertiesOwnedHistory.datePurchased" field-type="date">
+    </ParamField>
+    <ParamField body="propertiesOwnedHistory.datePurchased" param-type="date" showLocation="false">
       The date the homeowner purchased the property.
-    </ResponseField>
-    <ResponseField name="propertiesOwnedHistory.dateSold" field-type="date">
+    </ParamField>
+    <ParamField body="propertiesOwnedHistory.dateSold" param-type="date" showLocation="false">
       The date the property owner sold this property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertiesRepresented" field-type="keyword">
+<ParamField body="propertiesRepresented" param-type="keyword" showLocation="false">
   The property the person represents as a broker. Links directly to a key within our property data.
 
   **Example:** `"propertiesRepresented": ["us/ut/ogden/668w4150s"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="province" field-type="text">
+<ParamField body="province" param-type="text" showLocation="false">
   The current province/state where this person works.
 
   **Example:** `"province": "PA"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="salesCountAllTime" field-type="integer">
+<ParamField body="salesCountAllTime" param-type="integer" showLocation="false">
   The total count of properties sold by the broker.
 
   **Example:** `"salesCountAllTime": 55`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="salesCountLastYear" field-type="integer">
+<ParamField body="salesCountLastYear" param-type="integer" showLocation="false">
   The total count of properties sold by the broker within the last 365 days.
 
   **Example:** `"salesCountLastYear": 12`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sourceURLs" field-type="keyword">
+<ParamField body="sourceURLs" param-type="keyword" showLocation="false">
   A list of URLs used to generate data for this business location.  If `https://datafiniti.co` is used, then the data was sourced from our data partners.
 
   **Example:** `"sourceURLs": ["https://datafiniti.co"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="tcpa" field-type="boolean">
+<ParamField body="tcpa" param-type="boolean" showLocation="false">
   A flag indicating whether the person is on the TCPA litigators list.
 
   **Example:** `"tcpa": false`
-</ResponseField>
+</ParamField>

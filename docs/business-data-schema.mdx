@@ -4,14 +4,14 @@ title: Business Data Schema
 
 The business data schema below lists all available fields in a business record.  Note that actual business records (actually, most of them) may not have every field present.
 
-<ResponseField name="address" field-type="text">
+<ParamField body="address" param-type="text" showLocation="false">
   The physical street address for this business location.
 
 
   **Example:** `"address": "3382 30th St"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="categories" field-type="text">
+<ParamField body="categories" param-type="text" showLocation="false">
   A list of category keywords used for this business across multiple sources.
 
   **Example:**
@@ -23,16 +23,16 @@ The business data schema below lists all available fields in a business record. 
        "thing"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="city" field-type="text">
+<ParamField body="city" param-type="text" showLocation="false">
   The city of this business location.
 
 
   **Example:** `"city": "San Diego"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="claimed" field-type="keyword">
+<ParamField body="claimed" param-type="keyword" showLocation="false">
   A list of websites where the business location has been claimed by the business' owner.
 
   **Example:**
@@ -42,16 +42,16 @@ The business data schema below lists all available fields in a business record. 
      "http://foursquare.com/"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="country" field-type="text">
+<ParamField body="country" param-type="text" showLocation="false">
   The two-letter country code for the business location's country.
 
 
   **Example:** `"country": "US"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="cuisines" field-type="text">
+<ParamField body="cuisines" param-type="text" showLocation="false">
   A list of cuisines offered by this business location.  This field will only show for restaurants or other eating locations.
 
   **Example:**
@@ -62,23 +62,23 @@ The business data schema below lists all available fields in a business record. 
      "Seafood, Vegetarian / Vegan, Mediterranean"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateAdded" field-type="date">
+<ParamField body="dateAdded" param-type="date" showLocation="false">
   The date this business was first added to the business database.
 
 
   **Example:** `"dateAdded": "2016-03-24T09:27:02Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateUpdated" field-type="date">
+<ParamField body="dateUpdated" param-type="date" showLocation="false">
   The most recent date this business was updated or seen by our system.
 
 
   **Example:** `"dateUpdated": "2017-03-20T20:45:49Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="descriptions" field-type="nested">
+<ParamField body="descriptions" param-type="nested" showLocation="false">
   A list of descriptions for this business from various sources.  Each description contains:
 
   **Example:**
@@ -95,19 +95,19 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="descriptions.dateSeen" field-type="date">
+    <ParamField body="descriptions.dateSeen" param-type="date" showLocation="false">
       The date when this description has been seen for this business.
-    </ResponseField>
-    <ResponseField name="descriptions.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="descriptions.sourceURLs" param-type="keyword" showLocation="false">
       A list of source URLs where this specific description was seen.
-    </ResponseField>
-    <ResponseField name="descriptions.value" field-type="text">
+    </ParamField>
+    <ParamField body="descriptions.value" param-type="text" showLocation="false">
       A unique description for this business.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="domains" field-type="domain">
+<ParamField body="domains" param-type="domain" showLocation="false">
   A list of each unique domain found in the `sourceURLs` field.
 
   **Example:**
@@ -118,9 +118,9 @@ The business data schema below lists all available fields in a business record. 
      "www.zagat.com"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="emails" field-type="text">
+<ParamField body="emails" param-type="text" showLocation="false">
   A list of emails belonging to the business.
 
   **Example:**
@@ -129,16 +129,16 @@ The business data schema below lists all available fields in a business record. 
      "elena@searocketbistro.com"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="facebookPageURL" field-type="text">
+<ParamField body="facebookPageURL" param-type="text" showLocation="false">
   A URL pointing to the Facebook page for the business.
 
 
   **Example:** `"facebookPageURL": "http://www.facebook.com/pages/Sea-Rocket-Bistro/114213985293774"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="faxes" field-type="text">
+<ParamField body="faxes" param-type="text" showLocation="false">
   A list of fax numbers for the business.
 
   **Example:**
@@ -147,9 +147,9 @@ The business data schema below lists all available fields in a business record. 
      "3135619486"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="features" field-type="nested">
+<ParamField body="features" param-type="nested" showLocation="false">
   A list of features associated with this business location.  The feature list can be collected from specific feature sections available on listings for this business.  It can also serve as a catch-all field for miscellaneous characteristics of this business that don't make sense to include as top-level fields.
   
    Each feature contains:
@@ -175,28 +175,28 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="features.key" field-type="text">
+    <ParamField body="features.key" param-type="text" showLocation="false">
       A label for this feature.
-    </ResponseField>
-    <ResponseField name="features.replace" field-type="boolean">
+    </ParamField>
+    <ParamField body="features.replace" param-type="boolean" showLocation="false">
       Flag indicating value field is replaced versus appended.
-    </ResponseField>
-    <ResponseField name="features.value" field-type="text">
+    </ParamField>
+    <ParamField body="features.value" param-type="text" showLocation="false">
       A list of possible values for this feature.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="geoLocation" field-type="geo_shape">
+<ParamField body="geoLocation" param-type="geo_shape" showLocation="false">
   A location value that stores the latitude and longitude in a format that allows geospatial querying.
   
    The value is stored as Well-Known Text format, which resembles an (x, y) value, i.e. (longitude latitude).
 
 
   **Example:** `"geoLocation": "POINT (-119.5094 37.229366)"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="hours" field-type="nested">
+<ParamField body="hours" param-type="nested" showLocation="false">
   The hours of operation for this business location.
   
    Each hour object may contain:
@@ -218,22 +218,22 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="hours.day" field-type="text">
+    <ParamField body="hours.day" param-type="text" showLocation="false">
       The day(s) for this hour of operation.
-    </ResponseField>
-    <ResponseField name="hours.dept" field-type="text">
+    </ParamField>
+    <ParamField body="hours.dept" param-type="text" showLocation="false">
       The department or business unit related to this hour of operation.
-    </ResponseField>
-    <ResponseField name="hours.meal" field-type="text">
+    </ParamField>
+    <ParamField body="hours.meal" param-type="text" showLocation="false">
       The mealtime associated with these hours.  Typically reserved for restaurant locations.
-    </ResponseField>
-    <ResponseField name="hours.hour" field-type="text">
+    </ParamField>
+    <ParamField body="hours.hour" param-type="text" showLocation="false">
       The hours of operation.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="imageURLs" field-type="text">
+<ParamField body="imageURLs" param-type="text" showLocation="false">
   A list of image URLs associated with this business.
 
   **Example:**
@@ -243,16 +243,16 @@ The business data schema below lists all available fields in a business record. 
      "https://irs0.4sqi.net/img/general/200x200/1556291_gjOF8nnudHh_ICSWXoTs75_FxtcKt25nZtwbqjaHtKQ.jpg",
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="isClosed" field-type="boolean">
+<ParamField body="isClosed" param-type="boolean" showLocation="false">
   A `true` or `false` value for whether or not the business location is closed.
 
 
   **Example:** `"isClosed": "false"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="keys" field-type="keyword">
+<ParamField body="keys" param-type="keyword" showLocation="false">
   A list of internal Datafiniti identifiers for this business.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn how this works](/docs/how-business-records-are-merged)
 
   **Example:**
@@ -261,9 +261,9 @@ The business data schema below lists all available fields in a business record. 
      "us/ca/sandiego/338230thst/2075732923"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="languagesSpoken" field-type="text">
+<ParamField body="languagesSpoken" param-type="text" showLocation="false">
   A list of the languages spoken at this business.
 
   **Example:**
@@ -273,30 +273,30 @@ The business data schema below lists all available fields in a business record. 
      "Spanish"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="latitude" field-type="text">
+<ParamField body="latitude" param-type="text" showLocation="false">
   The latitude coordinates for this business location.
 
 
   **Example:** `"latitude": "32.740654"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="longitude" field-type="text">
+<ParamField body="longitude" param-type="text" showLocation="false">
   The longitude coordinates for this business location.
 
 
   **Example:** `"longitude": "-117.129482"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="menuPageURL" field-type="keyword">
+<ParamField body="menuPageURL" param-type="keyword" showLocation="false">
   A URL pointing to the menu for the business.   This field will only show for restaurants or other eating locations.
 
 
   **Example:** `"menuPageURL": "http://www.citysearch.com/profile/menu/648254644"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="menus" field-type="nested">
+<ParamField body="menus" param-type="nested" showLocation="false">
   A list of menu items offered by the business.  This field will only show for restaurants or other eating locations.
   
    Each menu item may include:
@@ -333,41 +333,41 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="menus.amountMin" field-type="float">
+    <ParamField body="menus.amountMin" param-type="float" showLocation="false">
       The minimum price value of the item.
-    </ResponseField>
-    <ResponseField name="menus.amountMax" field-type="float">
+    </ParamField>
+    <ParamField body="menus.amountMax" param-type="float" showLocation="false">
       The maximum price value of the item.  This is typically the same as amountMin, except in cases where a price range is listed.
-    </ResponseField>
-    <ResponseField name="menus.category" field-type="text">
+    </ParamField>
+    <ParamField body="menus.category" param-type="text" showLocation="false">
       The menu section this item belongs to.
-    </ResponseField>
-    <ResponseField name="menus.currency" field-type="keyword">
+    </ParamField>
+    <ParamField body="menus.currency" param-type="keyword" showLocation="false">
       The currency listed for amountMin and amountMax.
-    </ResponseField>
-    <ResponseField name="menus.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="menus.dateSeen" param-type="date" showLocation="false">
       The date when this item was seen.
-    </ResponseField>
-    <ResponseField name="menus.description" field-type="text">
+    </ParamField>
+    <ParamField body="menus.description" param-type="text" showLocation="false">
       A description for the item.
-    </ResponseField>
-    <ResponseField name="menus.name" field-type="text">
+    </ParamField>
+    <ParamField body="menus.name" param-type="text" showLocation="false">
       The item's name on the menu.
-    </ResponseField>
-    <ResponseField name="menus.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="menus.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this item was seen.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="name" field-type="text">
+<ParamField body="name" param-type="text" showLocation="false">
   The business location's name.
 
 
   **Example:** `"name": "Pete's Seafood & Sandwich"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="neighborhoods" field-type="text">
+<ParamField body="neighborhoods" param-type="text" showLocation="false">
   A list of neighborhoods where this business is located.  Sometimes an area can belong to multiple neighborhoods, which is why this field is a list.
 
   **Example:**
@@ -377,30 +377,30 @@ The business data schema below lists all available fields in a business record. 
      "North Park"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numEmployeesMin" field-type="integer">
+<ParamField body="numEmployeesMin" param-type="integer" showLocation="false">
   The lower bound on the number of people possibly employed by this business.
 
 
   **Example:** `"numEmployeesMin": "5"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numEmployeesMax" field-type="integer">
+<ParamField body="numEmployeesMax" param-type="integer" showLocation="false">
   The upper bound on the number of people employed by this business.
 
 
   **Example:** `"numEmployeesMax": "10"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numRoom" field-type="integer">
+<ParamField body="numRoom" param-type="integer" showLocation="false">
   The number of rooms available at this business.  This field typically shows for hotels or other similar businesses.
 
 
   **Example:** `"numRoom": 10`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="paymentTypes" field-type="text">
+<ParamField body="paymentTypes" param-type="text" showLocation="false">
   A list of payment options accepted by the business.
 
   **Example:**
@@ -411,9 +411,9 @@ The business data schema below lists all available fields in a business record. 
      "Visa"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="people" field-type="nested">
+<ParamField body="people" param-type="nested" showLocation="false">
   A list of known people associated with or employed by this business.
   
    Each person may contain:
@@ -437,22 +437,22 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="people.dateSeen" field-type="date">
+    <ParamField body="people.dateSeen" param-type="date" showLocation="false">
       The date when this person was last seen.
-    </ResponseField>
-    <ResponseField name="people.email" field-type="text">
+    </ParamField>
+    <ParamField body="people.email" param-type="text" showLocation="false">
       The person's email.
-    </ResponseField>
-    <ResponseField name="people.name" field-type="text">
+    </ParamField>
+    <ParamField body="people.name" param-type="text" showLocation="false">
       The person's name.
-    </ResponseField>
-    <ResponseField name="people.title" field-type="text">
+    </ParamField>
+    <ParamField body="people.title" param-type="text" showLocation="false">
       The person's title.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phones" field-type="keyword">
+<ParamField body="phones" param-type="keyword" showLocation="false">
   A list of phone numbers for the business.
 
   **Example:**
@@ -462,37 +462,37 @@ The business data schema below lists all available fields in a business record. 
      "6195734102"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="postalCode" field-type="keyword">
+<ParamField body="postalCode" param-type="keyword" showLocation="false">
   The postal or zip code of the business' location.
 
 
   **Example:** `"postalCode": "92014"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="priceRangeCurrency" field-type="keyword">
+<ParamField body="priceRangeCurrency" param-type="keyword" showLocation="false">
   The currency associated with the price range fields.
 
 
   **Example:** `"priceRangeCurrency": "USD"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="priceRangeMin" field-type="float">
+<ParamField body="priceRangeMin" param-type="float" showLocation="false">
   The lower bound of the business' price range.  This field is typically used for retail businesses.
 
 
   **Example:** `"priceRangeMin": 25`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="priceRangeMax" field-type="float">
+<ParamField body="priceRangeMax" param-type="float" showLocation="false">
   The upper bound of the business' price range.  This field is typically used for retail businesses.
 
 
   **Example:** `"priceRangeMax": 40`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="primaryCategories" field-type="text">
+<ParamField body="primaryCategories" param-type="text" showLocation="false">
   A list of standardized categories to which this business belongs.  Category values can be found [here](/docs/possible-values-for-business-fields).
 
   **Example:**
@@ -501,9 +501,9 @@ The business data schema below lists all available fields in a business record. 
      "Retail"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="productsOrServices" field-type="text">
+<ParamField body="productsOrServices" param-type="text" showLocation="false">
   A list of products or services offered by this business.
 
   **Example:**
@@ -513,37 +513,37 @@ The business data schema below lists all available fields in a business record. 
      "Catering"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="province" field-type="text">
+<ParamField body="province" param-type="text" showLocation="false">
   The province or state for this business location.
 
 
   **Example:** `"province": "CA"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="revenueCurrency" field-type="keyword">
+<ParamField body="revenueCurrency" param-type="keyword" showLocation="false">
   The currency associated with the revenue fields.
 
 
   **Example:** `"revenueCurrency": "USD"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="revenueMin" field-type="integer">
+<ParamField body="revenueMin" param-type="integer" showLocation="false">
   The minimum known value of the business' annual revenue.
 
 
   **Example:** `"revenueMin": 30000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="revenueMax" field-type="integer">
+<ParamField body="revenueMax" param-type="integer" showLocation="false">
   The maximum known value of the business' annual revenue.
 
 
   **Example:** `"revenueMax": 100000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="reviews" field-type="nested">
+<ParamField body="reviews" param-type="nested" showLocation="false">
   A list of reviews for this business location.
   
    Review objects may contain:
@@ -577,43 +577,43 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="reviews.date" field-type="date">
+    <ParamField body="reviews.date" param-type="date" showLocation="false">
       The date the review was posted.
-    </ResponseField>
-    <ResponseField name="reviews.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="reviews.dateSeen" param-type="date" showLocation="false">
       The date when the review was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="reviews.doRecommend" field-type="boolean">
+    </ParamField>
+    <ParamField body="reviews.doRecommend" param-type="boolean" showLocation="false">
       A true/false for whether or not the reviewer recommends the product.
-    </ResponseField>
-    <ResponseField name="reviews.id" field-type="keyword">
+    </ParamField>
+    <ParamField body="reviews.id" param-type="keyword" showLocation="false">
       The website ID associated with this review.
-    </ResponseField>
-    <ResponseField name="reviews.rating" field-type="double">
+    </ParamField>
+    <ParamField body="reviews.rating" param-type="double" showLocation="false">
       A 1 to 5 star value for the review.
-    </ResponseField>
-    <ResponseField name="reviews.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="reviews.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this review was seen.
-    </ResponseField>
-    <ResponseField name="reviews.text" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.text" param-type="text" showLocation="false">
       The full (or available) text of the review.
-    </ResponseField>
-    <ResponseField name="reviews.title" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.title" param-type="text" showLocation="false">
       The review's title.
-    </ResponseField>
-    <ResponseField name="reviews.userCity" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userCity" param-type="text" showLocation="false">
       The reviewer's city.
-    </ResponseField>
-    <ResponseField name="reviews.username" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.username" param-type="text" showLocation="false">
       The reviewer's username.
-    </ResponseField>
-    <ResponseField name="reviews.userProvince" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userProvince" param-type="text" showLocation="false">
       The reviewer's province or state.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="rooms" field-type="nested">
+<ParamField body="rooms" param-type="nested" showLocation="false">
   A list of room types available at the business' location.  This field is typically associated with hotels and other similar businesses.
   
    Room objects may contain:
@@ -645,35 +645,35 @@ The business data schema below lists all available fields in a business record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="rooms.amountMin" field-type="text">
+    <ParamField body="rooms.amountMin" param-type="text" showLocation="false">
       The minimum price value listed for the room.
-    </ResponseField>
-    <ResponseField name="rooms.amountMax" field-type="text">
+    </ParamField>
+    <ParamField body="rooms.amountMax" param-type="text" showLocation="false">
       The maximum price value listed.
-    </ResponseField>
-    <ResponseField name="rooms.capacity" field-type="text">
+    </ParamField>
+    <ParamField body="rooms.capacity" param-type="text" showLocation="false">
       The maximum number of people that can occupy this room.
-    </ResponseField>
-    <ResponseField name="rooms.currency" field-type="text">
+    </ParamField>
+    <ParamField body="rooms.currency" param-type="text" showLocation="false">
       The currency listed for amountMin and amountMax.
-    </ResponseField>
-    <ResponseField name="rooms.dateSeen" field-type="text">
+    </ParamField>
+    <ParamField body="rooms.dateSeen" param-type="text" showLocation="false">
       A list of dates when this room was seen.
-    </ResponseField>
-    <ResponseField name="rooms.roomType" field-type="text">
+    </ParamField>
+    <ParamField body="rooms.roomType" param-type="text" showLocation="false">
       A classification for the type of room.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sic" field-type="text">
+<ParamField body="sic" param-type="text" showLocation="false">
   The SIC code for the business.  [Learn more about SIC codes](https://en.wikipedia.org/wiki/Standard_Industrial_Classification).
 
 
   **Example:** `"sic": "5610"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sourceURLs" field-type="keyword">
+<ParamField body="sourceURLs" param-type="keyword" showLocation="false">
   A list of URLs used to generate data for this business location.
 
   **Example:**
@@ -684,16 +684,16 @@ The business data schema below lists all available fields in a business record. 
      "https://www.zagat.com/r/petes-seafood-and-sandwich-san-diego",
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="twitter" field-type="text">
+<ParamField body="twitter" param-type="text" showLocation="false">
   The twitter username for the business.
 
 
   **Example:** `"twitter": "sdpark2park"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="websites" field-type="keyword">
+<ParamField body="websites" param-type="keyword" showLocation="false">
   A list of websites for the business.
 
   **Example:**
@@ -703,20 +703,20 @@ The business data schema below lists all available fields in a business record. 
      "http://www.searocketbistro.com"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="yearIncorporated" field-type="integer">
+<ParamField body="yearIncorporated" param-type="integer" showLocation="false">
   The year the business was incorporated.
 
 
   **Example:** `"yearIncorporated": 2004 `
-</ResponseField>
+</ParamField>
 
-<ResponseField name="yearOpened" field-type="integer">
+<ParamField body="yearOpened" param-type="integer" showLocation="false">
   The year the business opened.
 
 
   **Example:** `"yearOpened": 2005`
-</ResponseField>
+</ParamField>
 
 

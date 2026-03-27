@@ -4,21 +4,21 @@ title: Product Data Schema
 
 The product data schema below lists all available fields in a product record.  Note that actual product records (actually, most of them) may not have every field present.
 
-<ResponseField name="asins" field-type="keyword">
+<ParamField body="asins" param-type="keyword" showLocation="false">
   The ASIN (Amazon identifier) used for this product.
 
 
   **Example:** `"asins":  "B0009XCFRE"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="brand" field-type="text">
+<ParamField body="brand" param-type="text" showLocation="false">
   The brand name of this product as presented by the data source.
 
 
   **Example:** `"brand": "Sumsung Electronics"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="categories" field-type="text">
+<ParamField body="categories" param-type="text" showLocation="false">
   A list of category keywords used for this product across multiple sources.
 
   **Example:**
@@ -30,16 +30,16 @@ The product data schema below lists all available fields in a product record.  N
      "Propane Heaters"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="canonicalBrand" field-type="text">
+<ParamField body="canonicalBrand" param-type="text" showLocation="false">
   The canonical brand name after normalization of the name from the source.
 
 
   **Example:** `"canonicalBrand": "Sumsung"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="colors" field-type="text">
+<ParamField body="colors" param-type="text" showLocation="false">
   A list of colors available for this product.
 
   **Example:**
@@ -49,30 +49,30 @@ The product data schema below lists all available fields in a product record.  N
      "Black"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="count" field-type="keyword">
+<ParamField body="count" param-type="keyword" showLocation="false">
   The number of units included in the product packaging.  Can include a description of the unit.
 
 
   **Example:** `"count": "30"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateAdded" field-type="date">
+<ParamField body="dateAdded" param-type="date" showLocation="false">
   The date this product was first added to the product database.
 
 
   **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateUpdated" field-type="date">
+<ParamField body="dateUpdated" param-type="date" showLocation="false">
   The most recent date this product was updated or seen by our system.
 
 
   **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="descriptions" field-type="nested">
+<ParamField body="descriptions" param-type="nested" showLocation="false">
   A list of descriptions for this product from various sources.  Each description contains:
 
   **Example:**
@@ -97,19 +97,19 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="descriptions.dateSeen" field-type="date">
+    <ParamField body="descriptions.dateSeen" param-type="date" showLocation="false">
       The date when this description has been seen selling this product.
-    </ResponseField>
-    <ResponseField name="descriptions.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="descriptions.sourceURLs" param-type="keyword" showLocation="false">
       A list of source URLs where this specific description was seen.
-    </ResponseField>
-    <ResponseField name="descriptions.value" field-type="text">
+    </ParamField>
+    <ParamField body="descriptions.value" param-type="text" showLocation="false">
       A unique description for this product.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dimension" field-type="keyword">
+<ParamField body="dimension" param-type="keyword" showLocation="false">
   The length, width, and height of this product.  Units included.
    [Dimensions Normalization](/docs/dimensions-normalization)
 
@@ -119,9 +119,9 @@ The product data schema below lists all available fields in a product record.  N
    `"dimension": "16 ft x 22 ft",`
    `"dimension": "15 mm x 42 mm x 34 mm"
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="domains" field-type="domain">
+<ParamField body="domains" param-type="domain" showLocation="false">
   A list of each unique domain found in the `sourceURLs` field.
 
   **Example:**
@@ -131,9 +131,9 @@ The product data schema below lists all available fields in a product record.  N
      "www.website.com"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ean" field-type="keyword">
+<ParamField body="ean" param-type="keyword" showLocation="false">
   The EAN codes for this product.  There may be more than one EAN in the list when a product has multiple variations,
     each using a different EAN.
      [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
@@ -145,23 +145,23 @@ The product data schema below lists all available fields in a product record.  N
      "0014045125965"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ean13" field-type="keyword">
+<ParamField body="ean13" param-type="keyword" showLocation="false">
   The EAN-13 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
 
 
   **Example:** `"ean13":"0014045125963"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ean8" field-type="keyword">
+<ParamField body="ean8" param-type="keyword" showLocation="false">
   The EAN-8 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
 
 
   **Example:** `"ean8":"96385074"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="features" field-type="nested">
+<ParamField body="features" param-type="nested" showLocation="false">
   A list of features associated with this product.  The feature list can be collected from specific feature sections available on product listings for the product.  It can also serve as a catch-all field for miscellaneous characteristics of this product that don't make sense to include as top-level fields.
   
    Each feature contains:
@@ -186,19 +186,19 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="features.key" field-type="text">
+    <ParamField body="features.key" param-type="text" showLocation="false">
       A label for this feature.
-    </ResponseField>
-    <ResponseField name="features.replace" field-type="boolean">
+    </ParamField>
+    <ParamField body="features.replace" param-type="boolean" showLocation="false">
       Flag indicating value field is replaced versus appended.
-    </ResponseField>
-    <ResponseField name="features.value" field-type="text">
+    </ParamField>
+    <ParamField body="features.value" param-type="text" showLocation="false">
       A list of possible values for this feature.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="financingAndLeasing" field-type="text">
+<ParamField body="financingAndLeasing" param-type="text" showLocation="false">
   A list of financing or leasing terms associated with this product.  Each term may contain:
 
   **Example:**
@@ -237,58 +237,58 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="financingAndLeasing.additionalDetails" field-type="text">
+    <ParamField body="financingAndLeasing.additionalDetails" param-type="text" showLocation="false">
       Any additional information related to this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.apr" field-type="text">
+    </ParamField>
+    <ParamField body="financingAndLeasing.apr" param-type="text" showLocation="false">
       The annual percentage rate.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.currency" field-type="keyword">
+    </ParamField>
+    <ParamField body="financingAndLeasing.currency" param-type="keyword" showLocation="false">
       The currency listed for any monetary values.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="financingAndLeasing.dateSeen" param-type="date" showLocation="false">
       A list of dates when this term was seen.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.description" field-type="text">
+    </ParamField>
+    <ParamField body="financingAndLeasing.description" param-type="text" showLocation="false">
       The description provided for this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.disclaimers" field-type="text">
+    </ParamField>
+    <ParamField body="financingAndLeasing.disclaimers" param-type="text" showLocation="false">
       Any disclaimers associated with this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.dueAtSigningMax" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.dueAtSigningMax" param-type="float" showLocation="false">
       The maximum monetary amount due when purchasing this product under this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.dueAtSigningMin" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.dueAtSigningMin" param-type="float" showLocation="false">
       The minimum monetary amount due when purchasing this product under this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.milesPerYear" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.milesPerYear" param-type="float" showLocation="false">
       Usually associated with vehicles, the maximum mileage allowed under this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.monthlyPaymentMax" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.monthlyPaymentMax" param-type="float" showLocation="false">
       The maximum amount due each month under this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.monthlyPaymentMin" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.monthlyPaymentMin" param-type="float" showLocation="false">
       The minimum amount due each month under this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.name" field-type="text">
+    </ParamField>
+    <ParamField body="financingAndLeasing.name" param-type="text" showLocation="false">
       The name for this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.type" field-type="keyword">
+    </ParamField>
+    <ParamField body="financingAndLeasing.type" param-type="keyword" showLocation="false">
       Either `financing` or `leasing`.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.securityDepositMax" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.securityDepositMax" param-type="float" showLocation="false">
       The maximum security deposit for this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.securityDepositMin" field-type="float">
+    </ParamField>
+    <ParamField body="financingAndLeasing.securityDepositMin" param-type="float" showLocation="false">
       The minimum security deposit for this term.
-    </ResponseField>
-    <ResponseField name="financingAndLeasing.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="financingAndLeasing.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this term was seen.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="flavors" field-type="text">
+<ParamField body="flavors" param-type="text" showLocation="false">
   A list of flavors available for this product.
 
   **Example:**
@@ -299,9 +299,9 @@ The product data schema below lists all available fields in a product record.  N
      "Grape"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="gtins" field-type="keyword">
+<ParamField body="gtins" param-type="keyword" showLocation="false">
   A list of all Global Trade Identifier Numbers for this product. Values will include all ean, isbn, and upc values.
     [Learn more about GTINs](https://en.wikipedia.org/wiki/Global_Trade_Item_Number).
 
@@ -316,9 +316,9 @@ The product data schema below lists all available fields in a product record.  N
      "3882215542"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="imageURLs" field-type="keyword">
+<ParamField body="imageURLs" param-type="keyword" showLocation="false">
   A list of image URLs for this product.
 
   **Example:**
@@ -327,16 +327,16 @@ The product data schema below lists all available fields in a product record.  N
      "https://i5.images.com/asr.jpeg"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="isbn" field-type="keyword">
+<ParamField body="isbn" param-type="keyword" showLocation="false">
   The ISBN code for this product.  [Learn more about ISBNs](https://en.wikipedia.org/wiki/International_Standard_Book_Number).
 
 
   **Example:** `"isbn": "3882215542"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="keys" field-type="keyword">
+<ParamField body="keys" param-type="keyword" showLocation="false">
   A list of internal Datafiniti identifiers for this product.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn how this works](/docs/how-product-records-are-merged)
 
   **Example:**
@@ -347,23 +347,23 @@ The product data schema below lists all available fields in a product record.  N
      "worthington/299581"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="manufacturer" field-type="text">
+<ParamField body="manufacturer" param-type="text" showLocation="false">
   The manufacturer of this product.
 
 
   **Example:** `"manufacturer": "Worthington"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="manufacturerNumber" field-type="keyword">
+<ParamField body="manufacturerNumber" param-type="keyword" showLocation="false">
   The manufacturer or model number of this product.
 
 
   **Example:** `"manufacturerNumber": "299581"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="merchants" field-type="nested">
+<ParamField body="merchants" param-type="nested" showLocation="false">
   A list of merchants selling this product.  These are typically third-party merchants found on e-commerce websites.
   
    Merchant objects can contain:
@@ -393,51 +393,51 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="merchants.address" field-type="text">
+    <ParamField body="merchants.address" param-type="text" showLocation="false">
       The merchant's physical address.
-    </ResponseField>
-    <ResponseField name="merchants.availability" field-type="keyword">
+    </ParamField>
+    <ParamField body="merchants.availability" param-type="keyword" showLocation="false">
       A description of the product's availability with this merchant.
-    </ResponseField>
-    <ResponseField name="merchants.city" field-type="text">
+    </ParamField>
+    <ParamField body="merchants.city" param-type="text" showLocation="false">
       The merchant's city.
-    </ResponseField>
-    <ResponseField name="merchants.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="merchants.dateSeen" param-type="date" showLocation="false">
       The date when this merchant has been seen selling this product.
-    </ResponseField>
-    <ResponseField name="merchants.isPrivateSeller" field-type="boolean">
+    </ParamField>
+    <ParamField body="merchants.isPrivateSeller" param-type="boolean" showLocation="false">
       True if the merchant is an individual. False if it's a company.
-    </ResponseField>
-    <ResponseField name="merchants.name" field-type="text">
+    </ParamField>
+    <ParamField body="merchants.name" param-type="text" showLocation="false">
       The merchant's name.
-    </ResponseField>
-    <ResponseField name="merchants.phone" field-type="keyword">
+    </ParamField>
+    <ParamField body="merchants.phone" param-type="keyword" showLocation="false">
       The merchant's phone number.
-    </ResponseField>
-    <ResponseField name="merchants.postalCode" field-type="text">
+    </ParamField>
+    <ParamField body="merchants.postalCode" param-type="text" showLocation="false">
       The merchant's postal or zip code.
-    </ResponseField>
-    <ResponseField name="merchants.province" field-type="text">
+    </ParamField>
+    <ParamField body="merchants.province" param-type="text" showLocation="false">
       The merchant's province or state.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceAmount" field-type="float">
+<ParamField body="mostRecentPriceAmount" param-type="float" showLocation="false">
   The product's most recent price amount scraped.
 
 
   **Example:** `"mostRecentPriceAmount": 85`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceAvailability" field-type="text">
+<ParamField body="mostRecentPriceAvailability" param-type="text" showLocation="false">
   The product's most recent price availability scraped.
 
 
   **Example:** `"mostRecentPriceAvailability": "true"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceByDomain" field-type="nested">
+<ParamField body="mostRecentPriceByDomain" param-type="nested" showLocation="false">
   A list of Prices of this product by each domain source.  These are typically third-party merchants found on e-commerce websites.
 
   **Example:**
@@ -467,108 +467,108 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="mostRecentPriceByDomain.amount" field-type="text">
+    <ParamField body="mostRecentPriceByDomain.amount" param-type="text" showLocation="false">
       The price amount of the product by this domain.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.availability" field-type="keyword">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.availability" param-type="keyword" showLocation="false">
       A true or false if this product is available at this price.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.currency" field-type="text">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.currency" param-type="text" showLocation="false">
       The currency listed for amount.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.color" field-type="keyword">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.color" param-type="keyword" showLocation="false">
       The color associated with this price.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.condition" field-type="keyword">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.condition" param-type="keyword" showLocation="false">
       The condition of the product when being sold at this price.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.date" field-type="date">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.date" param-type="date" showLocation="false">
       The date when this price was seen.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.domain" field-type="domain">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.domain" param-type="domain" showLocation="false">
       The domain sourceURL of the product's price
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.firstDateSeen" param-type="date" showLocation="false">
       the date of when the record was first scraped by Datafiniti
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.isSale" field-type="boolean">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.isSale" param-type="boolean" showLocation="false">
       A true/false for whether or not this price is a sale/discounted price.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.size" field-type="text">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.size" param-type="text" showLocation="false">
       The size associated with this price.
-    </ResponseField>
-    <ResponseField name="mostRecentPriceByDomain.sourceURLs" field-type="text">
+    </ParamField>
+    <ParamField body="mostRecentPriceByDomain.sourceURLs" param-type="text" showLocation="false">
       A list of URLs
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceColor" field-type="text">
+<ParamField body="mostRecentPriceColor" param-type="text" showLocation="false">
   The most recent color(s) available for this product.
 
 
   **Example:** `"mostRecentPriceColor": "Torrid - coral with shimmer"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceCondition" field-type="keyword">
+<ParamField body="mostRecentPriceCondition" param-type="keyword" showLocation="false">
   The condition most recently scrape of the product when being sold at this price.
 
 
   **Example:** `"condition": "Used",`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceCurrency" field-type="text">
+<ParamField body="mostRecentPriceCurrency" param-type="text" showLocation="false">
   The currency listed for mostRecentPriceAmount.
 
 
   **Example:** `"mostRecentPriceCurrency": "USD"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceDate" field-type="date">
+<ParamField body="mostRecentPriceDate" param-type="date" showLocation="false">
   The most recent price date of the product record.
 
 
   **Example:** `"mostRecentPriceDate": "2022-03-29T19:26:49.157Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceDomain" field-type="domain">
+<ParamField body="mostRecentPriceDomain" param-type="domain" showLocation="false">
   The domain of the most recent price scraped by Datafiniti
 
 
   **Example:** `"mostRecentPriceDomain": "www.nordstrom.com"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceIsSale" field-type="boolean">
+<ParamField body="mostRecentPriceIsSale" param-type="boolean" showLocation="false">
   A true/false for whether or not this price is a sale/discounted price.
 
 
   **Example:** `"mostRecentPriceIsSale": "true"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceSize" field-type="text">
+<ParamField body="mostRecentPriceSize" param-type="text" showLocation="false">
   The size associated with this mostRecentPrice.
 
 
   **Example:** `"mostRecentPriceSize": "M"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceSourceURL" field-type="keyword">
+<ParamField body="mostRecentPriceSourceURL" param-type="keyword" showLocation="false">
   The most recent URL used to generate data for this product.
 
   **Example:**
   ```json
   "mostRecentPriceSourceURL": "https://www.nordstrom.com/s/ara-gloria-gore-tex-waterproof-bootie-women/5684497"
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="name" field-type="text">
+<ParamField body="name" param-type="text" showLocation="false">
   The product's name.
 
 
   **Example:** `"name": "Worthington 20-lb Tank"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="prices" field-type="nested">
+<ParamField body="prices" param-type="nested" showLocation="false">
   A list of prices for this product.
   
    Price objects may contain:
@@ -617,64 +617,64 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="prices.amountMin" field-type="float">
+    <ParamField body="prices.amountMin" param-type="float" showLocation="false">
       The minimum price value listed.
-    </ResponseField>
-    <ResponseField name="prices.amountMax" field-type="float">
+    </ParamField>
+    <ParamField body="prices.amountMax" param-type="float" showLocation="false">
       The maximum price value listed.  This is typically the same as amountMin, except in cases where a price range is listed.
-    </ResponseField>
-    <ResponseField name="prices.availability" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.availability" param-type="keyword" showLocation="false">
       A true or false if this product is available at this price.
-    </ResponseField>
-    <ResponseField name="prices.color" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.color" param-type="keyword" showLocation="false">
       The color associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.condition" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.condition" param-type="keyword" showLocation="false">
       The condition of the product when being sold at this price.
-    </ResponseField>
-    <ResponseField name="prices.count" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.count" param-type="keyword" showLocation="false">
       The number of units being sold at this price.
-    </ResponseField>
-    <ResponseField name="prices.currency" field-type="text">
+    </ParamField>
+    <ParamField body="prices.currency" param-type="text" showLocation="false">
       The currency listed for amountMin and amountMax.
-    </ResponseField>
-    <ResponseField name="prices.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="prices.dateSeen" param-type="date" showLocation="false">
       A list of dates when this price was seen.
-    </ResponseField>
-    <ResponseField name="prices.flavor" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.flavor" param-type="keyword" showLocation="false">
       The flavor associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.isSale" field-type="boolean">
+    </ParamField>
+    <ParamField body="prices.isSale" param-type="boolean" showLocation="false">
       A true/false for whether or not this price is a sale/discounted price.
-    </ResponseField>
-    <ResponseField name="prices.isSold" field-type="boolean">
+    </ParamField>
+    <ParamField body="prices.isSold" param-type="boolean" showLocation="false">
       A true/flase for whether or not the product has been sold at this price (typically reserved for vehicle listings).
-    </ResponseField>
-    <ResponseField name="prices.merchant" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.merchant" param-type="keyword" showLocation="false">
       The merchant and/or website selling at this price.
-    </ResponseField>
-    <ResponseField name="prices.offer" field-type="text">
+    </ParamField>
+    <ParamField body="prices.offer" param-type="text" showLocation="false">
       Any special offer associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.returnPolicy" field-type="text">
+    </ParamField>
+    <ParamField body="prices.returnPolicy" param-type="text" showLocation="false">
       The return policy associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.shipping" field-type="text">
+    </ParamField>
+    <ParamField body="prices.shipping" param-type="text" showLocation="false">
       The shipping terms associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.size" field-type="text">
+    </ParamField>
+    <ParamField body="prices.size" param-type="text" showLocation="false">
       The size associated with this price.
-    </ResponseField>
-    <ResponseField name="prices.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this price was seen.
-    </ResponseField>
-    <ResponseField name="prices.warranty" field-type="text">
+    </ParamField>
+    <ParamField body="prices.warranty" param-type="text" showLocation="false">
       The warranty associated with this price.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="primaryCategories" field-type="text">
+<ParamField body="primaryCategories" param-type="text" showLocation="false">
   A list of standardized categories to which this product belongs.  Category values can be found [here](/docs/possible-values-for-product-fields).
 
   **Example:**
@@ -683,9 +683,9 @@ The product data schema below lists all available fields in a product record.  N
      "Electronics"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="primaryImageURLs" field-type="keyword">
+<ParamField body="primaryImageURLs" param-type="keyword" showLocation="false">
   A list of URLs for the primary images taken from each domain sourced in this record.  This list will only contain 1 URL per domain.
 
   **Example:**
@@ -695,9 +695,9 @@ The product data schema below lists all available fields in a product record.  N
      "https://www.target.com/i/abc.jpg"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="quantities" field-type="nested">
+<ParamField body="quantities" param-type="nested" showLocation="false">
   A list of available quantities for this product.  Quantities indicate how many units of the product are available from a specific source at a given time.
   
    Quantity objects may contain:
@@ -719,19 +719,19 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="quantities.dateSeen" field-type="date">
+    <ParamField body="quantities.dateSeen" param-type="date" showLocation="false">
       A list of dates when this quantity was seen.
-    </ResponseField>
-    <ResponseField name="quantities.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="quantities.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this quantity was seen.
-    </ResponseField>
-    <ResponseField name="quantities.value" field-type="text">
+    </ParamField>
+    <ParamField body="quantities.value" param-type="text" showLocation="false">
       The actual quantity value.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="reviews" field-type="nested">
+<ParamField body="reviews" param-type="nested" showLocation="false">
   A list of reviews for this product.
   
    Review objects may contain:
@@ -775,49 +775,49 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="reviews.date" field-type="date">
+    <ParamField body="reviews.date" param-type="date" showLocation="false">
       The date the review was posted.
-    </ResponseField>
-    <ResponseField name="reviews.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="reviews.dateSeen" param-type="date" showLocation="false">
       The date when the review was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="reviews.didPurchase" field-type="boolean">
+    </ParamField>
+    <ParamField body="reviews.didPurchase" param-type="boolean" showLocation="false">
       A true/false for whether or not the reviewer did purchase the product.
-    </ResponseField>
-    <ResponseField name="reviews.doRecommend" field-type="boolean">
+    </ParamField>
+    <ParamField body="reviews.doRecommend" param-type="boolean" showLocation="false">
       A true/false for whether or not the reviewer recommends the product.
-    </ResponseField>
-    <ResponseField name="reviews.id" field-type="keyword">
+    </ParamField>
+    <ParamField body="reviews.id" param-type="keyword" showLocation="false">
       The website ID associated with this review.
-    </ResponseField>
-    <ResponseField name="reviews.numHelpful" field-type="integer">
+    </ParamField>
+    <ParamField body="reviews.numHelpful" param-type="integer" showLocation="false">
       The number of people that found this review helpful.
-    </ResponseField>
-    <ResponseField name="reviews.rating" field-type="float">
+    </ParamField>
+    <ParamField body="reviews.rating" param-type="float" showLocation="false">
       A 1 to 5 start value for the review.
-    </ResponseField>
-    <ResponseField name="reviews.sourceURLs" field-type="keyword">
+    </ParamField>
+    <ParamField body="reviews.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this review was seen.
-    </ResponseField>
-    <ResponseField name="reviews.text" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.text" param-type="text" showLocation="false">
       The full (or available) text of the review.
-    </ResponseField>
-    <ResponseField name="reviews.title" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.title" param-type="text" showLocation="false">
       The review's title.
-    </ResponseField>
-    <ResponseField name="reviews.userCity" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userCity" param-type="text" showLocation="false">
       The reviewer's city.
-    </ResponseField>
-    <ResponseField name="reviews.username" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.username" param-type="text" showLocation="false">
       The reviewer's username.
-    </ResponseField>
-    <ResponseField name="reviews.userProvince" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userProvince" param-type="text" showLocation="false">
       The reviewer's province or state.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sdsURLs" field-type="keyword">
+<ParamField body="sdsURLs" param-type="keyword" showLocation="false">
   A list of URLs that lead to SDS for the given record.
 
   **Example:**
@@ -827,9 +827,9 @@ The product data schema below lists all available fields in a product record.  N
    /pdfImages/8c/8c72c7b4-1d29-41a3-b8ba-43699e42d44b.pdf"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="secondaryCategories" field-type="text">
+<ParamField body="secondaryCategories" param-type="text" showLocation="false">
   A list of second level standardized categories to which this product belongs.
 
   **Example:**
@@ -838,9 +838,9 @@ The product data schema below lists all available fields in a product record.  N
      "Cell Phones"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sizes" field-type="text">
+<ParamField body="sizes" param-type="text" showLocation="false">
   A list of sizes available for this product.
 
   **Example:**
@@ -851,9 +851,9 @@ The product data schema below lists all available fields in a product record.  N
      "Small"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="skus" field-type="nested">
+<ParamField body="skus" param-type="nested" showLocation="false">
   A list of SKUs for this product.  SKUs are typically specific to individual retailers or websites.
   
    SKU objects may contain:
@@ -871,16 +871,16 @@ The product data schema below lists all available fields in a product record.  N
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="skus.sourceURLs" field-type="keyword">
+    <ParamField body="skus.sourceURLs" param-type="keyword" showLocation="false">
       A list of URLs where this SKU was seen.
-    </ResponseField>
-    <ResponseField name="skus.value" field-type="text">
+    </ParamField>
+    <ParamField body="skus.value" param-type="text" showLocation="false">
       The actual SKU.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sourceURLs" field-type="keyword">
+<ParamField body="sourceURLs" param-type="keyword" showLocation="false">
   A list of URLs used to generate data for this product.
 
   **Example:**
@@ -889,16 +889,16 @@ The product data schema below lists all available fields in a product record.  N
     "http://www.website.com/4567"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="stockNum" field-type="keyword">
+<ParamField body="stockNum" param-type="keyword" showLocation="false">
   The stock number that corresponds to a product.
 
 
   **Example:** `"stockNum":"15365711"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomy" field-type="taxonomy">
+<ParamField body="taxonomy" param-type="taxonomy" showLocation="false">
   Hierarchical classification(s) of a product.
 
   **Example:**
@@ -907,9 +907,9 @@ The product data schema below lists all available fields in a product record.  N
                "automotive > motorcycle & powersports > parts > wheels & tires > tires & accessories > tires & inner tubes > motorcycle & scooter > motorcycle > street"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel1" field-type="keyword">
+<ParamField body="taxonomyLevel1" param-type="keyword" showLocation="false">
   Top level classification of a product.
 
   **Example:**
@@ -918,9 +918,9 @@ The product data schema below lists all available fields in a product record.  N
                "automotive"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel2" field-type="keyword">
+<ParamField body="taxonomyLevel2" param-type="keyword" showLocation="false">
   Second level classification of a product.
 
   **Example:**
@@ -929,9 +929,9 @@ The product data schema below lists all available fields in a product record.  N
                "motorcycle & powersports"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel3" field-type="keyword">
+<ParamField body="taxonomyLevel3" param-type="keyword" showLocation="false">
   Third level classification of a product.
 
   **Example:**
@@ -940,9 +940,9 @@ The product data schema below lists all available fields in a product record.  N
                "parts"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel4" field-type="keyword">
+<ParamField body="taxonomyLevel4" param-type="keyword" showLocation="false">
   Fourth level classification of a product.
 
   **Example:**
@@ -951,9 +951,9 @@ The product data schema below lists all available fields in a product record.  N
                "wheels & tires"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel5" field-type="keyword">
+<ParamField body="taxonomyLevel5" param-type="keyword" showLocation="false">
   Fifth level classification of a product.
 
   **Example:**
@@ -962,9 +962,9 @@ The product data schema below lists all available fields in a product record.  N
                "tires & accessories"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel6" field-type="keyword">
+<ParamField body="taxonomyLevel6" param-type="keyword" showLocation="false">
   Sixth level classification of a product.
 
   **Example:**
@@ -973,9 +973,9 @@ The product data schema below lists all available fields in a product record.  N
                "tires & inner tubes"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel7" field-type="keyword">
+<ParamField body="taxonomyLevel7" param-type="keyword" showLocation="false">
   Seventh level classification of a product.
 
   **Example:**
@@ -984,9 +984,9 @@ The product data schema below lists all available fields in a product record.  N
                "motorcycle & scooter"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel8" field-type="keyword">
+<ParamField body="taxonomyLevel8" param-type="keyword" showLocation="false">
   Eighth level classification of a product.
 
   **Example:**
@@ -995,9 +995,9 @@ The product data schema below lists all available fields in a product record.  N
                "motorcycle"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxonomyLevel9" field-type="keyword">
+<ParamField body="taxonomyLevel9" param-type="keyword" showLocation="false">
   Ninth level classification of a product.
 
   **Example:**
@@ -1006,9 +1006,9 @@ The product data schema below lists all available fields in a product record.  N
                "street"
              ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="upc" field-type="keyword">
+<ParamField body="upc" param-type="keyword" showLocation="false">
   The UPC code for this product.
      There may be more than one UPC in the list when a product has multiple variations,
     each using a different UPC.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
@@ -1020,30 +1020,30 @@ The product data schema below lists all available fields in a product record.  N
      "014045125961"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="upca" field-type="keyword">
+<ParamField body="upca" param-type="keyword" showLocation="false">
   The UPC-A code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
 
 
   **Example:** `"upca":"014045125963"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="upce" field-type="keyword">
+<ParamField body="upce" param-type="keyword" showLocation="false">
   The UPC-E code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
 
 
   **Example:** `"upce":"425261"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="vin" field-type="keyword">
+<ParamField body="vin" param-type="keyword" showLocation="false">
   The VIN code for this product.  This is specific to car listings.  [Learn more about VINs](https://en.wikipedia.org/wiki/Vehicle_identification_number).
 
 
   **Example:** `"vin": "1FTMF1ET8EFB00361"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="websiteIDs" field-type="keyword">
+<ParamField body="websiteIDs" param-type="keyword" showLocation="false">
   A list of website IDs for this product.  Website IDs are tied to a specific online retailer.  They are the unique identifier used by website.  They are used by Datafiniti when other unique identifiers are not available for a product.
 
   **Example:**
@@ -1053,13 +1053,13 @@ The product data schema below lists all available fields in a product record.  N
      "website.com-4567"
    ]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="weight" field-type="text">
+<ParamField body="weight" param-type="text" showLocation="false">
   The weight of the product.  Units included.
 
 
   **Example:** `"weight": "20 lbs"`
-</ResponseField>
+</ParamField>
 
 

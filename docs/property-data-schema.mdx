@@ -1,9 +1,10 @@
-# Property Data Schema
-
+---
+title: Property Data Schema
+---
 
 The property data schema below lists all available fields in a property record. Note that actual property records (actually, most of them) may not have every field present.
 
-<ResponseField name="absenteeOwner" field-type="nested">
+<ParamField body="absenteeOwner" param-type="nested" showLocation="false">
   The owner of a property who does not reside in or otherwise occupy that property.
 
   **Example:**
@@ -12,40 +13,40 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="absenteeOwner.absent" field-type="boolean">
+    <ParamField body="absenteeOwner.absent" param-type="boolean" showLocation="false">
       Is currently an absentee owner
-    </ResponseField>
-    <ResponseField name="absenteeOwner.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="absenteeOwner.firstDateSeen" param-type="date" showLocation="false">
       Earliest date seen of the absentee owner.
-    </ResponseField>
-    <ResponseField name="absenteeOwner.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="absenteeOwner.lastDateSeen" param-type="date" showLocation="false">
       Latest date seen of the absentee owner.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="address" field-type="text">
+<ParamField body="address" param-type="text" showLocation="false">
   The physical street address for this property.
 
 
   **Example:** `"address": "7206 Walling Ln"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="appliances" field-type="text">
+<ParamField body="appliances" param-type="text" showLocation="false">
   The appliances included with the property.
 
 
   **Example:** `"appliances": ["Cooktop","Dryer","Dishwasher","Microwave","Refrigerator","Washer"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="architecturalStyles" field-type="text">
+<ParamField body="architecturalStyles" param-type="text" showLocation="false">
   The architectural style of the property.
 
 
   **Example:** `"architecturalStyles": ["Ranch","Bungalow"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="assessedValues" field-type="nested">
+<ParamField body="assessedValues" param-type="nested" showLocation="false">
   The assessed value of the property. Each assessed value may contain:
 
   **Example:**
@@ -54,29 +55,29 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="assessedValues.improvementsAmount" field-type="float">
+    <ParamField body="assessedValues.improvementsAmount" param-type="float" showLocation="false">
       assessed value for improvements made to the property.
-    </ResponseField>
-    <ResponseField name="assessedValues.landAmount" field-type="float">
+    </ParamField>
+    <ParamField body="assessedValues.landAmount" param-type="float" showLocation="false">
       assessed value for the land/lot of the property.
-    </ResponseField>
-    <ResponseField name="assessedValues.totalAmount" field-type="float">
+    </ParamField>
+    <ParamField body="assessedValues.totalAmount" param-type="float" showLocation="false">
       amount value the property is currently assessed for.
-    </ResponseField>
-    <ResponseField name="assessedValues.year" field-type="integer">
+    </ParamField>
+    <ParamField body="assessedValues.year" param-type="integer" showLocation="false">
       year value when the property was assessed.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="brandTenant" field-type="string">
+<ParamField body="brandTenant" param-type="string" showLocation="false">
   The branded tenant that is currently associated with the property.
 
 
   **Example:** `"brandTenant": "Bob Evans Restaurants, LLC"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="brokers" field-type="nested">
+<ParamField body="brokers" param-type="nested" showLocation="false">
   A list of brokers that have represented this property over time. Each broker may contain:
 
   **Example:**
@@ -85,138 +86,138 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="brokers.agent" field-type="text">
+    <ParamField body="brokers.agent" param-type="text" showLocation="false">
       The name of the real estate agent representing this property.
-    </ResponseField>
-    <ResponseField name="brokers.company" field-type="text">
+    </ParamField>
+    <ParamField body="brokers.company" param-type="text" showLocation="false">
       The company this agent works for (or the company representing this property).
-    </ResponseField>
-    <ResponseField name="brokers.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="brokers.dateSeen" param-type="date" showLocation="false">
       The date this agent/company was seen representing the property.
-    </ResponseField>
-    <ResponseField name="brokers.emails" field-type="keyword">
+    </ParamField>
+    <ParamField body="brokers.emails" param-type="keyword" showLocation="false">
       A list of email addresses associated with the agent or company.
-    </ResponseField>
-    <ResponseField name="brokers.licenseNumber" field-type="text">
+    </ParamField>
+    <ParamField body="brokers.licenseNumber" param-type="text" showLocation="false">
       The license number of the agent representing the property.
-    </ResponseField>
-    <ResponseField name="brokers.licenseType" field-type="text">
+    </ParamField>
+    <ParamField body="brokers.licenseType" param-type="text" showLocation="false">
       The license Type of the agent representing the property.
-    </ResponseField>
-    <ResponseField name="brokers.people_key" field-type="text">
+    </ParamField>
+    <ParamField body="brokers.people_key" param-type="text" showLocation="false">
       The corresponding key that link to Datafiniti's people data record. (contact, demographics, & more)
-    </ResponseField>
-    <ResponseField name="brokers.phones" field-type="keyword">
+    </ParamField>
+    <ParamField body="brokers.phones" param-type="keyword" showLocation="false">
       A phone number associated with the agent or company.
-    </ResponseField>
-    <ResponseField name="brokers.websites" field-type="keyword">
+    </ParamField>
+    <ParamField body="brokers.websites" param-type="keyword" showLocation="false">
       A list of websites associated with the agent or company.
-    </ResponseField>
-    <ResponseField name="brokers.workEmail" field-type="keyword">
+    </ParamField>
+    <ParamField body="brokers.workEmail" param-type="keyword" showLocation="false">
       Email address specifically associated with the business the broker works for currently.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="brokerCoop" field-type="boolean">
+<ParamField body="brokerCoop" param-type="boolean" showLocation="false">
   True / False whether or not the property is a broker's CoOp.
 
 
   **Example:** `"brokerCoop": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="buildingClass" field-type="string">
+<ParamField body="buildingClass" param-type="string" showLocation="false">
   The building class as defined the classification relative to local commercial real estate markets.
 
 
   **Example:** `"buildingClass": "A"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="buildingName" field-type="text">
+<ParamField body="buildingName" param-type="text" showLocation="false">
   The name of the building where this property is located. This field is specific to apartments, condos, and similar property types.
 
 
   **Example:** `"buildingName": "Castle Beach Club"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="capRate" field-type="float">
+<ParamField body="capRate" param-type="float" showLocation="false">
   The capitalization rate of the property.
 
 
   **Example:** `"capRate": 8`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="capRateSourceURL" field-type="text">
+<ParamField body="capRateSourceURL" param-type="text" showLocation="false">
   The source url of the capRate.
 
 
   **Example:** `"capRateSourceURL": "https://www.loopnet.com/Listing/5805-Manatee-Ave-W-Bradenton-FL/35241589/"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="categories" field-type="text">
+<ParamField body="categories" param-type="text" showLocation="false">
   A list of category keywords used for this property across multiple sources.
 
 
   **Example:** `"categories": ["Single family residence", "farming"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="cbsaCode" field-type="string">
+<ParamField body="cbsaCode" param-type="string" showLocation="false">
   The 5 digit cbsa code of the property.
 
 
   **Example:** `"cbsaCode": 02312`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="cbsaName" field-type="text">
+<ParamField body="cbsaName" param-type="text" showLocation="false">
   The cbsa name associated with the property.
 
 
   **Example:** `"cbsaName": "OXNARD-THOUSAND OAKS-VENTURA, CA METROPOLITAN"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="censusBlock" field-type="string">
+<ParamField body="censusBlock" param-type="string" showLocation="false">
   The census block the property is associate to.
 
 
   **Example:** `"censusBlock": 1012`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="censusBlockGroup" field-type="string">
+<ParamField body="censusBlockGroup" param-type="string" showLocation="false">
   The census group the property is associated to.
 
 
   **Example:** `"censusBlockGroup": 4`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="censusTract" field-type="string">
+<ParamField body="censusTract" param-type="string" showLocation="false">
   The census tract the property is associated to.
 
 
   **Example:** `"censusTract": 5102`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="city" field-type="text">
+<ParamField body="city" param-type="text" showLocation="false">
   The city where the property is located.
 
 
   **Example:** `"city": "Dallas"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="civilDivisionCode" field-type="text">
+<ParamField body="civilDivisionCode" param-type="text" showLocation="false">
   The civil division code for the property.
 
 
   **Example:** `"civilDivisionCode": 4`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="civilDivisionName" field-type="string">
+<ParamField body="civilDivisionName" param-type="string" showLocation="false">
   The civil division name of the property.
 
 
   **Example:** `"civilDivisionName": "SUMMERSVILLE"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="companies" field-type="nested">
+<ParamField body="companies" param-type="nested" showLocation="false">
   A list of companies that have been seen for this property. Each company can contain:
 
   **Example:**
@@ -225,107 +226,107 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="companies.dateSeen" field-type="date">
+    <ParamField body="companies.dateSeen" param-type="date" showLocation="false">
       Date when Datafiniti seen the company's data.
-    </ResponseField>
-    <ResponseField name="companies.email" field-type="string">
+    </ParamField>
+    <ParamField body="companies.email" param-type="string" showLocation="false">
       Email of the company.
-    </ResponseField>
-    <ResponseField name="companies.equity" field-type="integer">
+    </ParamField>
+    <ParamField body="companies.equity" param-type="integer" showLocation="false">
       Sum total of equity of the company
-    </ResponseField>
-    <ResponseField name="companies.equityPercent" field-type="bigdecimal">
+    </ParamField>
+    <ParamField body="companies.equityPercent" param-type="bigdecimal" showLocation="false">
       the percent of equity of the company
-    </ResponseField>
-    <ResponseField name="companies.landline" field-type="boolean">
+    </ParamField>
+    <ParamField body="companies.landline" param-type="boolean" showLocation="false">
       True or False if a landline is found.
-    </ResponseField>
-    <ResponseField name="companies.name" field-type="string">
+    </ParamField>
+    <ParamField body="companies.name" param-type="string" showLocation="false">
       The name of company
-    </ResponseField>
-    <ResponseField name="companies.phone" field-type="string">
+    </ParamField>
+    <ParamField body="companies.phone" param-type="string" showLocation="false">
       the phone number of the company.
-    </ResponseField>
-    <ResponseField name="companies.title" field-type="string">
+    </ParamField>
+    <ParamField body="companies.title" param-type="string" showLocation="false">
       title of company in regards of the property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="congressionalDistrictHouse" field-type="string">
+<ParamField body="congressionalDistrictHouse" param-type="string" showLocation="false">
   District of the property.
 
   **Example:** `"congressionalDistrictHouse": "4"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="country" field-type="text">
+<ParamField body="country" param-type="text" showLocation="false">
   The two-letter country code for the property location's country.
 
 
   **Example:** `"country": "US"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="county" field-type="text">
+<ParamField body="county" param-type="text" showLocation="false">
   The county of the property record.
 
 
   **Example:** `"county": "Hillsborough"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="countyFIPS" field-type="integer">
+<ParamField body="countyFIPS" param-type="integer" showLocation="false">
   County FIPS # of the property.
 
 
   **Example:** `"countyFIPS": 12057`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="currentOwnerType" field-type="string">
+<ParamField body="currentOwnerType" param-type="string" showLocation="false">
   Current owner type of the property.
 
   **Example:** `"currentOwnerType": "Company"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateAdded" field-type="date">
+<ParamField body="dateAdded" param-type="date" showLocation="false">
   The date this property was first added to the property database.
 
 
   **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="dateUpdated" field-type="date">
+<ParamField body="dateUpdated" param-type="date" showLocation="false">
   The most recent date this property was updated or seen by our system.
 
 
   **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="daysOnMarket" field-type="integer">
+<ParamField body="daysOnMarket" param-type="integer" showLocation="false">
   The number of days the property has been on market.
 
 
   **Example:** `"daysOnMarket": 3`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="deposits" field-type="nested">
+<ParamField body="deposits" param-type="nested" showLocation="false">
   A list of deposit fees that have been seen for this property. Each deposit contains:
 
 
   **Example:** `"deposits": [{"amount": 104, "currency": "USD", "dateSeen": ["2016-08-07T18:07:05Z"]}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="deposits.amount" field-type="float">
+    <ParamField body="deposits.amount" param-type="float" showLocation="false">
       The fee amount.
-    </ResponseField>
-    <ResponseField name="deposits.currency" field-type="keyword">
+    </ParamField>
+    <ParamField body="deposits.currency" param-type="keyword" showLocation="false">
       The currency for the amount.
-    </ResponseField>
-    <ResponseField name="deposits.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="deposits.dateSeen" param-type="date" showLocation="false">
       A list of dates this deposit fee was seen.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="descriptions" field-type="nested">
+<ParamField body="descriptions" param-type="nested" showLocation="false">
   A list of descriptions for this property from various sources. Each description contains:
 
   **Example:**
@@ -334,30 +335,30 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="descriptions.dateSeen" field-type="date">
+    <ParamField body="descriptions.dateSeen" param-type="date" showLocation="false">
       The date when this description has been seen for this property.
-    </ResponseField>
-    <ResponseField name="descriptions.value" field-type="text">
+    </ParamField>
+    <ParamField body="descriptions.value" param-type="text" showLocation="false">
       A unique description for this property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="domains" field-type="domain">
+<ParamField body="domains" param-type="domain" showLocation="false">
   A list of each unique domain found in the sourceURLs field.
 
 
   **Example:** `"domains": ["www.airbnb.com"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="effectiveGrossIncome" field-type="integer">
+<ParamField body="effectiveGrossIncome" param-type="integer" showLocation="false">
   The effective gross income of the property.
 
 
   **Example:** `"effectiveGrossIncome": 275352`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="estimatedPrices" field-type="nested">
+<ParamField body="estimatedPrices" param-type="nested" showLocation="false">
   A list of price estimates for the property.
 
   **Example:**
@@ -366,39 +367,39 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="estimatedPrices.amountMax" field-type="integer">
+    <ParamField body="estimatedPrices.amountMax" param-type="integer" showLocation="false">
       The maximum price estimate value listed.
-    </ResponseField>
-    <ResponseField name="estimatedPrices.amountMin" field-type="integer">
+    </ParamField>
+    <ParamField body="estimatedPrices.amountMin" param-type="integer" showLocation="false">
       The minimum price estimate value listed.
-    </ResponseField>
-    <ResponseField name="estimatedPrices.currency" field-type="string">
+    </ParamField>
+    <ParamField body="estimatedPrices.currency" param-type="string" showLocation="false">
       The currency listed for amountMin and amountMax
-    </ResponseField>
-    <ResponseField name="estimatedPrices.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="estimatedPrices.dateSeen" param-type="date" showLocation="false">
       The date when this estimatedPrice was seen for this property.
-    </ResponseField>
-    <ResponseField name="estimatedPrices.pricePerSquareFoot" field-type="float">
+    </ParamField>
+    <ParamField body="estimatedPrices.pricePerSquareFoot" param-type="float" showLocation="false">
       The price divide by the square footage.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="exteriorConstruction" field-type="text">
+<ParamField body="exteriorConstruction" param-type="text" showLocation="false">
   A list of all the exterior construction of the property.
 
 
   **Example:** `"exteriorConstruction": ["brick","wood paneling"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="exteriorFeatures" field-type="text">
+<ParamField body="exteriorFeatures" param-type="text" showLocation="false">
   The exterior features the property offers.
 
 
   **Example:** `"exteriorFeatures": ["Storm Shutters","Breezeway","Pool"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="features" field-type="nested">
+<ParamField body="features" param-type="nested" showLocation="false">
   A list of features associated with this property. The feature list can be collected from specific feature sections available on listings for this property. It can also serve as a catch-all field for miscellaneous characteristics of this property that don't make sense to include as top-level fields.
   
   Each feature contains:
@@ -407,19 +408,19 @@ The property data schema below lists all available fields in a property record. 
   **Example:** `"features": [{"key": "Community District", "replace": "true", "value": ["318"]}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="features.key" field-type="text">
+    <ParamField body="features.key" param-type="text" showLocation="false">
       A label for this feature.
-    </ResponseField>
-    <ResponseField name="features.replace" field-type="boolean">
+    </ParamField>
+    <ParamField body="features.replace" param-type="boolean" showLocation="false">
       Flag indicating value field is replaced versus appended.
-    </ResponseField>
-    <ResponseField name="features.value" field-type="text">
+    </ParamField>
+    <ParamField body="features.value" param-type="text" showLocation="false">
       A list of possible values for this feature.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="fees" field-type="nested">
+<ParamField body="fees" param-type="nested" showLocation="false">
   A list of various fees that have been seen for this property. Each fee will contain:
 
   **Example:**
@@ -428,25 +429,25 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="fees.amountMax" field-type="float">
+    <ParamField body="fees.amountMax" param-type="float" showLocation="false">
       The maximum fee value listed.
-    </ResponseField>
-    <ResponseField name="fees.amountMin" field-type="float">
+    </ParamField>
+    <ParamField body="fees.amountMin" param-type="float" showLocation="false">
       The minimum fee value listed.
-    </ResponseField>
-    <ResponseField name="fees.currency" field-type="keyword">
+    </ParamField>
+    <ParamField body="fees.currency" param-type="keyword" showLocation="false">
       The currency listed for amountMin and amountMax
-    </ResponseField>
-    <ResponseField name="fees.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="fees.dateSeen" param-type="date" showLocation="false">
       A list of dates when this fee was seen.
-    </ResponseField>
-    <ResponseField name="fees.type" field-type="text">
+    </ParamField>
+    <ParamField body="fees.type" param-type="text" showLocation="false">
       A classification value for the fee.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="floorPlans" field-type="nested">
+<ParamField body="floorPlans" param-type="nested" showLocation="false">
   A list of floorplans associated with the property
 
   **Example:**
@@ -455,103 +456,103 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="floorPlans.floorSize" field-type="text">
+    <ParamField body="floorPlans.floorSize" param-type="text" showLocation="false">
       The floor size of the floor plan being referenced.
-    </ResponseField>
-    <ResponseField name="floorPlans.name" field-type="text">
+    </ParamField>
+    <ParamField body="floorPlans.name" param-type="text" showLocation="false">
       The name of the floor plan being referenced.
-    </ResponseField>
-    <ResponseField name="floorPlans.numBathrooms" field-type="integer">
+    </ParamField>
+    <ParamField body="floorPlans.numBathrooms" param-type="integer" showLocation="false">
       The number of bathrooms in the floor plan.
-    </ResponseField>
-    <ResponseField name="floorPlans.numBedrooms" field-type="integer">
+    </ParamField>
+    <ParamField body="floorPlans.numBedrooms" param-type="integer" showLocation="false">
       The number of bedrooms in the floor plan.
-    </ResponseField>
-    <ResponseField name="floorPlans.type" field-type="text">
+    </ParamField>
+    <ParamField body="floorPlans.type" param-type="text" showLocation="false">
       the type of floor plan classified by the property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="floorSizeValue" field-type="float">
+<ParamField body="floorSizeValue" param-type="float" showLocation="false">
   The size of the walkable area of the property. For apartments and condos, this is the size of the property. For homes and buildings, this is the combined size of each floor and does not include lot size.
 
 
   **Example:** `"floorSizeValue": 947`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="floorSizeUnit" field-type="keyword">
+<ParamField body="floorSizeUnit" param-type="keyword" showLocation="false">
   The units of measurement for `floorSize`.
 
 
   **Example:** `"floorSizeUnit": "Sq. ft"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="geoLocation" field-type="geo_shape">
+<ParamField body="geoLocation" param-type="geo_shape" showLocation="false">
   A location value that stores the latitude and longitude in a format that allows geospatial querying.
   
   The value is stored as Well-Known Text format, which resembles an (x, y) value, i.e. (longitude latitude).
 
 
   **Example:** `"geoLocation": "POINT (-119.5094 37.229366)"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="geoQuality" field-type="integer">
+<ParamField body="geoQuality" param-type="integer" showLocation="false">
   The quality of the geoLocation data of the property.
 
 
   **Example:** `"geoQuality": 0`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="grossRentalIncome" field-type="float">
+<ParamField body="grossRentalIncome" param-type="float" showLocation="false">
   The gross rental income of the property.
 
 
   **Example:** `"grossRentalIncome": 66000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="groundLease" field-type="boolean">
+<ParamField body="groundLease" param-type="boolean" showLocation="false">
   True/False if the property includes a ground lease for the land.
 
 
   **Example:** `"groundLease": false`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="hvacTypes" field-type="text">
+<ParamField body="hvacTypes" param-type="text" showLocation="false">
   The type / components of the HVAC system.
 
 
   **Example:** `"hvacTypes": ["Cental Air","Electric","Fans"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="imageURLs" field-type="keyword">
+<ParamField body="imageURLs" param-type="keyword" showLocation="false">
   A list of image URLs for this property.
 
 
   **Example:** `"imageURLs": ["http://image.rent.com/imgr/61bbc9f535f0e180bc804ac8f4c50067"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="instrumentNumber" field-type="string">
+<ParamField body="instrumentNumber" param-type="string" showLocation="false">
   Instrument # of the property.
 
   **Example:** `"instrumentNumber": "3312-0576"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="investmentType" field-type="text">
+<ParamField body="investmentType" param-type="text" showLocation="false">
   The investment type relating to the investment strategy or risk level.
 
 
   **Example:** `"investmentType": "Stabilized"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="investmentTypeSourceURL" field-type="text">
+<ParamField body="investmentTypeSourceURL" param-type="text" showLocation="false">
   The source URL of the investmentType.
 
 
   **Example:** `"investmentTypeSourceURL": "https://www.crexi.com/properties/16266"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="involuntaryLienJudgement" field-type="nested">
+<ParamField body="involuntaryLienJudgement" param-type="nested" showLocation="false">
   involuntaryLienJudgement shows if a lien is set against your wishes and is the result of not fulfilling your financial obligations
 
   **Example:**
@@ -560,601 +561,601 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="involuntaryLienJudgement.firstDateSeen" field-type="date">
+    <ParamField body="involuntaryLienJudgement.firstDateSeen" param-type="date" showLocation="false">
       first date seen on the lien of the property.
-    </ResponseField>
-    <ResponseField name="involuntaryLienJudgement.judgement" field-type="boolean">
+    </ParamField>
+    <ParamField body="involuntaryLienJudgement.judgement" param-type="boolean" showLocation="false">
       if a lien was set on this property.
-    </ResponseField>
-    <ResponseField name="involuntaryLienJudgement.lien" field-type="boolean">
+    </ParamField>
+    <ParamField body="involuntaryLienJudgement.lien" param-type="boolean" showLocation="false">
       If a lien is current owed on the property
-    </ResponseField>
-    <ResponseField name="involuntaryLienJudgement.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="involuntaryLienJudgement.lastDateSeen" param-type="date" showLocation="false">
       last date seen on the lien of the property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="isUnit" field-type="boolean">
+<ParamField body="isUnit" param-type="boolean" showLocation="false">
   If the property is a unit number of a complex / building
 
   **Example:** `"isUnit": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="keys" field-type="keyword">
+<ParamField body="keys" param-type="keyword" showLocation="false">
   A list of internal Datafiniti identifiers for this property. The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.
   [How Property Records Are Merged](/docs/how-property-records-are-merged)
 
 
   **Example:** `"keys": ["us/ca/nhills/9411brightwoodct"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="languagesSpoken" field-type="text">
+<ParamField body="languagesSpoken" param-type="text" showLocation="false">
   A list of the languages spoken at this property.
 
 
   **Example:** `"languagesSpoken": ["French", "English"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="latitude" field-type="text">
+<ParamField body="latitude" param-type="text" showLocation="false">
   The latitude coordinates for this property.
 
 
   **Example:** `"latitude": "32.860858"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="leasingTerms" field-type="nested">
+<ParamField body="leasingTerms" param-type="nested" showLocation="false">
   A list of leasing terms that have been associated with this property. Each leasing term will contain:
 
 
   **Example:** `"leasingTerms": [{"dateSeen": "2016-07-30T20:41:01Z", "value": "12 Months"}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="leasingTerms.dateSeen" field-type="date">
+    <ParamField body="leasingTerms.dateSeen" param-type="date" showLocation="false">
       The date when this term was seen.
-    </ResponseField>
-    <ResponseField name="leasingTerms.value" field-type="text">
+    </ParamField>
+    <ParamField body="leasingTerms.value" param-type="text" showLocation="false">
       The leasing term description.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="leaseType" field-type="text">
+<ParamField body="leaseType" param-type="text" showLocation="false">
   The type of lease
 
 
   **Example:** `"leaseType": "Triple Net"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="legalDescription" field-type="text">
+<ParamField body="legalDescription" param-type="text" showLocation="false">
   The legal description of the property record.
 
 
   **Example:** `"legalDescription": "LOT 279 OXFORD OAKS PHASE TWO PB 16 PGS 17-17D"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="legalRange" field-type="string">
+<ParamField body="legalRange" param-type="string" showLocation="false">
   Legal range of the property.
 
   **Example:** `"legalRange": "08E"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="listingName" field-type="text">
+<ParamField body="listingName" param-type="text" showLocation="false">
   The name of the property listing. This isn't the name of the building. It's a descriptive name supplied for the listing itself.
 
 
   **Example:** `"listingName": "Antico Appartamento"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="longitude" field-type="text">
+<ParamField body="longitude" param-type="text" showLocation="false">
   The longitude coordinates for this property.
 
 
   **Example:** `"longitude": "-96.735808"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="lotDepthValue" field-type="float">
+<ParamField body="lotDepthValue" param-type="float" showLocation="false">
   The depth dimension of a property's lot.
 
 
   **Example:** `"lotDepthValue": 150`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="lotDepthUnit" field-type="text">
+<ParamField body="lotDepthUnit" param-type="text" showLocation="false">
   The depth dimension unit of a property's lot.
 
 
   **Example:** `"lotDepthUnit": "ft"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="lotSizeValue" field-type="integer">
+<ParamField body="lotSizeValue" param-type="integer" showLocation="false">
   The lot size for the property. This is the ground area covered by the property.
 
 
   **Example:** `"lotSizeValue": 2219`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="lotSizeUnit" field-type="keyword">
+<ParamField body="lotSizeUnit" param-type="keyword" showLocation="false">
   The units of measurement for `lotSize`.
 
 
   **Example:** `"lotSizeUnit": "Sq. ft"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="majorTenants" field-type="string">
+<ParamField body="majorTenants" param-type="string" showLocation="false">
   The major tenants associated with the property.
 
   **Example:**
   ```json
   "majorTenants": ["Traffic Planning & Design Inc", "Allentown Brew Works", "Bethlehem Brew Works", "C P Rankin Inc", "Touchpoint Industries, LLC", "One In Allentown"]
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="managedBy" field-type="nested">
+<ParamField body="managedBy" param-type="nested" showLocation="false">
   A list of companies or people that have managed this property. Each managedBy object will contain:
 
 
   **Example:** `"managedBy": [{"dateSeen": ["2016-03-03T15:02:13Z"], "value": "ROM Investments"}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="managedBy.dateSeen" field-type="date">
+    <ParamField body="managedBy.dateSeen" param-type="date" showLocation="false">
       A list of dates when this information was seen.
-    </ResponseField>
-    <ResponseField name="managedBy.value" field-type="text">
+    </ParamField>
+    <ParamField body="managedBy.value" param-type="text" showLocation="false">
       The name of the company or person.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mlsName" field-type="text">
+<ParamField body="mlsName" param-type="text" showLocation="false">
   The mls name of the listing company/realtor
 
 
   **Example:** `"mlsName": "sovereign realty group"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mlsNumber" field-type="keyword">
+<ParamField body="mlsNumber" param-type="keyword" showLocation="false">
   The MLS number for the property. [Learn more about MLS numbers](https://en.wikipedia.org/wiki/Multiple_listing_service).
 
 
   **Example:** `"mlsNumber": "16177277"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentAbsenteeOwner" field-type="boolean">
+<ParamField body="mostRecentAbsenteeOwner" param-type="boolean" showLocation="false">
   The most recent boolean value for the absentee owner.
 
 
   **Example:** `"mostRecentAbsenteeOwner": false`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentAbsenteeOwnerFirstDateSeen" field-type="date">
+<ParamField body="mostRecentAbsenteeOwnerFirstDateSeen" param-type="date" showLocation="false">
   The most recent first date seen of the absentee owner.
 
 
   **Example:** `"mostRecentAbsenteeOwnerFirstDateSeen": "2024-04-11T16:57:22.605Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentBrokerAgent" field-type="text">
+<ParamField body="mostRecentBrokerAgent" param-type="text" showLocation="false">
   The most recent broker agent added to the brokers field.
 
 
   **Example:** `"mostRecentBrokerAgent": "Rackel Atkins"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentBrokerCompany" field-type="text">
+<ParamField body="mostRecentBrokerCompany" param-type="text" showLocation="false">
   The company of the most recent broker added to the broker's field.
 
 
   **Example:** `"mostRecentBrokerCompany": "Compass Recom"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentBrokerDateSeen" field-type="text">
+<ParamField body="mostRecentBrokerDateSeen" param-type="text" showLocation="false">
   The date seen of the most recent broker added to the brokers field.
 
 
   **Example:** `"mostRecentBrokerDateSeen": "2023-10-23T19:20:50.418Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentBrokerEmails" field-type="text">
+<ParamField body="mostRecentBrokerEmails" param-type="text" showLocation="false">
   The email(s) of the most recent broker agent.
 
 
   **Example:** `"mostRecentBrokerEmails": ["mavhovsepia@pearsonrealty.com"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentBrokerPhones" field-type="text">
+<ParamField body="mostRecentBrokerPhones" param-type="text" showLocation="false">
   The phone number(s) of the most recent broker agent.
 
 
   **Example:** `"mostRecentBrokerPhones": ["(713) 948-6666"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentEstimatedPriceAmount" field-type="integer">
+<ParamField body="mostRecentEstimatedPriceAmount" param-type="integer" showLocation="false">
   The most recent estimated price amount
 
 
   **Example:** `"mostRecentEstimatedPriceAmount": 95267`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentEstimatedPriceDate" field-type="date">
+<ParamField body="mostRecentEstimatedPriceDate" param-type="date" showLocation="false">
   The most recent estimate price date
 
 
   **Example:** `"mostRecentEstimatedPriceDate": "2024-09-11T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentEstimatedPriceDomain" field-type="text">
+<ParamField body="mostRecentEstimatedPriceDomain" param-type="text" showLocation="false">
   The most recent source domain of the estimate price
 
 
   **Example:** `"mostRecentEstimatedPriceDomain": "www.redfin.com"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentEstimatedPriceSourceURL" field-type="text">
+<ParamField body="mostRecentEstimatedPriceSourceURL" param-type="text" showLocation="false">
   The most recent sourceURL used for obtaining the price estimate
 
 
   **Example:** `"mostRecentEstimatedPriceSourceURL": "www.redfin.com/093757"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentInvoluntaryJudgement" field-type="boolean">
+<ParamField body="mostRecentInvoluntaryJudgement" param-type="boolean" showLocation="false">
   The most recent Involuntary Lien Judgement value
 
 
   **Example:** `"mostRecentInvoluntaryJudgement": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentInvoluntaryLien" field-type="boolean">
+<ParamField body="mostRecentInvoluntaryLien" param-type="boolean" showLocation="false">
   The most recent Involuntary Lien on the property value
 
 
   **Example:** `"mostRecentInvoluntaryLien": false`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentInvoluntaryLienJudgementFirstDateSeen" field-type="date">
+<ParamField body="mostRecentInvoluntaryLienJudgementFirstDateSeen" param-type="date" showLocation="false">
   The most recent first date seen of the Involuntary Lien.
 
 
   **Example:** `"mostRecentInvoluntaryLienJudgementFirstDateSeen": "2024-04-11T18:19:19.342Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentOwnerFirstName" field-type="text">
+<ParamField body="mostRecentOwnerFirstName" param-type="text" showLocation="false">
   The most recent first name from the owners top level field.
 
 
   **Example:** `"mostRecentOwnerFirstName": "Jeff"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentOwnerLastName" field-type="text">
+<ParamField body="mostRecentOwnerLastName" param-type="text" showLocation="false">
   The most recent last name from the owners top level field.
 
 
   **Example:** `"mostRecentOwnerLastName": "Allback"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentOwnerPeopleKey" field-type="keyword">
+<ParamField body="mostRecentOwnerPeopleKey" param-type="keyword" showLocation="false">
   The most recent people key of the owners top level field. This can be matched to the people database
 
 
   **Example:** `"mostRecentOwnerPeopleKey": "jeff/allback/us/al/85255/3114epatrickst"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceAmount" field-type="bigdecimal">
+<ParamField body="mostRecentPriceAmount" param-type="bigdecimal" showLocation="false">
   The property's most recent price amount from our prices field. **This does not include rent prices**
 
 
   **Example:** `"mostRecentPriceAmount": 85`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalListPriceAmount" field-type="float">
+<ParamField body="mostRecentRentalListPriceAmount" param-type="float" showLocation="false">
   The most recent rental listing price from our prices field.
 
 
   **Example:** `"mostRecentRentalListPriceAmount": 429000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalListPriceDate" field-type="date">
+<ParamField body="mostRecentRentalListPriceDate" param-type="date" showLocation="false">
   The most recent rental listing date from our prices field.
 
 
   **Example:** `"mostRecentRentalListPriceDate": "2025-09-11T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPriceAmount" field-type="bigdecimal" deprecated="true">
+<ParamField body="mostRecentRentalPriceAmount" param-type="bigdecimal" deprecated="true" showLocation="false">
   The property's most recent rent price amount from our prices field.
   
   Deprecated on Jan 31st, 2026
 
 
   **Example:** `"mostRecentRentalPriceAmount": 1436`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPriceDate" field-type="date" deprecated="true">
+<ParamField body="mostRecentRentalPriceDate" param-type="date" deprecated="true" showLocation="false">
   The most recent rental price date
   
   Deprecated on Jan 31st, 2026
 
 
   **Example:** `"mostRecentRentalPriceDate": "2024-09-11T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPriceDomain" field-type="text">
+<ParamField body="mostRecentRentalPriceDomain" param-type="text" showLocation="false">
   The most recent domain used for obtaining the rental price.
 
 
   **Example:** `"mostRecentRentalPriceDomain": "www.remax.com"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPriceFirstDateSeen" field-type="date">
+<ParamField body="mostRecentRentalPriceFirstDateSeen" param-type="date" showLocation="false">
   The most recent rental prices first seen by Datafiniti
 
 
   **Example:** `"mostRecentRentalPriceFirstDateSeen": "2024-09-11T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPricePeriod" field-type="keyword">
+<ParamField body="mostRecentRentalPricePeriod" param-type="keyword" showLocation="false">
   The period term of the most recent rental price.
   Either `Per Month` or `Per Year`
 
 
   **Example:** `"mostRecentRentalPricePeriod": "Per Month"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalPriceSourceURL" field-type="text">
+<ParamField body="mostRecentRentalPriceSourceURL" param-type="text" showLocation="false">
   The most recent source Url used for obtaining the rental price.
 
 
   **Example:** `"mostRecentRentalPriceSourceURL": "www.remax.com/usdfusj/19278"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentSaleListPriceAmount" field-type="float">
+<ParamField body="mostRecentSaleListPriceAmount" param-type="float" showLocation="false">
   The most recent "sale list" price from our prices field.
 
 
   **Example:** `"mostRecentSaleListPriceAmount": 456990`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentSaleListPriceDate" field-type="date">
+<ParamField body="mostRecentSaleListPriceDate" param-type="date" showLocation="false">
   The most recent "sale list" price date from our prices field.
 
 
   **Example:** `"mostRecentSaleListPriceDate": "2025-10-23T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentSoldPriceAmount" field-type="float">
+<ParamField body="mostRecentSoldPriceAmount" param-type="float" showLocation="false">
   The most recent "sale" price from our prices field.
 
 
   **Example:** `"mostRecentSoldPriceAmount": 480000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentSoldPriceDate" field-type="date">
+<ParamField body="mostRecentSoldPriceDate" param-type="date" showLocation="false">
   The most recent "sale" price date from our prices field.
 
 
   **Example:** `"mostRecentSoldPriceDate": "2025-10-21T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalStatus" field-type="keyword">
+<ParamField body="mostRecentRentalStatus" param-type="keyword" showLocation="false">
   The most recent value for `rentalStatuses.type` for this property. See possible values [here](/docs/possible-values-for-property-fields).
 
 
   **Example:** `"mostRecentStatus": "Rental"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalStatusDate" field-type="date">
+<ParamField body="mostRecentRentalStatusDate" param-type="date" showLocation="false">
   The most recent rental status date listed by the source.
 
 
   **Example:** `"mostRecentRentalStatusDate": "2025-08-23T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentRentalStatusFirstDateSeen" field-type="date">
+<ParamField body="mostRecentRentalStatusFirstDateSeen" param-type="date" showLocation="false">
   The most recent rental status first seen by Datafiniti
 
 
   **Example:** `"mostRecentRentalStatusFirstDateSeen": "2024-09-11T00:00:00.000Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceCurrency" field-type="text">
+<ParamField body="mostRecentPriceCurrency" param-type="text" showLocation="false">
   The currency listed for mostRecentPriceAmount.
 
 
   **Example:** `"mostRecentPriceCurrency": "USD"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceDomain" field-type="domain">
+<ParamField body="mostRecentPriceDomain" param-type="domain" showLocation="false">
   The domain of the most recent price scraped by Datafiniti
 
 
   **Example:** `"mostRecentPriceDomain": "www.nordstrom.com"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentPriceDate" field-type="date">
+<ParamField body="mostRecentPriceDate" param-type="date" showLocation="false">
   The most recent price date of the property record.
 
 
   **Example:** `"mostRecentPriceDate": "2022-03-29T19:26:49.157Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentStatus" field-type="keyword">
+<ParamField body="mostRecentStatus" param-type="keyword" showLocation="false">
   The most recent value for `statuses.type` for this property. See possible values [here](/docs/possible-values-for-property-fields).
 
 
   **Example:** `"mostRecentStatus": "For Sale"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentStatusDate" field-type="date">
+<ParamField body="mostRecentStatusDate" param-type="date" showLocation="false">
   The date of change that corresponds to the `mostRecentStatus` for this property.
 
 
   **Example:** `"mostRecentStatusDate": "2017-01-10T20:12:16Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentStatusFirstDateSeen" field-type="date">
+<ParamField body="mostRecentStatusFirstDateSeen" param-type="date" showLocation="false">
   This date corresponds to the most recent date seen of the most recent status data source.
 
 
   **Example:** `"mostRecentStatusFirstDateSeen": "2021-09-09T00:00:00.000"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentVacancy" field-type="boolean">
+<ParamField body="mostRecentVacancy" param-type="boolean" showLocation="false">
   The most recent vacancy value of the property.
 
 
   **Example:** `"mostRecentVacancy": false`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="mostRecentVacancyFirstDateSeen" field-type="date">
+<ParamField body="mostRecentVacancyFirstDateSeen" param-type="date" showLocation="false">
   This date corresponds to the first date seen from the source of the property listing.
 
 
   **Example:** `"mostRecentVacancyFirstDateSeen": "2024-04-11T16:57:22.603Z"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="msaCode" field-type="string">
+<ParamField body="msaCode" param-type="string" showLocation="false">
   The msa code of the property.
 
 
   **Example:** `"msaCode": 212312`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="msaName" field-type="text">
+<ParamField body="msaName" param-type="text" showLocation="false">
   The msa name of the property.
 
 
   **Example:** `"msaName": "OXNARD-THOUSAND OAKS-VENTURA, CA METROPOLITAN"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="municipality" field-type="text">
+<ParamField body="municipality" param-type="text" showLocation="false">
   The property municipality in regards the county/city.
 
 
   **Example:** `"municipality": "READING TWP"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="neighborhoods" field-type="text">
+<ParamField body="neighborhoods" param-type="text" showLocation="false">
   A list of neighborhoods where this property is located. Sometimes an area can belong to multiple neighborhoods, which is why this field is a list.
 
 
   **Example:** `"neighborhoods": ["Canarsie"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="netOperatingIncome" field-type="float">
+<ParamField body="netOperatingIncome" param-type="float" showLocation="false">
   The total revenue a property generates from all sources, such as rent and other fees, minus all operating expenses
 
 
   **Example:** `"netOperatingIncome": 49050`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="netOperatingIncomeSourceURL" field-type="text">
+<ParamField body="netOperatingIncomeSourceURL" param-type="text" showLocation="false">
   The source URL of the net operating income in regards to the property.
 
   **Example:**
   ```json
   "netOperatingIncomeSourceURL": "https://deausenrealty.idxbroker.com/idx/details/listing/b004/PAPH2466918/1529-E-Berks-Street-Philadelphia-PA-191"
   ```
-</ResponseField>
+</ParamField>
 
-<ResponseField name="netRentable" field-type="float">
+<ParamField body="netRentable" param-type="float" showLocation="false">
   The net rentable amount of the commercial property.
 
 
   **Example:** `"netRentable": 34513`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numBathroom" field-type="float">
+<ParamField body="numBathroom" param-type="float" showLocation="false">
   The number of bathrooms in this property. Can be a whole number (e.g. "1") or a float (e.g., 1.25).
 
 
   **Example:** `"numBathroom": 1.25`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numBedroom" field-type="integer">
+<ParamField body="numBedroom" param-type="integer" showLocation="false">
   The number of bedrooms in this property.
 
 
   **Example:** `"numBedroom": 3`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numFloor" field-type="integer">
+<ParamField body="numFloor" param-type="integer" showLocation="false">
   The number of floors or stories in this property.
 
 
   **Example:** `"numFloor": 2`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numParkingSpaces" field-type="integer">
+<ParamField body="numParkingSpaces" param-type="integer" showLocation="false">
   The number of parking spots on the property.
 
 
   **Example:** `"numParkingSpaces": 0`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numPeople" field-type="integer">
+<ParamField body="numPeople" param-type="integer" showLocation="false">
   The number of people that can occupy this property.
 
 
   **Example:** `"numPeople": 6`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numProperties" field-type="integer">
+<ParamField body="numProperties" param-type="integer" showLocation="false">
   The number of commercially available property within the address.
 
 
   **Example:** `"numProperties": 2`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numRoom" field-type="integer">
+<ParamField body="numRoom" param-type="integer" showLocation="false">
   The number of rooms in this property.
 
 
   **Example:** `"numRoom": 2`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numTenants" field-type="integer">
+<ParamField body="numTenants" param-type="integer" showLocation="false">
   The number of active tenants for a commercial property.
 
 
   **Example:** `"numTenants": 2`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="numUnit" field-type="integer">
+<ParamField body="numUnit" param-type="integer" showLocation="false">
   The number of units available in this property.
 
 
   **Example:** `"numUnit": 1`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="occupancy" field-type="string">
+<ParamField body="occupancy" param-type="string" showLocation="false">
   The current status of the commercial occupancy of the property.
 
 
   **Example:** `"occupancy": "Vacant"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="operatingExpenses" field-type="string">
+<ParamField body="operatingExpenses" param-type="string" showLocation="false">
   The operating expense description of the commercial property.
 
 
   **Example:** `"operatingExpenses": "Fee - Property Management"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="otherIncome" field-type="float">
+<ParamField body="otherIncome" param-type="float" showLocation="false">
   Other income revenue value of the commercial property.
 
 
   **Example:** `"otherIncome": 14400`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ownership" field-type="string">
+<ParamField body="ownership" param-type="string" showLocation="false">
   The ownership clause / stake of a property for the buyer.
 
 
   **Example:** `"ownership": "Fee Simple"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="owners" field-type="nested">
+<ParamField body="owners" param-type="nested" showLocation="false">
 
   **Example:**
   ```json
@@ -1162,35 +1163,35 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="owners.firstDateSeen" field-type="date">
+    <ParamField body="owners.firstDateSeen" param-type="date" showLocation="false">
       the first time the owner was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="owners.firstName" field-type="text">
+    </ParamField>
+    <ParamField body="owners.firstName" param-type="text" showLocation="false">
       first name of the owner.
-    </ResponseField>
-    <ResponseField name="owners.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="owners.lastDateSeen" param-type="date" showLocation="false">
       the last time the owner was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="owners.lastName" field-type="text">
+    </ParamField>
+    <ParamField body="owners.lastName" param-type="text" showLocation="false">
       last name of the owner.
-    </ResponseField>
-    <ResponseField name="owners.peopleKey" field-type="keyword">
+    </ParamField>
+    <ParamField body="owners.peopleKey" param-type="keyword" showLocation="false">
       people key matched to Datafiniti's people database.
-    </ResponseField>
-    <ResponseField name="owners.transactionDate" field-type="date">
+    </ParamField>
+    <ParamField body="owners.transactionDate" param-type="date" showLocation="false">
       date the owner purchased this property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ownerOccupied" field-type="boolean">
+<ParamField body="ownerOccupied" param-type="boolean" showLocation="false">
   The true/false value of whether owner occupies the property.
 
 
   **Example:** `"ownerOccupied": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="ownerOccupiedStatus" field-type="nested">
+<ParamField body="ownerOccupiedStatus" param-type="nested" showLocation="false">
 
   **Example:**
   ```json
@@ -1198,62 +1199,62 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="ownerOccupiedStatus.firstDateSeen" field-type="date">
+    <ParamField body="ownerOccupiedStatus.firstDateSeen" param-type="date" showLocation="false">
       the first date seen by Datafiniti of owner occupancy being true
-    </ResponseField>
-    <ResponseField name="ownerOccupiedStatus.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="ownerOccupiedStatus.lastDateSeen" param-type="date" showLocation="false">
       the last date seen by Datafiniti of owner occupancy being true
-    </ResponseField>
-    <ResponseField name="ownerOccupiedStatus.startDate" field-type="date">
+    </ParamField>
+    <ParamField body="ownerOccupiedStatus.startDate" param-type="date" showLocation="false">
       the lease start date seen by the leasing agency.
-    </ResponseField>
-    <ResponseField name="ownerOccupiedStatus.status" field-type="boolean">
+    </ParamField>
+    <ParamField body="ownerOccupiedStatus.status" param-type="boolean" showLocation="false">
       The true/false value of whether owner occupies the property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="parking" field-type="text">
+<ParamField body="parking" param-type="text" showLocation="false">
   A list of details regarding parking at this property.
 
 
   **Example:** `"parking": ["Garage"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="parkingTypes" field-type="text">
+<ParamField body="parkingTypes" param-type="text" showLocation="false">
   A list of parking types that pertains to the property.
 
 
   **Example:** `"parkingTypes": ["Street", "Attached Garage"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="parcelNumbers" field-type="nested">
+<ParamField body="parcelNumbers" param-type="nested" showLocation="false">
   The parcel number associated to the property.
 
 
   **Example:** `"parcelNumbers": [{"number": "29-29-22-12-0015", "account": "394308", "year": 1985}]`
 
   <Expandable title="Sub-fields">
-    <ResponseField name="parcelNumbers.account" field-type="string">
+    <ParamField body="parcelNumbers.account" param-type="string" showLocation="false">
       Account number of parcel.
-    </ResponseField>
-    <ResponseField name="parcelNumbers.number" field-type="string">
+    </ParamField>
+    <ParamField body="parcelNumbers.number" param-type="string" showLocation="false">
       Legal parcel number of the property.
-    </ResponseField>
-    <ResponseField name="parcelNumbers.year" field-type="integer">
+    </ParamField>
+    <ParamField body="parcelNumbers.year" param-type="integer" showLocation="false">
       Recorded year of the parcel number.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="paymentTypes" field-type="text">
+<ParamField body="paymentTypes" param-type="text" showLocation="false">
   A list of payment options accepted by the property.
 
 
   **Example:** `"paymentTypes": ["Visa"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="people" field-type="nested">
+<ParamField body="people" param-type="nested" showLocation="false">
   A list of known people associated with or employed by this property.
   
   Each person may contain:
@@ -1264,70 +1265,70 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="people.dateSeen" field-type="date">
+    <ParamField body="people.dateSeen" param-type="date" showLocation="false">
       The date when this person was seen.
-    </ResponseField>
-    <ResponseField name="people.email" field-type="text">
+    </ParamField>
+    <ParamField body="people.email" param-type="text" showLocation="false">
       The person's email.
-    </ResponseField>
-    <ResponseField name="people.equity" field-type="float">
+    </ParamField>
+    <ParamField body="people.equity" param-type="float" showLocation="false">
       Sum total of equity of properties
-    </ResponseField>
-    <ResponseField name="people.equityPercent" field-type="float">
+    </ParamField>
+    <ParamField body="people.equityPercent" param-type="float" showLocation="false">
       Percent estimated equity percentage (100 minus LTV)
-    </ResponseField>
-    <ResponseField name="people.firstName" field-type="text">
+    </ParamField>
+    <ParamField body="people.firstName" param-type="text" showLocation="false">
       first name of the person
-    </ResponseField>
-    <ResponseField name="people.lastName" field-type="text">
+    </ParamField>
+    <ParamField body="people.lastName" param-type="text" showLocation="false">
       last name of the person
-    </ResponseField>
-    <ResponseField name="people.landline" field-type="boolean">
+    </ParamField>
+    <ParamField body="people.landline" param-type="boolean" showLocation="false">
       Does the person have a landline.
-    </ResponseField>
-    <ResponseField name="people.name" field-type="text">
+    </ParamField>
+    <ParamField body="people.name" param-type="text" showLocation="false">
       The person's name.
-    </ResponseField>
-    <ResponseField name="people.people_key" field-type="keyword">
+    </ParamField>
+    <ParamField body="people.people_key" param-type="keyword" showLocation="false">
       the corresponding key that link to Datafiniti's people data record. (contact, demographics, & more)
-    </ResponseField>
-    <ResponseField name="people.phone" field-type="text">
+    </ParamField>
+    <ParamField body="people.phone" param-type="text" showLocation="false">
       The person's phone number.
-    </ResponseField>
-    <ResponseField name="people.title" field-type="text">
+    </ParamField>
+    <ParamField body="people.title" param-type="text" showLocation="false">
       The person's title.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="permits" field-type="boolean">
+<ParamField body="permits" param-type="boolean" showLocation="false">
   if there is a permit or permitting process adhere to this property.
 
   **Example:** `"permits": true`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="petPolicy" field-type="text">
+<ParamField body="petPolicy" param-type="text" showLocation="false">
   The pet policy for the property.
 
 
   **Example:** `"petPolicy": "Pets are not allowed."`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="phones" field-type="keyword">
+<ParamField body="phones" param-type="keyword" showLocation="false">
   A list of phone numbers for the property.
 
 
   **Example:** `"phones": ["5058982700"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="postalCode" field-type="keyword">
+<ParamField body="postalCode" param-type="keyword" showLocation="false">
   The postal or zip code of the property.
 
 
   **Example:** `"postalCode": "75231"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="prices" field-type="nested">
+<ParamField body="prices" param-type="nested" showLocation="false">
   A list of prices for this property.
   
   Price objects may contain:
@@ -1338,68 +1339,68 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="prices.amountMin" field-type="float">
+    <ParamField body="prices.amountMin" param-type="float" showLocation="false">
       The minimum price value listed.
-    </ResponseField>
-    <ResponseField name="prices.amountMax" field-type="float">
+    </ParamField>
+    <ParamField body="prices.amountMax" param-type="float" showLocation="false">
       The maximum price value listed. This is typically the same as amountMin, except in cases where a price range is listed.
-    </ResponseField>
-    <ResponseField name="prices.availability" field-type="keyword">
+    </ParamField>
+    <ParamField body="prices.availability" param-type="keyword" showLocation="false">
       The property's availability at this price.
-    </ResponseField>
-    <ResponseField name="prices.comment" field-type="text">
+    </ParamField>
+    <ParamField body="prices.comment" param-type="text" showLocation="false">
       A note related to this price.
-    </ResponseField>
-    <ResponseField name="prices.currency" field-type="text">
+    </ParamField>
+    <ParamField body="prices.currency" param-type="text" showLocation="false">
       The currency listed for amountMin and amountMax.
-    </ResponseField>
-    <ResponseField name="prices.date" field-type="date">
+    </ParamField>
+    <ParamField body="prices.date" param-type="date" showLocation="false">
       A list of date when the property was set to this price.
-    </ResponseField>
-    <ResponseField name="prices.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="prices.dateSeen" param-type="date" showLocation="false">
       A list of dates when this price was seen.
-    </ResponseField>
-    <ResponseField name="prices.dateValidStart" field-type="date">
+    </ParamField>
+    <ParamField body="prices.dateValidStart" param-type="date" showLocation="false">
       The date when this price becomes valid.
-    </ResponseField>
-    <ResponseField name="prices.dateValidEnd" field-type="date">
+    </ParamField>
+    <ParamField body="prices.dateValidEnd" param-type="date" showLocation="false">
       The date when this price is no longer valid.
-    </ResponseField>
-    <ResponseField name="prices.domain" field-type="text">
+    </ParamField>
+    <ParamField body="prices.domain" param-type="text" showLocation="false">
       The domain of the source of the price.
-    </ResponseField>
-    <ResponseField name="prices.isSale" field-type="boolean">
+    </ParamField>
+    <ParamField body="prices.isSale" param-type="boolean" showLocation="false">
       A true/false for whether or not this is a sale price. - deprecated
-    </ResponseField>
-    <ResponseField name="prices.isSold" field-type="boolean">
+    </ParamField>
+    <ParamField body="prices.isSold" param-type="boolean" showLocation="false">
       A true/false for whether or not this is the sold price. - deprecated
-    </ResponseField>
-    <ResponseField name="prices.minStay" field-type="text">
+    </ParamField>
+    <ParamField body="prices.minStay" param-type="text" showLocation="false">
       The minimum length of stay required for this price.
-    </ResponseField>
-    <ResponseField name="prices.period" field-type="text">
+    </ParamField>
+    <ParamField body="prices.period" param-type="text" showLocation="false">
       The calendar period for which this price is valid.
-    </ResponseField>
-    <ResponseField name="prices.pricePerSquareFoot" field-type="float">
+    </ParamField>
+    <ParamField body="prices.pricePerSquareFoot" param-type="float" showLocation="false">
       The price divide by the square footage.
-    </ResponseField>
-    <ResponseField name="prices.status" field-type="string">
+    </ParamField>
+    <ParamField body="prices.status" param-type="string" showLocation="false">
       The property status of the prices
-    </ResponseField>
-    <ResponseField name="prices.type" field-type="string">
+    </ParamField>
+    <ParamField body="prices.type" param-type="string" showLocation="false">
       the type of price at which the property was listed for sale, sold, or rent. (Sale List, Sold, or Rental List)
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="proFormaNOI" field-type="float">
+<ParamField body="proFormaNOI" param-type="float" showLocation="false">
   The pro Forma net operating income of the property.
 
 
   **Example:** `"proFormaNOI": 122400`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertyTaxes" field-type="nested">
+<ParamField body="propertyTaxes" param-type="nested" showLocation="false">
   A list of property taxes that have been seen for this property. Each property tax will include:
 
   **Example:**
@@ -1408,43 +1409,43 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="propertyTaxes.amount" field-type="float">
+    <ParamField body="propertyTaxes.amount" param-type="float" showLocation="false">
       The tax amount.
-    </ResponseField>
-    <ResponseField name="propertyTaxes.currency" field-type="text">
+    </ParamField>
+    <ParamField body="propertyTaxes.currency" param-type="text" showLocation="false">
       The amount's currency.
-    </ResponseField>
-    <ResponseField name="propertyTaxes.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="propertyTaxes.dateSeen" param-type="date" showLocation="false">
       A list of dates when this tax has been seen for this property.
-    </ResponseField>
-    <ResponseField name="propertyTaxes.year" field-type="integer">
+    </ParamField>
+    <ParamField body="propertyTaxes.year" param-type="integer" showLocation="false">
       The year of taxable amount of the property.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="propertyType" field-type="text">
+<ParamField body="propertyType" param-type="text" showLocation="false">
   A classification for the property type. See possible values [here](/docs/possible-values-for-property-fields).
 
 
   **Example:** `"propertyType": "Condo"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="province" field-type="text">
+<ParamField body="province" param-type="text" showLocation="false">
   The province or state for this property.
 
 
   **Example:** `"province": "TX"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="rentableSquareFeet" field-type="float">
+<ParamField body="rentableSquareFeet" param-type="float" showLocation="false">
   The rentable square footage of space for the rental property.
 
 
   **Example:** `"rentableSquareFeet": 35000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="rentalStatuses" field-type="nested">
+<ParamField body="rentalStatuses" param-type="nested" showLocation="false">
   A list of historical rental statuses. This field is used to indicate when the property is status `For Rent` or `Short-term Rental`.
   
   `rentalStatuses` objects may contain:
@@ -1455,35 +1456,35 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="rentalStatuses.date" field-type="date">
+    <ParamField body="rentalStatuses.date" param-type="date" showLocation="false">
       the date the rental status was posted by the source.
-    </ResponseField>
-    <ResponseField name="rentalStatuses.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="rentalStatuses.dateSeen" param-type="date" showLocation="false">
       the date when the rental status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="rentalStatuses.type" field-type="string">
+    </ParamField>
+    <ParamField body="rentalStatuses.type" param-type="string" showLocation="false">
       the type of rental being listed `For Rent` or `Short-term Rental`
-    </ResponseField>
-    <ResponseField name="rentalStatuses.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="rentalStatuses.firstDateSeen" param-type="date" showLocation="false">
       the first date seen of the rental status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="rentalStatuses.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="rentalStatuses.lastDateSeen" param-type="date" showLocation="false">
       the latest date seen of the rental status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="rentalStatuses.sourceURLs" field-type="string">
+    </ParamField>
+    <ParamField body="rentalStatuses.sourceURLs" param-type="string" showLocation="false">
       the source URL of the rental property listing.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="rentBumps" field-type="string">
+<ParamField body="rentBumps" param-type="string" showLocation="false">
   The terms of a rentable property on when a rent increase will occur.
 
 
   **Example:** `"rentBumps": "10% Increase Every 5 Years in Term and In Each Option"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="reviews" field-type="nested">
+<ParamField body="reviews" param-type="nested" showLocation="false">
   A list of reviews for this property.
   
   Review objects may contain:
@@ -1494,79 +1495,79 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="reviews.date" field-type="date">
+    <ParamField body="reviews.date" param-type="date" showLocation="false">
       The date the review was posted.
-    </ResponseField>
-    <ResponseField name="reviews.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="reviews.dateSeen" param-type="date" showLocation="false">
       The date when the review was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="reviews.doRecommend" field-type="boolean">
+    </ParamField>
+    <ParamField body="reviews.doRecommend" param-type="boolean" showLocation="false">
       A true/false for whether or not the reviewer recommends the property.
-    </ResponseField>
-    <ResponseField name="reviews.rating" field-type="float">
+    </ParamField>
+    <ParamField body="reviews.rating" param-type="float" showLocation="false">
       A 1 to 5 star value for the review.
-    </ResponseField>
-    <ResponseField name="reviews.text" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.text" param-type="text" showLocation="false">
       The full (or available) text of the review.
-    </ResponseField>
-    <ResponseField name="reviews.title" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.title" param-type="text" showLocation="false">
       The review's title.
-    </ResponseField>
-    <ResponseField name="reviews.userCity" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userCity" param-type="text" showLocation="false">
       The reviewer's city.
-    </ResponseField>
-    <ResponseField name="reviews.username" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.username" param-type="text" showLocation="false">
       The reviewer's username.
-    </ResponseField>
-    <ResponseField name="reviews.userProvince" field-type="text">
+    </ParamField>
+    <ParamField body="reviews.userProvince" param-type="text" showLocation="false">
       The reviewer's province or state.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="roofing" field-type="text">
+<ParamField body="roofing" param-type="text" showLocation="false">
   A list of materials the roof of the property is made from.
 
 
   **Example:** `"roofing": ["Asphalt", "Fiberglass"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="roomTypes" field-type="text">
+<ParamField body="roomTypes" param-type="text" showLocation="false">
   The types of rooms the property has.
 
 
   **Example:** `"roomTypes": ["Laundry","Great","Game"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="rules" field-type="text">
+<ParamField body="rules" param-type="text" showLocation="false">
   A list of rules for living or staying at this property.
 
 
   **Example:** `"rules": ["No smoking"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="saleCondition" field-type="text">
+<ParamField body="saleCondition" param-type="text" showLocation="false">
   The sale condition of a property as per the seller.
 
 
   **Example:** `"saleCondition": "1031 Exchange"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="saleType" field-type="text">
+<ParamField body="saleType" param-type="text" showLocation="false">
   The type of commercial sale of a property.
 
 
   **Example:** `"saleType": "Standard"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sewerType" field-type="text">
+<ParamField body="sewerType" param-type="text" showLocation="false">
   The type of sewer access of the property. (public, private, and/or septic)
 
 
   **Example:** `"sewerType": ["Private"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="sourceURLsPerField" field-type="nested">
+<ParamField body="sourceURLsPerField" param-type="nested" showLocation="false">
   The latest sourceURL for each field that Datafiniti provides in the property data schema.
 
   **Example:**
@@ -1575,16 +1576,16 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="sourceURLsPerField.Field" field-type="text">
+    <ParamField body="sourceURLsPerField.Field" param-type="text" showLocation="false">
       the property data top level field the sourceURL pertains to.
-    </ResponseField>
-    <ResponseField name="sourceURLsPerField.SourceURLs" field-type="text">
+    </ParamField>
+    <ParamField body="sourceURLsPerField.SourceURLs" param-type="text" showLocation="false">
       the source URL of the field.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="statuses" field-type="nested" deprecated="true">
+<ParamField body="statuses" param-type="nested" deprecated="true" showLocation="false">
   **Deprecated**
   A list of statuses for this property. This field is used to indicate when the property is for sale, etc.
   
@@ -1596,28 +1597,28 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="statuses.date" field-type="date">
+    <ParamField body="statuses.date" param-type="date" showLocation="false">
       Date the status occurred
-    </ResponseField>
-    <ResponseField name="statuses.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statuses.dateSeen" param-type="date" showLocation="false">
       A list of dates when this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statuses.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statuses.firstDateSeen" param-type="date" showLocation="false">
       the first date seen of this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statuses.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statuses.lastDateSeen" param-type="date" showLocation="false">
       the latest date seen of this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statuses.isUnderContract" field-type="boolean">
+    </ParamField>
+    <ParamField body="statuses.isUnderContract" param-type="boolean" showLocation="false">
       A true/false value to indicate if this status is under contract.
-    </ResponseField>
-    <ResponseField name="statuses.type" field-type="keyword">
+    </ParamField>
+    <ParamField body="statuses.type" param-type="keyword" showLocation="false">
       The status. See possible values [here](/docs/possible-values-for-property-fields).
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="statusHistory" field-type="nested">
+<ParamField body="statusHistory" param-type="nested" showLocation="false">
   A list of Historical statuses for this property. This field is used to indicate when the property is for sale, etc. No rental statuses are found here.
   
   Each status includes:
@@ -1628,90 +1629,90 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="statusHistory.date" field-type="date">
+    <ParamField body="statusHistory.date" param-type="date" showLocation="false">
       Date the status occurred
-    </ResponseField>
-    <ResponseField name="statusHistory.dateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statusHistory.dateSeen" param-type="date" showLocation="false">
       A list of dates when this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statusHistory.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statusHistory.firstDateSeen" param-type="date" showLocation="false">
       the first date seen of this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statusHistory.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="statusHistory.lastDateSeen" param-type="date" showLocation="false">
       the latest date seen of this status was seen by Datafiniti.
-    </ResponseField>
-    <ResponseField name="statusHistory.sourceURLs" field-type="url">
+    </ParamField>
+    <ParamField body="statusHistory.sourceURLs" param-type="url" showLocation="false">
       The sourceURL of the status.
-    </ResponseField>
-    <ResponseField name="statusHistory.type" field-type="keyword">
+    </ParamField>
+    <ParamField body="statusHistory.type" param-type="keyword" showLocation="false">
       The status. See possible values [here](/docs/possible-values-for-property-fields).
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="subtype" field-type="text">
+<ParamField body="subtype" param-type="text" showLocation="false">
   The subtype of the propertyType field.
 
 
   **Example:** `"subtype": ["Medical Office, Traditional Office"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="subdivision" field-type="string">
+<ParamField body="subdivision" param-type="string" showLocation="false">
   Subdivision / neighborhood of the property.
 
   **Example:** `"subdivision": "Crescent Heights Sub"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxExemptions" field-type="text">
+<ParamField body="taxExemptions" param-type="text" showLocation="false">
   A list of tax exemptions for the property.
 
 
   **Example:** `"taxExemptions": ["Homeowner", "Disabled", "Senior"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="taxID" field-type="keyword">
+<ParamField body="taxID" param-type="keyword" showLocation="false">
   The tax ID for the property.
 
 
   **Example:** `"taxID": "30-9011-019-0029758"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="tenancy" field-type="text">
+<ParamField body="tenancy" param-type="text" showLocation="false">
   The type of tenants the property allows.
 
 
   **Example:** `"tenancy": "Single"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="tenantCredit" field-type="text">
+<ParamField body="tenantCredit" param-type="text" showLocation="false">
   The credit approve for tenants wanting to rent the property.
 
 
   **Example:** `"tenantCredit": "Corporate Guarantee"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="title" field-type="text">
+<ParamField body="title" param-type="text" showLocation="false">
   The title text of the property.
 
 
   **Example:** `"title": "Single Family Residence, A-Frame - Snellville, GA"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="topographyCode" field-type="integer">
+<ParamField body="topographyCode" param-type="integer" showLocation="false">
   The topography code in relationship to the property.
 
 
   **Example:** `"topographyCode": 150`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="totalExpenses" field-type="float">
+<ParamField body="totalExpenses" param-type="float" showLocation="false">
   The total expense cost of the property.
 
 
   **Example:** `"totalExpenses": 24984`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="transactions" field-type="nested">
+<ParamField body="transactions" param-type="nested" showLocation="false">
   A list of transactional data for this property after a sale is completed. This field is used to indicate when the property was purchased and by who.
   
   Each transaction includes:
@@ -1722,83 +1723,83 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="transactions.buyerFirstName" field-type="string">
+    <ParamField body="transactions.buyerFirstName" param-type="string" showLocation="false">
       First name of the buyer.
-    </ResponseField>
-    <ResponseField name="transactions.buyerMiddleName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.buyerMiddleName" param-type="string" showLocation="false">
       Middle name of the buyer.
-    </ResponseField>
-    <ResponseField name="transactions.buyerLastName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.buyerLastName" param-type="string" showLocation="false">
       Last name of the buyer.
-    </ResponseField>
-    <ResponseField name="transactions.contactOwnerMailAddressFull" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.contactOwnerMailAddressFull" param-type="string" showLocation="false">
       Mailing address provided by the buyer at the time of the transaction.
-    </ResponseField>
-    <ResponseField name="transactions.documentNumber" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.documentNumber" param-type="string" showLocation="false">
       the document number of the transaction.
-    </ResponseField>
-    <ResponseField name="transactions.documentType" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.documentType" param-type="string" showLocation="false">
       Contains all documents attached in this transaction.
-    </ResponseField>
-    <ResponseField name="transactions.firstDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="transactions.firstDateSeen" param-type="date" showLocation="false">
       Earliest date seen from the source of the property listing by Datafiniti.
-    </ResponseField>
-    <ResponseField name="transactions.interestType" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.interestType" param-type="string" showLocation="false">
       interest rate by the lender.
-    </ResponseField>
-    <ResponseField name="transactions.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="transactions.lastDateSeen" param-type="date" showLocation="false">
       Latest date seen from the source of the property listing by Datafiniti.
-    </ResponseField>
-    <ResponseField name="transactions.lenderName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.lenderName" param-type="string" showLocation="false">
       Name of the lender.
-    </ResponseField>
-    <ResponseField name="transactions.loanType" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.loanType" param-type="string" showLocation="false">
       Type of loan for this transaction.
-    </ResponseField>
-    <ResponseField name="transactions.loanAmount" field-type="double">
+    </ParamField>
+    <ParamField body="transactions.loanAmount" param-type="double" showLocation="false">
       Loan amount by lending company.
-    </ResponseField>
-    <ResponseField name="transactions.mortgageTerm" field-type="integer">
+    </ParamField>
+    <ParamField body="transactions.mortgageTerm" param-type="integer" showLocation="false">
       Length in months of the loan.
-    </ResponseField>
-    <ResponseField name="transactions.ownerType" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.ownerType" param-type="string" showLocation="false">
       Type of owner for transaction.
-    </ResponseField>
-    <ResponseField name="transactions.parcelNumber" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.parcelNumber" param-type="string" showLocation="false">
       Number parcel was created.
-    </ResponseField>
-    <ResponseField name="transactions.price" field-type="double">
+    </ParamField>
+    <ParamField body="transactions.price" param-type="double" showLocation="false">
       Price of the property for this transaction.
-    </ResponseField>
-    <ResponseField name="transactions.saleDate" field-type="date">
+    </ParamField>
+    <ParamField body="transactions.saleDate" param-type="date" showLocation="false">
       Date the when transaction occurred
-    </ResponseField>
-    <ResponseField name="transactions.sellerFirstName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.sellerFirstName" param-type="string" showLocation="false">
       First name of the seller.
-    </ResponseField>
-    <ResponseField name="transactions.sellerMiddleName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.sellerMiddleName" param-type="string" showLocation="false">
       Middle name of the seller.
-    </ResponseField>
-    <ResponseField name="transactions.sellerLastName" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.sellerLastName" param-type="string" showLocation="false">
       Last name of the seller.
-    </ResponseField>
-    <ResponseField name="transactions.transactionID" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.transactionID" param-type="string" showLocation="false">
       the ID value of the transaction.
-    </ResponseField>
-    <ResponseField name="transactions.type" field-type="string">
+    </ParamField>
+    <ParamField body="transactions.type" param-type="string" showLocation="false">
       the type of transaction in relation to the saleDate.
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="trustDescription" field-type="string">
+<ParamField body="trustDescription" param-type="string" showLocation="false">
   The description of the trust information in relation to the property.
 
 
   **Example:** `"trustDescription": "Not a trust"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="vacancy" field-type="nested">
+<ParamField body="vacancy" param-type="nested" showLocation="false">
   The status of the vacancy of the property:
 
   **Example:**
@@ -1807,57 +1808,57 @@ The property data schema below lists all available fields in a property record. 
   ```
 
   <Expandable title="Sub-fields">
-    <ResponseField name="vacancy.firstDateSeen" field-type="date">
+    <ParamField body="vacancy.firstDateSeen" param-type="date" showLocation="false">
       Earliest date seen from the source of the vacancy by Datafiniti.
-    </ResponseField>
-    <ResponseField name="vacancy.lastDateSeen" field-type="date">
+    </ParamField>
+    <ParamField body="vacancy.lastDateSeen" param-type="date" showLocation="false">
       Latest date seen from the source of the vacancy by Datafiniti.
-    </ResponseField>
-    <ResponseField name="vacancy.vacant" field-type="boolean">
+    </ParamField>
+    <ParamField body="vacancy.vacant" param-type="boolean" showLocation="false">
       If the property is currently vacant
-    </ResponseField>
+    </ParamField>
   </Expandable>
-</ResponseField>
+</ParamField>
 
-<ResponseField name="vacancyLoss" field-type="float">
+<ParamField body="vacancyLoss" param-type="float" showLocation="false">
   The vacancy amount loss from the previous tenant(s).
 
 
   **Example:** `"vacancyLoss": 132000`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="virtualTour" field-type="link">
+<ParamField body="virtualTour" param-type="link" showLocation="false">
   The virtual tour link of a listing of the property.
 
 
   **Example:** `"virtualTour": "http://www.tourfactory.com/idxr1453880"`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="websiteIDs" field-type="keyword">
+<ParamField body="websiteIDs" param-type="keyword" showLocation="false">
   A list of website IDs for this property. Website IDs are tied to a specific online retailer. They are the unique identifier used by website. They are used by Datafiniti when other unique identifiers are not available for a property.
 
 
   **Example:** `"websiteIDs": ["domain.com-123", "website.com-4567"]`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="yearBuilt" field-type="integer">
+<ParamField body="yearBuilt" param-type="integer" showLocation="false">
   The year the property was built.
 
 
   **Example:** `"yearBuilt": 2021`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="yearRenovated" field-type="integer">
+<ParamField body="yearRenovated" param-type="integer" showLocation="false">
   The latest date the property was renovated.
 
 
   **Example:** `"yearRenovated": 2022`
-</ResponseField>
+</ParamField>
 
-<ResponseField name="zoning" field-type="string">
+<ParamField body="zoning" param-type="string" showLocation="false">
   The zoning value for the property.
 
 
   **Example:** `"zoning": "C-2PD"`
-</ResponseField>
+</ParamField>
 
