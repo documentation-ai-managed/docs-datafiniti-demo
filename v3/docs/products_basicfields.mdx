@@ -1,28 +1,35 @@
 ---
 title: products_basicFields
 ---
-
-The `products_basicFields` view displays a limited number of fields from our [product schema](/v3/docs/product-data-schema).  This is view is helpful when you need less information to do your analysis.
+The `products_basicFields` view displays a limited number of fields from our [product schema](/v3/docs/product-data-schema). This view is helpful when you need less information to do your analysis.
 
 If using the `csv` format, the `categories` field will be nested into a single cell, but the `sourceURLs` field will be split into multiple rows.
 
-
 ## Included Fields
 
-| Field | Included Sub-fields |
-| --- | --- |
-| `brand` | N/A |
-| `categories` | N/A |
-| `manufacturer` | N/A |
-| `name` | N/A |
-| `sourceURLs` | N/A |
-
+| Field          | Included Sub-fields |
+| -------------- | ------------------- |
+| `brand`        | N/A                 |
+| `categories`   | N/A                 |
+| `manufacturer` | N/A                 |
+| `name`         | N/A                 |
+| `sourceURLs`   | N/A                 |
 
 ## Sample CSV Output
 
-Right-click and choose "Save link as..." to download this sample so you can see it in Excel: [products_basicFields-CSV-example.csv](https://gist.githubusercontent.com/shiondev/dc1c8327cf29cfba4954d808ae29b7e8/raw/1177ca765f1aca0c176c4d7b52cb23f418130b45/product_basicFields-CSV-example.csv)
+Right-click and choose "Save link as..." to download this sample so you can see it in Excel: [products\_basicFields-CSV-example.csv](https://gist.githubusercontent.com/shiondev/dc1c8327cf29cfba4954d808ae29b7e8/raw/1177ca765f1aca0c176c4d7b52cb23f418130b45/product_basicFields-CSV-example.csv)
 
+```csv
+id,brand,categories,manufacturer,name,sourceURLs
+AVpgRL7qLJeJML43LfPj,Sparco,"Envelopes,Fax Paper,Forms,Paper,Stationery,All Paper & Printable Media,Office,Paper & Printable Media,Office Supplies,Paper, Forms & Envelopes,Sparco,Paper & Stationery",Sparco Products,Sparco Economy 7-inch Thermal Fax Paper (box of 6),https://www.overstock.com/Office-Supplies/Sparco-Economy-7-inch-Thermal-Fax-Paper-Box-of-6/9519127/product.html
+AVpgfD46LJeJML43Oi86,National Tree Company,"Garden,Garden Accents,Outdoor Decor,Patio,Home & Garden,Garden & Patio,Fencing,Lumber & Composites,Garden Fencing",,93 In. Garden Accents Gated Archway,https://www.overstock.com/Home-Garden/National-Tree-Company-93-inch-Metal-Arch-with-Gate/9999462/product.html
+AVpe_xo3LJeJML430Ex9,NEW,"Mobile Accessories,Cases, Covers, Skins",,Shockproof Dual Color Frame Pc+tpu Phone Case Back Cover For Iphone 6 4.7 6 Plus,http://www.ebay.com.au/itm/181988243122
+AVpe_xprLJeJML430Eya,ARB 4x4 Accessories,"Automotive,Body Styling,Bumpers,Exterior Accessories",,Arb 4x4 Accessories 4x4 Accessories 3420210 Front Deluxe Bull Bar Winch Mount Bumper,http://www.sears.com/content/pdp/config/products/v1/products/SPM9593083932
+AVpe_xqUilAPnD_xSpEI,Hugo Boss,"Fragrances,Women",,Boss Woman By Hugo Boss 3.0 Oz Eau De Parfum Spray Nib Sealed For Women,http://www.ebay.com/itm/331712278775
+AVph9Rkv1cnluZ0-IR1Q,Wildkin,"Bags,Lunch Bags,luggage & bags,Wildkin,Home,Kitchen & Dining,Kitchen Storage & Organization,Food Storage",Wildkin,Wildkin Peace Signs Munch 'n Lunch Bag,https://www.overstock.com/Luggage-Bags/Wildkin-Munch-n-Lunch-Bag-Peace-Signs-Purple/8100331/product.html
+```
 
+## Sample JSON Output
 
 ```json
 {

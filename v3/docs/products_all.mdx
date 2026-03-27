@@ -1,51 +1,64 @@
 ---
 title: products_all
 ---
-
 The `products_all` view will display all available fields in our [product schema](/v3/docs/product-data-schema).
 
 If using the `csv` format, it will split out elements in multi-valued field lists into separate rows.  This means a single product will show up in multiple, contiguous rows while its `categories`, `prices`, etc fields will have one entry per row for each element in their lists.
 
-
 ## Included Fields
 
-| Field | Included Sub-fields |
-| --- | --- |
-| `asins` | N/A |
-| `brand` | N/A |
-| `categories` | N/A |
-| `colors` | N/A |
-| `count` | N/A |
-| `dateAdded` | N/A |
-| `dateUpdated` | N/A |
-| `descriptions` | `dateSeen` <br/> `sourceURLs` <br/> `value` |
-| `dimension` | N/A |
-| `ean` | N/A |
-| `features` | `key` <br/> `value` |
-| `flavors` | N/A |
-| `imageURLs` | N/A |
-| `isbn` | N/A |
-| `keys` | N/A |
-| `manufacturer` | N/A |
-| `manufacturerNumber` | N/A |
-| `merchants` | `address` <br/> `availability` <br/> `city` <br/> `country` <br/> `dateSeen` <br/> `name` <br/> `phone` <br/> `postalCode` <br/> `province` |
-| `name` | N/A |
-| `prices` | `amountMin` <br/> `amountMax` <br/> `availability` <br/> `color` <br/> `condition` <br/> `count` <br/> `currency` <br/> `dateAdded` <br/> `dateSeen` <br/> `flavor` <br/> `isSale` <br/> `merchant` <br/> `offer` <br/> `returnPolicy` <br/> `shipping` <br/> `size` <br/> `source` <br/> `sourceURLs` <br/> `warranty` |
-| `reviews` | `date` <br/> `dateAdded` <br/> `dateSeen` <br/> `didPurchase` <br/> `doRecommend` <br/> `numHelpful` <br/> `rating` <br/> `sourceURLs` <br/> `text` <br/> `title` <br/> `userCity` <br/> `username` <br/> `userProvince` |
-| `sizes` | N/A |
-| `skus` | `sourceURLs` <br/> `value` |
-| `sourceURLs` | N/A |
-| `upc` | N/A |
-| `vin` | N/A |
-| `websiteID` | N/A |
-| `weight` | N/A |
-
+| Field                | Included Sub-fields                                                                                                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `asins`              | N/A                                                                                                                                                                                                                           |
+| `brand`              | N/A                                                                                                                                                                                                                           |
+| `categories`         | N/A                                                                                                                                                                                                                           |
+| `colors`             | N/A                                                                                                                                                                                                                           |
+| `count`              | N/A                                                                                                                                                                                                                           |
+| `dateAdded`          | N/A                                                                                                                                                                                                                           |
+| `dateUpdated`        | N/A                                                                                                                                                                                                                           |
+| `descriptions`       | `dateSeen`  `sourceURLs`  `value`                                                                                                                                                                                             |
+| `dimension`          | N/A                                                                                                                                                                                                                           |
+| `ean`                | N/A                                                                                                                                                                                                                           |
+| `features`           | `key`  `value`                                                                                                                                                                                                                |
+| `flavors`            | N/A                                                                                                                                                                                                                           |
+| `imageURLs`          | N/A                                                                                                                                                                                                                           |
+| `isbn`               | N/A                                                                                                                                                                                                                           |
+| `keys`               | N/A                                                                                                                                                                                                                           |
+| `manufacturer`       | N/A                                                                                                                                                                                                                           |
+| `manufacturerNumber` | N/A                                                                                                                                                                                                                           |
+| `merchants`          | `address`  `availability`  `city`  `country`  `dateSeen`  `name`  `phone`  `postalCode`  `province`                                                                                                                           |
+| `name`               | N/A                                                                                                                                                                                                                           |
+| `prices`             | `amountMin`  `amountMax`  `availability`  `color`  `condition`  `count`  `currency`  `dateAdded`  `dateSeen`  `flavor`  `isSale`  `merchant`  `offer`  `returnPolicy`  `shipping`  `size`  `source`  `sourceURLs`  `warranty` |
+| `reviews`            | `date`  `dateAdded`  `dateSeen`  `didPurchase`  `doRecommend`  `numHelpful`  `rating`  `sourceURLs`  `text`  `title`  `userCity`  `username`  `userProvince`                                                                  |
+| `sizes`              | N/A                                                                                                                                                                                                                           |
+| `skus`               | `sourceURLs`  `value`                                                                                                                                                                                                         |
+| `sourceURLs`         | N/A                                                                                                                                                                                                                           |
+| `upc`                | N/A                                                                                                                                                                                                                           |
+| `vin`                | N/A                                                                                                                                                                                                                           |
+| `websiteID`          | N/A                                                                                                                                                                                                                           |
+| `weight`             | N/A                                                                                                                                                                                                                           |
 
 ## Sample CSV Output
 
-Right-click and choose "Save link as..." to download this sample so you can see it in Excel: [products_all-CSV-example.csv](https://raw.githubusercontent.com/datafiniti/SampleData/master/6210_1.csv)
+Right-click and choose "Save link as..." to download this sample so you can see it in Excel: [products\_all-CSV-example.csv](https://raw.githubusercontent.com/datafiniti/SampleData/master/6210_1.csv)
 
+```csv
+id,asins,brand,categories,colors,count,dateAdded,dateUpdated,descriptions.dateSeen,descriptions.sourceURLs,descriptions.
+value,dimension,ean,features.key,features.value,flavors,websiteID,imageURLs,isbn,keys,manufacturer,manufacturerNumber,merchants.address,merchants.availability,merchants.
+city,merchants.country,merchants.dateSeen,merchants.name,merchants.phone,merchants.postalCode,merchants.
+province,name,prices.amountMin,prices.amountMax,prices.availability,prices.color,prices.condition,prices.
+count,prices.currency,prices.dateAdded,prices.dateSeen,prices.flavor,prices.isSale,prices.merchant,prices.offer,prices
+.returnPolicy,prices.shipping,prices.size,prices.source,prices.sourceURLs,prices.warranty,reviews.date,reviews.
+dateAdded,reviews.dateSeen,reviews.didPurchase,reviews.doRecommend,reviews.numHelpful,reviews.rating,reviews.sourceURLs,reviews.text,reviews.title,reviews.userCity,reviews.username,reviews.userProvince,sizes,skus.sourceURLs,skus.value,sourceURLs,upc,vin,weight
+"AVnjo8-lD1GB75FR6uL3",,,,,,"2015-08-17T18:43:00Z","2016-05-05T17:20:05Z",,,,,,,,,,,,,"sunville",,,,,,,,,,,"Brand New Women's Fashion Rubber Rain Boots / Bottes De Pluie",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"227 g"
+"AVnjo8-lD1GB75FR6uL3","B00MKHSLP2",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"AVnjo8-lD1GB75FR6uL3",,,"Women",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"AVnjo8-lD1GB75FR6uL3",,,"Shoes",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"AVnjo8-lD1GB75FR6uL3",,,"Shoes & Handbags",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"AVnjo8-lD1GB75FR6uL3",,,"Boots",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+```
 
+## Sample JSON Output
 
 ```json
 {
