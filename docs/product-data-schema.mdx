@@ -4,69 +4,1062 @@ title: Product Data Schema
 
 The product data schema below lists all available fields in a product record.  Note that actual product records (actually, most of them) may not have every field present.
 
-| Field Name | Example Value (in JSON) | Description |
-| --- | --- | --- |
-| `asins` | `"asins":  "B0009XCFRE"` | The ASIN (Amazon identifier) used for this product.   <br /> Field type: keyword |
-| `brand` | `"brand": "Sumsung Electronics"` | The brand name of this product as presented by the data source.   <br /> Field type: text |
-| `categories` | `"categories": [ <br />   "Home Improvement", <br />   "Heating, Cooling, & Air Quality", <br />   "Heaters", <br />   "Propane Heaters" <br /> ]` | A list of category keywords used for this product across multiple sources.   <br /> Field type: text |
-| `canonicalBrand` | `"canonicalBrand": "Sumsung"` | The canonical brand name after normalization of the name from the source.   <br /> Field type: text |
-| `colors` | `"colors": [ <br />   "White", <br />   "Black" <br /> ]` | A list of colors available for this product.   <br /> Field type: text |
-| `count` | `"count": "30"` | The number of units included in the product packaging.  Can include a description of the unit.   <br /> Field type: keyword |
-| `dateAdded` | `"dateAdded": "2017-01-08T19:12:13Z"` | The date this product was first added to the product database.   <br /> Field type: date |
-| `dateUpdated` | `"dateUpdated": "2017-01-08T19:12:13Z"` | The most recent date this product was updated or seen by our system.   <br /> Field type: date |
-| `descriptions` | `"descriptions": [ <br />   { <br />     "dateSeen": "2017-01-08T19:12:13Z", <br />     "sourceURLs": [    "https://www.domain.com/p/123" <br />     ], <br />     "value": "Now you can enjoy cooking <br /> your favorite food." <br />   }, <br />   { <br />     "sourceURLs": [ <br />  "http://www.website.com/4567" <br />     ], <br />     "value": "The Worthington Pro Grade 20 lb.  <br /> Empty Propane Tank goes with your gas barbecue grill  <br /> (sold separately) and accommodates 4.7 gallons of gas." <br />   } <br /> ]` | A list of descriptions for this product from various sources.  Each description contains:   <br /> Field type: nested   <br />    <br /> `dateSeen`: The date when this description has been seen selling this product.   <br /> Field type: date   <br />    <br /> `sourceURLs`: A list of source URLs where this specific description was seen.   <br /> Field type: keyword   <br />    <br /> `value`: A unique description for this product.   <br /> Field type: text |
-| `dimension` | `"dimension": "23 in x 43.7 in x 30 in",`   <br /> `"dimension": "16 ft x 22 ft",`   <br /> `"dimension": "15 mm x 42 mm x 34 mm"` | The length, width, and height of this product.  Units included.   <br /> Field type: keyword   <br /> [Dimensions Normalization](/docs/dimensions-normalization) |
-| `domains` | `"domains": [ <br />   "www.domain.com", <br />   "www.website.com" <br /> ]` | A list of each unique domain found in the `sourceURLs` field.   <br /> Field type: domain |
-| `ean` | `"ean": [ <br />   "0014045125963", <br />   "0014045125965" <br /> ]` | The EAN codes for this product.  There may be more than one EAN in the list when a product has multiple variations,   <br />  each using a different EAN.   <br />   [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).   <br /> Field type: keyword |
-| `ean13` | `"ean13":"0014045125963"` | The EAN-13 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).   <br /> Field type: keyword |
-| `ean8` | `"ean8":"96385074"` | The EAN-8 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).   <br /> Field type: keyword |
-| `features` | `"features": [ <br />   { <br />     "key": "Count", <br />     "replace": "true", <br />     "value": [ <br />       "1" <br />     ] <br />   }, <br />   { <br />     "key": "Included", <br />     "value": [ <br />       "Batteries" <br />     ] <br />   } <br /> ]` | A list of features associated with this product.  The feature list can be collected from specific feature sections available on product listings for the product.  It can also serve as a catch-all field for miscellaneous characteristics of this product that don't make sense to include as top-level fields.   <br /> Field type: nested   <br />    <br /> Each feature contains:   <br /> `key`: A label for this feature.   <br /> Field type: text   <br />    <br /> `replace`: Flag indicating value field is replaced versus appended.   <br /> Field type: boolean   <br />    <br /> `value`: A list of possible values for this feature.   <br /> Field type: text |
-| `financingAndLeasing` | `"financingAndLeasing": [ <br />   { <br />     "additionalDetails": [ <br />       "acquisitionFee: $925", <br />       "mileOverageFee: $0.30/mile" <br />     ], <br />     "apr": 4.15, <br />     "currency": "USD", <br />     "dateSeen": [ <br />       "2018-09-20T04:00:00Z" <br />     ], <br />     "description": "Well equipped with features", <br />     "disclaimers": "Offer not valid in Puerto Rico. <br /> Lease financing available", <br />     "dueAtSigningMax": 7694, <br />     "dueAtSigningMin": 7694, <br />     "milesPerYear": 22500, <br />     "monthlyPaymentMax": 1269, <br />     "monthlyPaymentMin": 1269, <br />     "name": "2018 Civic Si Coupe 6 <br /> Speed Manual Featured Special Lease", <br />     "offerStartDate": "2018-10-31T00:00:00.000Z", <br />     "offerEndDate": "2018-09-05T00:00:00.000Z", <br />     "term": "36 months", <br />     "type": "leasing", <br />     "securityDepositMax": 0, <br />     "securityDepositMin": 0, <br />     "sourceURLs": [ <br />     ] <br />   } <br /> ]` | A list of financing or leasing terms associated with this product.  Each term may contain:   <br /> Field type: text   <br />    <br /> `additionalDetails`: Any additional information related to this term.   <br /> Field type: text   <br />    <br /> `apr`: The annual percentage rate.   <br /> Field type: text   <br />    <br /> `currency`: The currency listed for any monetary values.   <br /> Field type: keyword   <br />    <br /> `dateSeen`: A list of dates when this term was seen.   <br /> Field type: date   <br />    <br /> `description`: The description provided for this term.   <br /> Field type: text   <br />    <br /> `disclaimers`: Any disclaimers associated with this term.   <br /> Field type: text   <br />    <br /> `dueAtSigningMax`: The maximum monetary amount due when purchasing this product under this term.   <br /> Field type: float   <br />    <br /> `dueAtSigningMin`: The minimum monetary amount due when purchasing this product under this term.   <br /> Field type: float   <br />    <br /> `milesPerYear`: Usually associated with vehicles, the maximum mileage allowed under this term.   <br /> Field type: float   <br />    <br /> `monthlyPaymentMax`: The maximum amount due each month under this term.   <br /> Field type: float   <br />    <br /> `monthlyPaymentMin`: The minimum amount due each month under this term.   <br /> Field type: float   <br />    <br /> `name`: The name for this term.   <br /> Field type: text   <br />    <br /> `type`: Either `financing` or `leasing`.   <br /> Field type: keyword   <br />    <br /> `securityDepositMax`: The maximum security deposit for this term.   <br /> Field type: float   <br />    <br /> `securityDepositMin`: The minimum security deposit for this term.   <br /> Field type: float   <br />    <br /> `sourceURLs`: A list of URLs where this term was seen.   <br /> Field type: keyword |
-| `flavors` | `"flavors": [ <br />   "Fruit Punch", <br />   "Berry", <br />   "Grape" <br /> ]` | A list of flavors available for this product.   <br /> Field type: text |
-| `gtins` | `"gtins": [ <br />   "0014045125963", <br />   "0014045125965", <br />   "014045125963", <br />   "014045125961", <br />   "425261", <br />   "3882215542" <br /> ]` | A list of all Global Trade Identifier Numbers for this product. Values will include all ean, isbn, and upc values.   <br />  [Learn more about GTINs](https://en.wikipedia.org/wiki/Global_Trade_Item_Number).   <br /> Field type: keyword |
-| `imageURLs` | `"imageURLs": [ <br />   "https://i5.images.com/asr.jpeg" <br /> ]` | A list of image URLs for this product.   <br /> Field type: keyword |
-| `isbn` | `"isbn": "3882215542"` | The ISBN code for this product.  [Learn more about ISBNs](https://en.wikipedia.org/wiki/International_Standard_Book_Number).   <br /> Field type: keyword |
-| `keys` | `"keys": [ <br />   "014045125963", <br />   "0014045125963", <br />   "worthington/299581" <br /> ]` | A list of internal Datafiniti identifiers for this product.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn how this works](/docs/how-product-records-are-merged)   <br /> Field type: keyword |
-| `manufacturer` | `"manufacturer": "Worthington"` | The manufacturer of this product.   <br /> Field type: text |
-| `manufacturerNumber` | `"manufacturerNumber": "299581"` | The manufacturer or model number of this product.   <br /> Field type: keyword |
-| `merchants` | `"merchants": [ <br />   { <br />     "address": "2801 S Ih 35", <br />     "availability": "...", <br />     "city": "Austin", <br />     "country": "US", <br />     "dateSeen": "2017-01-08T19:12:13Z", <br />     "isPrivateSeller": false <br />     "name": "Zappysales", <br />     "phone": "5127131234", <br />     "postalCode": "78701", <br />     "province": "TX" <br />   }, <br />   { <br />     "dateSeen": [ <br />       "2017-01-08T19:12:13Z" <br />     ], <br />     "name": "Next Day Mro, Llc" <br />   } <br />  ]` | A list of merchants selling this product.  These are typically third-party merchants found on e-commerce websites.   <br /> Field type: nested   <br />    <br /> Merchant objects can contain:   <br /> `address`: The merchant's physical address.   <br /> Field type: text   <br />    <br /> `availability`: A description of the product's availability with this merchant.   <br /> Field type: keyword   <br />    <br /> `city`: The merchant's city.   <br /> Field type: text   <br />    <br /> `dateSeen`: The date when this merchant has been seen selling this product.   <br /> Field type: date   <br />    <br /> `isPrivateSeller`: True if the merchant is an individual. False if it's a company.   <br /> Field type: boolean   <br />    <br /> `name`: The merchant's name.   <br /> Field type: text   <br />    <br /> `phone`: The merchant's phone number.   <br /> Field type: keyword   <br />    <br /> `postalCode`: The merchant's postal or zip code.   <br /> Field type: text   <br />    <br /> `province`: The merchant's province or state.   <br /> Field type: text |
-| `mostRecentPriceAmount` | `"mostRecentPriceAmount": 85` | The product's most recent price amount scraped.   <br /> Field type: float |
-| `mostRecentPriceAvailability` | `"mostRecentPriceAvailability": "true"` | The product's most recent price availability scraped.   <br /> Field type: text |
-| `mostRecentPriceByDomain` | `"mostRecentPriceByDomain": [ <br />                 { <br />                     "amount": 79.95, <br />                     "availability": "true", <br />                     "currency": "USD", <br />                     "isSale": "true", <br />                     "domain": "www.nordstrom.com", <br />                     "sourceURL": "https://www.nordstrom.com/s/sea-level-multifit-cross-front-bikini-top/5746068", <br />                     "date": "2022-03-29T16:43:23.440Z", <br /> "firstDateSeen": "2022-03-29T16:59:38.617Z" <br />                     ], <br />                 }, <br />                 { <br />                     "amount": 89.95, <br />                     "availability": "true", <br />                     "currency": "USD", <br />                     "isSale": "false", <br />                     "domain": "www.sephora.com", <br />                     "sourceURL": "https://www.sephora.com/s/5746068", <br />                     "date": "2022-03-29T16:40:43.440Z" <br />                 } <br />             ]` | A list of Prices of this product by each domain source.  These are typically third-party merchants found on e-commerce websites.   <br /> Field type: nested   <br />    <br /> `amount`: The price amount of the product by this domain.   <br /> Field type: text   <br />    <br /> `availability`: A true or false if this product is available at this price.   <br /> Field type: keyword   <br />    <br /> `currency`: The currency listed for amount.   <br /> Field type: text   <br />    <br /> `color`: The color associated with this price.   <br /> Field type: keyword   <br />    <br /> `condition`: The condition of the product when being sold at this price.   <br /> Field type: keyword   <br />    <br /> `date`: The date when this price was seen.   <br /> Field type: date   <br />    <br /> `domain`: The domain sourceURL of the product's price   <br /> Field type: domain   <br />    <br />  `firstDateSeen`: the date of when the record was first scraped by Datafiniti   <br /> Field Type: date   <br />    <br /> `isSale`: A true/false for whether or not this price is a sale/discounted price.   <br /> Field type: boolean   <br />    <br /> `size`: The size associated with this price.   <br /> Field type: text   <br />    <br /> `sourceURLs`: A list of URLs |
-| `mostRecentPriceColor` | `"mostRecentPriceColor": "Torrid - coral with shimmer"` | The most recent color(s) available for this product.   <br /> Field type: text |
-| `mostRecentPriceCondition` | `"condition": "Used",` | The condition most recently scrape of the product when being sold at this price.   <br /> Field type: keyword |
-| `mostRecentPriceCurrency` | `"mostRecentPriceCurrency": "USD"` | The currency listed for mostRecentPriceAmount.   <br /> Field type: text |
-| `mostRecentPriceDate` | `"mostRecentPriceDate": "2022-03-29T19:26:49.157Z"` | The most recent price date of the product record.   <br /> Field type: date |
-| `mostRecentPriceDomain` | `"mostRecentPriceDomain": "www.nordstrom.com"` | The domain of the most recent price scraped by Datafiniti   <br /> Field type: domain |
-| `mostRecentPriceIsSale` | `"mostRecentPriceIsSale": "true"` | A true/false for whether or not this price is a sale/discounted price.   <br /> Field type: boolean |
-| `mostRecentPriceSize` | `"mostRecentPriceSize": "M"` | The size associated with this mostRecentPrice.   <br /> Field type: text |
-| `mostRecentPriceSourceURL` | `"mostRecentPriceSourceURL": "https://www.nordstrom.com/s/ara-gloria-gore-tex-waterproof-bootie-women/5684497"` | The most recent URL used to generate data for this product.   <br /> Field type: keyword |
-| `name` | `"name": "Worthington 20-lb Tank"` | The product's name.   <br /> Field type: text |
-| `prices` | `"prices": [ <br />   { <br />     "amountMin": 59.96, <br />     "amountMax": 59.96, <br />     "availability": "true", <br />     "color": "Red", <br />     "condition": "New", <br />     "count": "15", <br />     "currency": "USD", <br />     "dateSeen": [ <br />       "2016-06-10T00:00:00Z" <br />     ], <br />     "flavor": "Cherry", <br />     "isSale": "false", <br />     "isSold": "false", <br />     "merchant": "domain.com", <br />     "offer": "22% off", <br />     "returnPolicy": "90-Day", <br />     "shipping": "FREE shipping", <br />     "size": "S", <br />     "sourceURLs": [ <br />       "https://www.domain.com/p/123", <br />      "warranty": "..." <br />     ] <br />   }, <br />   { <br />     "amountMin": 62.06, <br />     "amountMax": 72.06, <br />     "condition": "new", <br />     "currency": "USD", <br />     "dateSeen": [ <br />       "2016-10-28T00:00:00Z" <br />     ], <br />     "merchant": "MRO - website.com", <br />     "sourceURLs": [ <br />       "http://www.website.com/4567" <br />     ] <br />   } <br /> ]` | A list of prices for this product.   <br /> Field type: nested   <br />    <br /> Price objects may contain:   <br /> `amountMin`: The minimum price value listed.   <br /> Field type: float   <br />    <br /> `amountMax`: The maximum price value listed.  This is typically the same as amountMin, except in cases where a price range is listed.   <br /> Field type: float   <br />    <br /> `availability`: A true or false if this product is available at this price.   <br /> Field type: keyword   <br />    <br /> `color`: The color associated with this price.   <br /> Field type: keyword   <br />    <br /> `condition`: The condition of the product when being sold at this price.   <br /> Field type: keyword   <br />    <br /> `count`: The number of units being sold at this price.   <br /> Field type: keyword   <br />    <br /> `currency`: The currency listed for amountMin and amountMax.   <br /> Field type: text   <br />    <br /> `dateSeen`: A list of dates when this price was seen.   <br /> Field type: date   <br />    <br /> `flavor`: The flavor associated with this price.   <br /> Field type: keyword   <br />    <br /> `isSale`: A true/false for whether or not this price is a sale/discounted price.   <br /> Field type: boolean   <br />    <br /> `isSold`: A true/flase for whether or not the product has been sold at this price (typically reserved for vehicle listings).   <br /> Field type: boolean   <br />    <br /> `merchant`: The merchant and/or website selling at this price.   <br /> Field type: keyword   <br />    <br /> `offer`: Any special offer associated with this price.   <br /> Field type: text   <br />    <br /> `returnPolicy`: The return policy associated with this price.   <br /> Field type: text   <br />    <br /> `shipping`: The shipping terms associated with this price.   <br /> Field type: text   <br />    <br /> `size`: The size associated with this price.   <br /> Field type: text   <br />    <br /> `sourceURLs`: A list of URLs where this price was seen.   <br /> Field type: keyword   <br />    <br /> `warranty`: The warranty associated with this price.   <br /> Field type: text |
-| `primaryCategories` | `"primaryCategories": [ <br />   "Electronics" <br /> ]` | A list of standardized categories to which this product belongs.  Category values can be found [here](/docs/possible-values-for-product-fields).   <br /> Field type: text |
-| `primaryImageURLs` | `"primaryImageURLs: [ <br />    "https://www.amazon.com/i/123.jpg" <br />   "https://www.target.com/i/abc.jpg" <br /> ]` | A list of URLs for the primary images taken from each domain sourced in this record.  This list will only contain 1 URL per domain.   <br /> Field type: keyword |
-| `quantities` | `"quantities": [  <br />   { <br />     "dateSeen": [ <br />       "2013-06-02T16:00:00Z", <br />       "2014-05-01T14:00:00Z" <br />     ],  <br />     "sourceURLs": [ <br />       "http://www.website.com/4567" <br />     ], <br />     "value": 20 <br />   } <br /> ]` | A list of available quantities for this product.  Quantities indicate how many units of the product are available from a specific source at a given time.   <br /> Field type: nested   <br />    <br /> Quantity objects may contain:   <br /> `dateSeen`: A list of dates when this quantity was seen.   <br /> Field type: date   <br />    <br /> `sourceURLs`: A list of URLs where this quantity was seen.   <br /> Field type: keyword   <br />    <br /> `value`: The actual quantity value.   <br /> Field type: text |
-| `reviews` | `"reviews": [ <br />   { <br />     "date": "2015-06-16T00:00:00Z", <br />     "dateSeen": "2016-05-15T00:00:00Z", <br />     "didPurchase": true, <br />     "doRecommend": true, <br />     "id": "1234" <br />     "numHelpful": 4, <br />     "rating": 4, <br />     "sourceURLs": [ <br />         "http://www.website.com/4567" <br />     ], <br />     "text": "Nice tank at a below <br /> average cost for propane tanks.", <br />     "title": "Solid Propane Tank", <br />     "userCity": "...", <br />     "username": "Cole33", <br />     "userProvince": "..." <br />   }, <br />   { <br />     "date": "2015-01-06T00:00:00Z", <br />     "dateSeen": [ <br />       "2016-05-15T00:00:00Z" <br />     ], <br />     "rating": 5, <br />     "sourceURLs": [ <br />         "https://www.domain.com/p/123" <br />       ], <br />     "text": "Holds propane and does not leak.  <br /> Completed the given gift.", <br />     "title": "tanked", <br />     "username": "joel01" <br />   } <br /> ]` | A list of reviews for this product.   <br /> Field type: nested   <br />    <br /> Review objects may contain:   <br /> `date`: The date the review was posted.   <br /> Field type: date   <br />    <br /> `dateSeen`: The date when the review was seen by Datafiniti.   <br /> Field type: date   <br />    <br /> `didPurchase`: A true/false for whether or not the reviewer did purchase the product.   <br /> Field type: boolean   <br />    <br /> `doRecommend`: A true/false for whether or not the reviewer recommends the product.   <br /> Field type: boolean   <br />    <br /> `id`: The website ID associated with this review.   <br /> Field type: keyword   <br />    <br /> `numHelpful`: The number of people that found this review helpful.   <br /> Field type: integer   <br />    <br /> `rating`: A 1 to 5 start value for the review.   <br /> Field type: float   <br />    <br /> `sourceURLs`: A list of URLs where this review was seen.   <br /> Field type: keyword   <br />    <br /> `text`: The full (or available) text of the review.   <br /> Field type: text   <br />    <br /> `title`: The review's title.   <br /> Field type: text   <br />    <br /> `userCity`: The reviewer's city.   <br /> Field type: text   <br />    <br /> `username`: The reviewer's username.   <br /> Field type: text   <br />    <br /> `userProvince`: The reviewer's province or state.   <br /> Field type: text |
-| `sdsURLs` | `"sdsURLs": [ <br />   "https://images.homedepot-static.com/catalog <br /> /pdfImages/8c/8c72c7b4-1d29-41a3-b8ba-43699e42d44b.pdf" <br /> ]` | A list of URLs that lead to SDS for the given record.   <br /> Field type: keyword |
-| `secondaryCategories` | `"secondaryCategories": [ <br />   "Cell Phones" <br /> ]` | A list of second level standardized categories to which this product belongs.   <br /> Field type: text |
-| `sizes` | `"sizes": [ <br />   "Large", <br />   "Medium", <br />   "Small" <br /> ]` | A list of sizes available for this product.   <br /> Field type: text |
-| `skus` | `"skus": [ <br />   { <br />     "sourceURLs": [ <br />       "http://www.web.com/p/123" <br />     ], <br />     "value": "1234XK6" <br />   } <br /> ]` | A list of SKUs for this product.  SKUs are typically specific to individual retailers or websites.   <br /> Field type: nested   <br />    <br /> SKU objects may contain:   <br /> _ `sourceURLs`: A list of URLs where this SKU was seen.   <br /> Field type: keyword   <br />    <br /> `value`: The actual SKU.   <br /> Field type: text |
-| `sourceURLs` | `"sourceURLs": [  "https://www.domain.com/p/123, <br />  "http://www.website.com/4567" <br /> ]` | A list of URLs used to generate data for this product.   <br /> Field type: keyword |
-| `stockNum` | `"stockNum":"15365711"` | The stock number that corresponds to a product.   <br /> Field type: keyword |
-| `taxonomy` | `"taxonomy" : [ <br />             "automotive > motorcycle & powersports > parts > wheels & tires > tires & accessories > tires & inner tubes > motorcycle & scooter > motorcycle > street" <br />           ]` | Hierarchical classification(s) of a product.   <br /> Field type: taxonomy |
-| `taxonomyLevel1` | `"taxonomyLevel1" : [ <br />             "automotive" <br />           ]` | Top level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel2` | `"taxonomyLevel2" : [ <br />             "motorcycle & powersports" <br />           ]` | Second level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel3` | `"taxonomyLevel3" : [ <br />             "parts" <br />           ]` | Third level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel4` | `"taxonomyLevel4" : [ <br />             "wheels & tires" <br />           ]` | Fourth level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel5` | `"taxonomyLevel5" : [ <br />             "tires & accessories" <br />           ]` | Fifth level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel6` | `"taxonomyLevel6" : [ <br />             "tires & inner tubes" <br />           ]` | Sixth level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel7` | `"taxonomyLevel7" : [ <br />             "motorcycle & scooter" <br />           ]` | Seventh level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel8` | `"taxonomyLevel8" : [ <br />             "motorcycle" <br />           ]` | Eighth level classification of a product.   <br /> Field type: keyword |
-| `taxonomyLevel9` | `"taxonomyLevel9" : [ <br />             "street" <br />           ]` | Ninth level classification of a product.   <br /> Field type: keyword |
-| `upc` | `"upc": [ <br />   "014045125963", <br />   "014045125961" <br /> ]` | The UPC code for this product.   <br />   There may be more than one UPC in the list when a product has multiple variations,   <br />  each using a different UPC.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).   <br /> Field type: keyword |
-| `upca` | `"upca":"014045125963"` | The UPC-A code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).   <br /> Field type: keyword |
-| `upce` | `"upce":"425261"` | The UPC-E code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).   <br /> Field type: keyword |
-| `vin` | `"vin": "1FTMF1ET8EFB00361"` | The VIN code for this product.  This is specific to car listings.  [Learn more about VINs](https://en.wikipedia.org/wiki/Vehicle_identification_number).   <br /> Field type: keyword |
-| `websiteIDs` | `"websiteIDs": [ <br />   "domain.com-123", <br />   "website.com-4567" <br /> ]` | A list of website IDs for this product.  Website IDs are tied to a specific online retailer.  They are the unique identifier used by website.  They are used by Datafiniti when other unique identifiers are not available for a product.   <br /> Field type: keyword |
-| `weight` | `"weight": "20 lbs"` | The weight of the product.  Units included.   <br /> Field type: text |
+<ResponseField name="asins" field-type="keyword">
+  The ASIN (Amazon identifier) used for this product.
+
+
+  **Example:** `"asins":  "B0009XCFRE"`
+</ResponseField>
+
+<ResponseField name="brand" field-type="text">
+  The brand name of this product as presented by the data source.
+
+
+  **Example:** `"brand": "Sumsung Electronics"`
+</ResponseField>
+
+<ResponseField name="categories" field-type="text">
+  A list of category keywords used for this product across multiple sources.
+
+  **Example:**
+  ```json
+  "categories": [
+     "Home Improvement",
+     "Heating, Cooling, & Air Quality",
+     "Heaters",
+     "Propane Heaters"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="canonicalBrand" field-type="text">
+  The canonical brand name after normalization of the name from the source.
+
+
+  **Example:** `"canonicalBrand": "Sumsung"`
+</ResponseField>
+
+<ResponseField name="colors" field-type="text">
+  A list of colors available for this product.
+
+  **Example:**
+  ```json
+  "colors": [
+     "White",
+     "Black"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="count" field-type="keyword">
+  The number of units included in the product packaging.  Can include a description of the unit.
+
+
+  **Example:** `"count": "30"`
+</ResponseField>
+
+<ResponseField name="dateAdded" field-type="date">
+  The date this product was first added to the product database.
+
+
+  **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
+</ResponseField>
+
+<ResponseField name="dateUpdated" field-type="date">
+  The most recent date this product was updated or seen by our system.
+
+
+  **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
+</ResponseField>
+
+<ResponseField name="descriptions" field-type="nested">
+  A list of descriptions for this product from various sources.  Each description contains:
+
+  **Example:**
+  ```json
+  "descriptions": [
+     {
+       "dateSeen": "2017-01-08T19:12:13Z",
+       "sourceURLs": [    "https://www.domain.com/p/123"
+       ],
+       "value": "Now you can enjoy cooking
+   your favorite food."
+     },
+     {
+       "sourceURLs": [
+    "http://www.website.com/4567"
+       ],
+       "value": "The Worthington Pro Grade 20 lb.
+   Empty Propane Tank goes with your gas barbecue grill
+   (sold separately) and accommodates 4.7 gallons of gas."
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="descriptions.dateSeen" field-type="date">
+      The date when this description has been seen selling this product.
+    </ResponseField>
+    <ResponseField name="descriptions.sourceURLs" field-type="keyword">
+      A list of source URLs where this specific description was seen.
+    </ResponseField>
+    <ResponseField name="descriptions.value" field-type="text">
+      A unique description for this product.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="dimension" field-type="keyword">
+  The length, width, and height of this product.  Units included.
+   [Dimensions Normalization](/docs/dimensions-normalization)
+
+  **Example:**
+  ```json
+  "dimension": "23 in x 43.7 in x 30 in",`
+   `"dimension": "16 ft x 22 ft",`
+   `"dimension": "15 mm x 42 mm x 34 mm"
+  ```
+</ResponseField>
+
+<ResponseField name="domains" field-type="domain">
+  A list of each unique domain found in the `sourceURLs` field.
+
+  **Example:**
+  ```json
+  "domains": [
+     "www.domain.com",
+     "www.website.com"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="ean" field-type="keyword">
+  The EAN codes for this product.  There may be more than one EAN in the list when a product has multiple variations,
+    each using a different EAN.
+     [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
+
+  **Example:**
+  ```json
+  "ean": [
+     "0014045125963",
+     "0014045125965"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="ean13" field-type="keyword">
+  The EAN-13 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
+
+
+  **Example:** `"ean13":"0014045125963"`
+</ResponseField>
+
+<ResponseField name="ean8" field-type="keyword">
+  The EAN-8 code for this product.    [Learn more about EANs](https://en.wikipedia.org/wiki/International_Article_Number).
+
+
+  **Example:** `"ean8":"96385074"`
+</ResponseField>
+
+<ResponseField name="features" field-type="nested">
+  A list of features associated with this product.  The feature list can be collected from specific feature sections available on product listings for the product.  It can also serve as a catch-all field for miscellaneous characteristics of this product that don't make sense to include as top-level fields.
+  
+   Each feature contains:
+
+  **Example:**
+  ```json
+  "features": [
+     {
+       "key": "Count",
+       "replace": "true",
+       "value": [
+         "1"
+       ]
+     },
+     {
+       "key": "Included",
+       "value": [
+         "Batteries"
+       ]
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="features.key" field-type="text">
+      A label for this feature.
+    </ResponseField>
+    <ResponseField name="features.replace" field-type="boolean">
+      Flag indicating value field is replaced versus appended.
+    </ResponseField>
+    <ResponseField name="features.value" field-type="text">
+      A list of possible values for this feature.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="financingAndLeasing" field-type="text">
+  A list of financing or leasing terms associated with this product.  Each term may contain:
+
+  **Example:**
+  ```json
+  "financingAndLeasing": [
+     {
+       "additionalDetails": [
+         "acquisitionFee: $925",
+         "mileOverageFee: $0.30/mile"
+       ],
+       "apr": 4.15,
+       "currency": "USD",
+       "dateSeen": [
+         "2018-09-20T04:00:00Z"
+       ],
+       "description": "Well equipped with features",
+       "disclaimers": "Offer not valid in Puerto Rico.
+   Lease financing available",
+       "dueAtSigningMax": 7694,
+       "dueAtSigningMin": 7694,
+       "milesPerYear": 22500,
+       "monthlyPaymentMax": 1269,
+       "monthlyPaymentMin": 1269,
+       "name": "2018 Civic Si Coupe 6
+   Speed Manual Featured Special Lease",
+       "offerStartDate": "2018-10-31T00:00:00.000Z",
+       "offerEndDate": "2018-09-05T00:00:00.000Z",
+       "term": "36 months",
+       "type": "leasing",
+       "securityDepositMax": 0,
+       "securityDepositMin": 0,
+       "sourceURLs": [
+       ]
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="financingAndLeasing.additionalDetails" field-type="text">
+      Any additional information related to this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.apr" field-type="text">
+      The annual percentage rate.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.currency" field-type="keyword">
+      The currency listed for any monetary values.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.dateSeen" field-type="date">
+      A list of dates when this term was seen.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.description" field-type="text">
+      The description provided for this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.disclaimers" field-type="text">
+      Any disclaimers associated with this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.dueAtSigningMax" field-type="float">
+      The maximum monetary amount due when purchasing this product under this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.dueAtSigningMin" field-type="float">
+      The minimum monetary amount due when purchasing this product under this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.milesPerYear" field-type="float">
+      Usually associated with vehicles, the maximum mileage allowed under this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.monthlyPaymentMax" field-type="float">
+      The maximum amount due each month under this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.monthlyPaymentMin" field-type="float">
+      The minimum amount due each month under this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.name" field-type="text">
+      The name for this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.type" field-type="keyword">
+      Either `financing` or `leasing`.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.securityDepositMax" field-type="float">
+      The maximum security deposit for this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.securityDepositMin" field-type="float">
+      The minimum security deposit for this term.
+    </ResponseField>
+    <ResponseField name="financingAndLeasing.sourceURLs" field-type="keyword">
+      A list of URLs where this term was seen.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="flavors" field-type="text">
+  A list of flavors available for this product.
+
+  **Example:**
+  ```json
+  "flavors": [
+     "Fruit Punch",
+     "Berry",
+     "Grape"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="gtins" field-type="keyword">
+  A list of all Global Trade Identifier Numbers for this product. Values will include all ean, isbn, and upc values.
+    [Learn more about GTINs](https://en.wikipedia.org/wiki/Global_Trade_Item_Number).
+
+  **Example:**
+  ```json
+  "gtins": [
+     "0014045125963",
+     "0014045125965",
+     "014045125963",
+     "014045125961",
+     "425261",
+     "3882215542"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="imageURLs" field-type="keyword">
+  A list of image URLs for this product.
+
+  **Example:**
+  ```json
+  "imageURLs": [
+     "https://i5.images.com/asr.jpeg"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="isbn" field-type="keyword">
+  The ISBN code for this product.  [Learn more about ISBNs](https://en.wikipedia.org/wiki/International_Standard_Book_Number).
+
+
+  **Example:** `"isbn": "3882215542"`
+</ResponseField>
+
+<ResponseField name="keys" field-type="keyword">
+  A list of internal Datafiniti identifiers for this product.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn how this works](/docs/how-product-records-are-merged)
+
+  **Example:**
+  ```json
+  "keys": [
+     "014045125963",
+     "0014045125963",
+     "worthington/299581"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="manufacturer" field-type="text">
+  The manufacturer of this product.
+
+
+  **Example:** `"manufacturer": "Worthington"`
+</ResponseField>
+
+<ResponseField name="manufacturerNumber" field-type="keyword">
+  The manufacturer or model number of this product.
+
+
+  **Example:** `"manufacturerNumber": "299581"`
+</ResponseField>
+
+<ResponseField name="merchants" field-type="nested">
+  A list of merchants selling this product.  These are typically third-party merchants found on e-commerce websites.
+  
+   Merchant objects can contain:
+
+  **Example:**
+  ```json
+  "merchants": [
+     {
+       "address": "2801 S Ih 35",
+       "availability": "...",
+       "city": "Austin",
+       "country": "US",
+       "dateSeen": "2017-01-08T19:12:13Z",
+       "isPrivateSeller": false
+       "name": "Zappysales",
+       "phone": "5127131234",
+       "postalCode": "78701",
+       "province": "TX"
+     },
+     {
+       "dateSeen": [
+         "2017-01-08T19:12:13Z"
+       ],
+       "name": "Next Day Mro, Llc"
+     }
+    ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="merchants.address" field-type="text">
+      The merchant's physical address.
+    </ResponseField>
+    <ResponseField name="merchants.availability" field-type="keyword">
+      A description of the product's availability with this merchant.
+    </ResponseField>
+    <ResponseField name="merchants.city" field-type="text">
+      The merchant's city.
+    </ResponseField>
+    <ResponseField name="merchants.dateSeen" field-type="date">
+      The date when this merchant has been seen selling this product.
+    </ResponseField>
+    <ResponseField name="merchants.isPrivateSeller" field-type="boolean">
+      True if the merchant is an individual. False if it's a company.
+    </ResponseField>
+    <ResponseField name="merchants.name" field-type="text">
+      The merchant's name.
+    </ResponseField>
+    <ResponseField name="merchants.phone" field-type="keyword">
+      The merchant's phone number.
+    </ResponseField>
+    <ResponseField name="merchants.postalCode" field-type="text">
+      The merchant's postal or zip code.
+    </ResponseField>
+    <ResponseField name="merchants.province" field-type="text">
+      The merchant's province or state.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="mostRecentPriceAmount" field-type="float">
+  The product's most recent price amount scraped.
+
+
+  **Example:** `"mostRecentPriceAmount": 85`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceAvailability" field-type="text">
+  The product's most recent price availability scraped.
+
+
+  **Example:** `"mostRecentPriceAvailability": "true"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceByDomain" field-type="nested">
+  A list of Prices of this product by each domain source.  These are typically third-party merchants found on e-commerce websites.
+
+  **Example:**
+  ```json
+  "mostRecentPriceByDomain": [
+                   {
+                       "amount": 79.95,
+                       "availability": "true",
+                       "currency": "USD",
+                       "isSale": "true",
+                       "domain": "www.nordstrom.com",
+                       "sourceURL": "https://www.nordstrom.com/s/sea-level-multifit-cross-front-bikini-top/5746068",
+                       "date": "2022-03-29T16:43:23.440Z",
+   "firstDateSeen": "2022-03-29T16:59:38.617Z"
+                       ],
+                   },
+                   {
+                       "amount": 89.95,
+                       "availability": "true",
+                       "currency": "USD",
+                       "isSale": "false",
+                       "domain": "www.sephora.com",
+                       "sourceURL": "https://www.sephora.com/s/5746068",
+                       "date": "2022-03-29T16:40:43.440Z"
+                   }
+               ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="mostRecentPriceByDomain.amount" field-type="text">
+      The price amount of the product by this domain.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.availability" field-type="keyword">
+      A true or false if this product is available at this price.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.currency" field-type="text">
+      The currency listed for amount.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.color" field-type="keyword">
+      The color associated with this price.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.condition" field-type="keyword">
+      The condition of the product when being sold at this price.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.date" field-type="date">
+      The date when this price was seen.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.domain" field-type="domain">
+      The domain sourceURL of the product's price
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.firstDateSeen" field-type="date">
+      the date of when the record was first scraped by Datafiniti
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.isSale" field-type="boolean">
+      A true/false for whether or not this price is a sale/discounted price.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.size" field-type="text">
+      The size associated with this price.
+    </ResponseField>
+    <ResponseField name="mostRecentPriceByDomain.sourceURLs" field-type="text">
+      A list of URLs
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="mostRecentPriceColor" field-type="text">
+  The most recent color(s) available for this product.
+
+
+  **Example:** `"mostRecentPriceColor": "Torrid - coral with shimmer"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceCondition" field-type="keyword">
+  The condition most recently scrape of the product when being sold at this price.
+
+
+  **Example:** `"condition": "Used",`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceCurrency" field-type="text">
+  The currency listed for mostRecentPriceAmount.
+
+
+  **Example:** `"mostRecentPriceCurrency": "USD"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceDate" field-type="date">
+  The most recent price date of the product record.
+
+
+  **Example:** `"mostRecentPriceDate": "2022-03-29T19:26:49.157Z"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceDomain" field-type="domain">
+  The domain of the most recent price scraped by Datafiniti
+
+
+  **Example:** `"mostRecentPriceDomain": "www.nordstrom.com"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceIsSale" field-type="boolean">
+  A true/false for whether or not this price is a sale/discounted price.
+
+
+  **Example:** `"mostRecentPriceIsSale": "true"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceSize" field-type="text">
+  The size associated with this mostRecentPrice.
+
+
+  **Example:** `"mostRecentPriceSize": "M"`
+</ResponseField>
+
+<ResponseField name="mostRecentPriceSourceURL" field-type="keyword">
+  The most recent URL used to generate data for this product.
+
+  **Example:**
+  ```json
+  "mostRecentPriceSourceURL": "https://www.nordstrom.com/s/ara-gloria-gore-tex-waterproof-bootie-women/5684497"
+  ```
+</ResponseField>
+
+<ResponseField name="name" field-type="text">
+  The product's name.
+
+
+  **Example:** `"name": "Worthington 20-lb Tank"`
+</ResponseField>
+
+<ResponseField name="prices" field-type="nested">
+  A list of prices for this product.
+  
+   Price objects may contain:
+
+  **Example:**
+  ```json
+  "prices": [
+     {
+       "amountMin": 59.96,
+       "amountMax": 59.96,
+       "availability": "true",
+       "color": "Red",
+       "condition": "New",
+       "count": "15",
+       "currency": "USD",
+       "dateSeen": [
+         "2016-06-10T00:00:00Z"
+       ],
+       "flavor": "Cherry",
+       "isSale": "false",
+       "isSold": "false",
+       "merchant": "domain.com",
+       "offer": "22% off",
+       "returnPolicy": "90-Day",
+       "shipping": "FREE shipping",
+       "size": "S",
+       "sourceURLs": [
+         "https://www.domain.com/p/123",
+        "warranty": "..."
+       ]
+     },
+     {
+       "amountMin": 62.06,
+       "amountMax": 72.06,
+       "condition": "new",
+       "currency": "USD",
+       "dateSeen": [
+         "2016-10-28T00:00:00Z"
+       ],
+       "merchant": "MRO - website.com",
+       "sourceURLs": [
+         "http://www.website.com/4567"
+       ]
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="prices.amountMin" field-type="float">
+      The minimum price value listed.
+    </ResponseField>
+    <ResponseField name="prices.amountMax" field-type="float">
+      The maximum price value listed.  This is typically the same as amountMin, except in cases where a price range is listed.
+    </ResponseField>
+    <ResponseField name="prices.availability" field-type="keyword">
+      A true or false if this product is available at this price.
+    </ResponseField>
+    <ResponseField name="prices.color" field-type="keyword">
+      The color associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.condition" field-type="keyword">
+      The condition of the product when being sold at this price.
+    </ResponseField>
+    <ResponseField name="prices.count" field-type="keyword">
+      The number of units being sold at this price.
+    </ResponseField>
+    <ResponseField name="prices.currency" field-type="text">
+      The currency listed for amountMin and amountMax.
+    </ResponseField>
+    <ResponseField name="prices.dateSeen" field-type="date">
+      A list of dates when this price was seen.
+    </ResponseField>
+    <ResponseField name="prices.flavor" field-type="keyword">
+      The flavor associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.isSale" field-type="boolean">
+      A true/false for whether or not this price is a sale/discounted price.
+    </ResponseField>
+    <ResponseField name="prices.isSold" field-type="boolean">
+      A true/flase for whether or not the product has been sold at this price (typically reserved for vehicle listings).
+    </ResponseField>
+    <ResponseField name="prices.merchant" field-type="keyword">
+      The merchant and/or website selling at this price.
+    </ResponseField>
+    <ResponseField name="prices.offer" field-type="text">
+      Any special offer associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.returnPolicy" field-type="text">
+      The return policy associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.shipping" field-type="text">
+      The shipping terms associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.size" field-type="text">
+      The size associated with this price.
+    </ResponseField>
+    <ResponseField name="prices.sourceURLs" field-type="keyword">
+      A list of URLs where this price was seen.
+    </ResponseField>
+    <ResponseField name="prices.warranty" field-type="text">
+      The warranty associated with this price.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="primaryCategories" field-type="text">
+  A list of standardized categories to which this product belongs.  Category values can be found [here](/docs/possible-values-for-product-fields).
+
+  **Example:**
+  ```json
+  "primaryCategories": [
+     "Electronics"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="primaryImageURLs" field-type="keyword">
+  A list of URLs for the primary images taken from each domain sourced in this record.  This list will only contain 1 URL per domain.
+
+  **Example:**
+  ```json
+  "primaryImageURLs: [
+      "https://www.amazon.com/i/123.jpg"
+     "https://www.target.com/i/abc.jpg"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="quantities" field-type="nested">
+  A list of available quantities for this product.  Quantities indicate how many units of the product are available from a specific source at a given time.
+  
+   Quantity objects may contain:
+
+  **Example:**
+  ```json
+  "quantities": [
+     {
+       "dateSeen": [
+         "2013-06-02T16:00:00Z",
+         "2014-05-01T14:00:00Z"
+       ],
+       "sourceURLs": [
+         "http://www.website.com/4567"
+       ],
+       "value": 20
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="quantities.dateSeen" field-type="date">
+      A list of dates when this quantity was seen.
+    </ResponseField>
+    <ResponseField name="quantities.sourceURLs" field-type="keyword">
+      A list of URLs where this quantity was seen.
+    </ResponseField>
+    <ResponseField name="quantities.value" field-type="text">
+      The actual quantity value.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="reviews" field-type="nested">
+  A list of reviews for this product.
+  
+   Review objects may contain:
+
+  **Example:**
+  ```json
+  "reviews": [
+     {
+       "date": "2015-06-16T00:00:00Z",
+       "dateSeen": "2016-05-15T00:00:00Z",
+       "didPurchase": true,
+       "doRecommend": true,
+       "id": "1234"
+       "numHelpful": 4,
+       "rating": 4,
+       "sourceURLs": [
+           "http://www.website.com/4567"
+       ],
+       "text": "Nice tank at a below
+   average cost for propane tanks.",
+       "title": "Solid Propane Tank",
+       "userCity": "...",
+       "username": "Cole33",
+       "userProvince": "..."
+     },
+     {
+       "date": "2015-01-06T00:00:00Z",
+       "dateSeen": [
+         "2016-05-15T00:00:00Z"
+       ],
+       "rating": 5,
+       "sourceURLs": [
+           "https://www.domain.com/p/123"
+         ],
+       "text": "Holds propane and does not leak.
+   Completed the given gift.",
+       "title": "tanked",
+       "username": "joel01"
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="reviews.date" field-type="date">
+      The date the review was posted.
+    </ResponseField>
+    <ResponseField name="reviews.dateSeen" field-type="date">
+      The date when the review was seen by Datafiniti.
+    </ResponseField>
+    <ResponseField name="reviews.didPurchase" field-type="boolean">
+      A true/false for whether or not the reviewer did purchase the product.
+    </ResponseField>
+    <ResponseField name="reviews.doRecommend" field-type="boolean">
+      A true/false for whether or not the reviewer recommends the product.
+    </ResponseField>
+    <ResponseField name="reviews.id" field-type="keyword">
+      The website ID associated with this review.
+    </ResponseField>
+    <ResponseField name="reviews.numHelpful" field-type="integer">
+      The number of people that found this review helpful.
+    </ResponseField>
+    <ResponseField name="reviews.rating" field-type="float">
+      A 1 to 5 start value for the review.
+    </ResponseField>
+    <ResponseField name="reviews.sourceURLs" field-type="keyword">
+      A list of URLs where this review was seen.
+    </ResponseField>
+    <ResponseField name="reviews.text" field-type="text">
+      The full (or available) text of the review.
+    </ResponseField>
+    <ResponseField name="reviews.title" field-type="text">
+      The review's title.
+    </ResponseField>
+    <ResponseField name="reviews.userCity" field-type="text">
+      The reviewer's city.
+    </ResponseField>
+    <ResponseField name="reviews.username" field-type="text">
+      The reviewer's username.
+    </ResponseField>
+    <ResponseField name="reviews.userProvince" field-type="text">
+      The reviewer's province or state.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="sdsURLs" field-type="keyword">
+  A list of URLs that lead to SDS for the given record.
+
+  **Example:**
+  ```json
+  "sdsURLs": [
+     "https://images.homedepot-static.com/catalog
+   /pdfImages/8c/8c72c7b4-1d29-41a3-b8ba-43699e42d44b.pdf"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="secondaryCategories" field-type="text">
+  A list of second level standardized categories to which this product belongs.
+
+  **Example:**
+  ```json
+  "secondaryCategories": [
+     "Cell Phones"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="sizes" field-type="text">
+  A list of sizes available for this product.
+
+  **Example:**
+  ```json
+  "sizes": [
+     "Large",
+     "Medium",
+     "Small"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="skus" field-type="nested">
+  A list of SKUs for this product.  SKUs are typically specific to individual retailers or websites.
+  
+   SKU objects may contain:
+
+  **Example:**
+  ```json
+  "skus": [
+     {
+       "sourceURLs": [
+         "http://www.web.com/p/123"
+       ],
+       "value": "1234XK6"
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="skus.sourceURLs" field-type="keyword">
+      A list of URLs where this SKU was seen.
+    </ResponseField>
+    <ResponseField name="skus.value" field-type="text">
+      The actual SKU.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="sourceURLs" field-type="keyword">
+  A list of URLs used to generate data for this product.
+
+  **Example:**
+  ```json
+  "sourceURLs": [  "https://www.domain.com/p/123,
+    "http://www.website.com/4567"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="stockNum" field-type="keyword">
+  The stock number that corresponds to a product.
+
+
+  **Example:** `"stockNum":"15365711"`
+</ResponseField>
+
+<ResponseField name="taxonomy" field-type="taxonomy">
+  Hierarchical classification(s) of a product.
+
+  **Example:**
+  ```json
+  "taxonomy" : [
+               "automotive > motorcycle & powersports > parts > wheels & tires > tires & accessories > tires & inner tubes > motorcycle & scooter > motorcycle > street"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel1" field-type="keyword">
+  Top level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel1" : [
+               "automotive"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel2" field-type="keyword">
+  Second level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel2" : [
+               "motorcycle & powersports"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel3" field-type="keyword">
+  Third level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel3" : [
+               "parts"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel4" field-type="keyword">
+  Fourth level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel4" : [
+               "wheels & tires"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel5" field-type="keyword">
+  Fifth level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel5" : [
+               "tires & accessories"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel6" field-type="keyword">
+  Sixth level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel6" : [
+               "tires & inner tubes"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel7" field-type="keyword">
+  Seventh level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel7" : [
+               "motorcycle & scooter"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel8" field-type="keyword">
+  Eighth level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel8" : [
+               "motorcycle"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="taxonomyLevel9" field-type="keyword">
+  Ninth level classification of a product.
+
+  **Example:**
+  ```json
+  "taxonomyLevel9" : [
+               "street"
+             ]
+  ```
+</ResponseField>
+
+<ResponseField name="upc" field-type="keyword">
+  The UPC code for this product.
+     There may be more than one UPC in the list when a product has multiple variations,
+    each using a different UPC.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
+
+  **Example:**
+  ```json
+  "upc": [
+     "014045125963",
+     "014045125961"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="upca" field-type="keyword">
+  The UPC-A code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
+
+
+  **Example:** `"upca":"014045125963"`
+</ResponseField>
+
+<ResponseField name="upce" field-type="keyword">
+  The UPC-E code for this product.  [Learn more about UPCs](https://en.wikipedia.org/wiki/Universal_Product_Code).
+
+
+  **Example:** `"upce":"425261"`
+</ResponseField>
+
+<ResponseField name="vin" field-type="keyword">
+  The VIN code for this product.  This is specific to car listings.  [Learn more about VINs](https://en.wikipedia.org/wiki/Vehicle_identification_number).
+
+
+  **Example:** `"vin": "1FTMF1ET8EFB00361"`
+</ResponseField>
+
+<ResponseField name="websiteIDs" field-type="keyword">
+  A list of website IDs for this product.  Website IDs are tied to a specific online retailer.  They are the unique identifier used by website.  They are used by Datafiniti when other unique identifiers are not available for a product.
+
+  **Example:**
+  ```json
+  "websiteIDs": [
+     "domain.com-123",
+     "website.com-4567"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="weight" field-type="text">
+  The weight of the product.  Units included.
+
+
+  **Example:** `"weight": "20 lbs"`
+</ResponseField>
+
 

@@ -4,57 +4,379 @@ title: People Data Schema
 
 The people data schema below lists all available fields in a people record.  Note that actual people records may not have every field present.
 
-| Field Name | Example Value (in JSON) | Description |
-| --- | --- | --- |
-| `address` | `"address": "1125 Lancaster Avenue"` | The current work address of this person.   <br /> Field type: text |
-| `birthDate` | `"birthDate": "1977-10-02"         ` | The full date of birth of the person in `YYYY-MM-DD` format.   <br /> Field type: date |
-| `birthYear` | `"birthYear": "1977"` | The birth year of the person in `YYYY` format.   <br /> Field type: integer |
-| `businessCategories` | `"businessCategories": [ <br />   "Advertising Agencies" <br /> ]` | A list of category keywords used for the business the person currently works in. Business Categories for people data can be found [here](/docs/possible-values-for-people-fields).   <br /> Field type: text |
-| `businessName` | `"businessName": "International Direct Response Inc"` | The current business where this person works.   <br /> Field type: text |
-| `city` | `"city": "Berwyn"` | The current city where this person works.   <br /> Field type: text |
-| `country` | `"country": "US"` | The current country where this person works.   <br /> Field type: text |
-| `dateAdded` | `"dateAdded": "2017-01-08T19:12:13Z"` | The date this person was first added to the people database.   <br /> Field type: date |
-| `dateOfDeath` | `"dateOfDeath": "2020-07-27T00:00:00Z"` | The date of death of the person.   <br /> Field type: date |
-| `dateUpdated` | `"dateUpdated": "2017-01-08T19:12:13Z"` | The most recent date this person was updated or seen by our system.   <br /> Field type: date |
-| `deceased` | `"deceased": true` | The value to determine if the person is currently deseased.   <br /> Field type: boolean |
-| `domains` | `"domains": [ <br />   "datafiniti.co" <br /> ]` | A list of each unique domain found in the `sourceURLs` field.   <br /> Field type: domain |
-| `emails` | `"emails": [ <br />   "doug@idronline.net" <br /> ]` | A list of emails associated with this person.   <br /> Field type: text |
-| `firstName` | `"firstName": "Doug"` | The person's first name.   <br /> Field type: text |
-| `gender` | `"gender": "male"` | The person's gender.   <br /> Field type: text |
-| `industries` | `"industries": [   <br />   "Advertising Agencies" <br /> ]` | A list of category keywords used for previous businesses in the person's experience. Industries for people data can be found [here](/docs/possible-values-for-people-fields).   <br /> Field type: text |
-| `interests` | `"interests": [ <br />   "disaster and humanitarian relief", <br />   "politics", <br />   "human rights", <br />   "psychology", <br />   "reddit", <br />   "cooking", <br />   "starcraft ii", <br />   "startups", <br />   "online dating", <br />   "saas", <br />   "painting", <br />   "heroes of newerth", <br />   "ventures for good" <br /> ]` | The personal interests of the person.   <br /> Field type: text |
-| `jobFunction` | `"jobFunction": "Marketing"` | The person's current job function.  Job function values can be found [here](/docs/possible-values-for-people-fields).   <br /> Field type: text |
-| `jobLevel` | `"jobLevel": "C-Team"` | The person's current job level.   <br />  Job level values can be found [here](/docs/possible-values-for-people-fields).   <br /> Field type: text |
-| `jobSkills` | `"jobSkills": [ <br />   "enterprise software", <br />   "start ups", <br />   "monetization", <br />   "social networking", <br />   "usability", <br />   "product management", <br />   "photoshop", <br />   "user experience", <br />   "web applications", <br />   "agile methodologies", <br />   "scrum", <br />   "video games" <br /> ]` | The person's job-related skills.   <br /> Field type: text |
-| `jobTitle` | `"jobTitle": "President of New Business Development"` | The person's current job title.   <br /> Field type: text |
-| `keys` | `"keys": [ <br />   "dougidronlinenet" <br /> ]` | A list of internal Datafiniti identifiers for people.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn more about how this works](https://datafiniti.co).   <br /> Field type: keyword |
-| `lastName` | `"lastName": "Guyer"` | The person's last name.   <br /> Field type: text |
-| `licenses` | `"licenses":  [ <br /> {   <br />     "type": "TREC",   <br />     "value": "123456"   <br /> } <br /> ]` | `type:` the type of license the person value is identified by   <br /> Field type: text   <br />    <br /> `value:` the string value of the license identified by the type   <br /> Field type: text |
-| `linkedinURL` | `"linkedinURL": "https://linkedin.com/in/some-person-7525231"` | LinkedIn URL for this person.  [LinkedIn](https://www.linkedin.com/)   <br /> Field type: keyword |
-| `mostRecentProfileImageURL` | "mostRecentProfileImageURL": "[https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"](https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"), | The person's most recent professional profile picture on their social network.   <br /> FIeld type: text |
-| `mostRecentPropertyPurchaseDate` | `"mostRecentPropertyPurchaseDate": "2024-12-04T00:00:00.000Z",` | The most recent purchase date of the owner of the property.   <br /> Field type: date |
-| `mostRecentPropertyPurchaseKey` | `"mostRecentPropertyPurchaseKey": "us/az/phoenix/3327n18thave",` | The most recent matching property key to the Datafiniti property database.   <br /> Field type: keyword |
-| `maxRecentSoldPrice` | `"maxRecentSoldPrice": 700000` | The maximum most recently sold price of a property from the broker.   <br /> Field type: float |
-| `minRecentSoldPrice` | `"minRecentSoldPrice": 155000,` | The minimum most recently sold price of a property from the broker.   <br /> Field type: float |
-| `numEmployeesMin` | `"numEmployeesMin": 20` | The minimum number of employees at the business where this person currently works.   <br /> Field type: integer |
-| `numEmployeesMax` | `"numEmployeesMax": 99` | The maximum number of employees at the business where this person currently works.   <br /> Field type: integer |
-| `personalEmails` | `"personalEmails": [   <br />   "mesheldo@gmail.com" <br /> ]` | The personal email addresses of the person.   <br /> Field type: text |
-| `phoneNumberHighScoreMobile` | `"phoneNumberHighScoreMobile": "+1 602-571-8454",` | The highest scored mobile phone from the phoneNumbers field   <br /> Field type: text |
-| `phoneNumberHighScoreMobileScore` | `"phoneNumberHighScoreMobileScore": 90` | The highest score amount of a  mobile phone from the phoneNumbers field.   <br /> Field type: Integer |
-| `phoneNumberHighScoreLand` | `"phoneNumberHighScoreLand": "+1 440-238-1444"` | The highest bdscore land line phone from the phoneNumbers field   <br /> Field type: text |
-| `phoneNumberHighScoreLandScore` | `"phoneNumberHighScoreLandScore": 100` | The highest score amount of a  land line phone from the phoneNumbers field.   <br /> Field type: Integer |
-| `phoneNumbers` | `{   <br />                     "number": "+1 205-665-7871",   <br />                     "carrier": "BELLSOUTH TELECOMM INC DBA SOUTH CENTRAL BELL TEL",   <br />                     "type": "Land Line",   <br />                     "tested": false,   <br />                     "reachableStatus": false,   <br />                     "bdscore": 70,   <br />                     "lastDateSeen": "2024-04-11T18:37:01.725Z"   <br />                 },` | A list of verified phone numbers where this person can be reached   <br />    <br /> `bdscore`: 0-100 (higher the better) score on how likely the person is to pick up the phone.   <br /> Field type: float   <br />    <br /> `carrier`: carrier of the phone number.   <br /> Field type: text   <br />    <br /> `lastDateSeen`: last date seen of the phone number   <br /> Field type: date   <br />    <br /> `number`: the 10 digit plus country code phone number   <br /> Field type: text   <br />    <br /> `reachableStatus`: if the person was reachable on this phone number.   <br /> Field type: boolean   <br />    <br /> `tested`: tested status of the phone   <br /> Field type: boolean   <br />    <br /> `type`: land line or mobile phone   <br /> Field type: text |
-| `postalCode` | `"postalCode": "19312-1243"` | The current postal/zip code where this person works.   <br /> Field type: keyword |
-| `primaryEmail` | `"primaryEmail": "maggie.sheldon@hover.to"` | The person's current professional email address.   <br /> Field type: text |
-| `professionalEmails` | `"professionalEmails"[  <br />   "maggie.sheldon@hover.to", <br />   "msheldon@mavenlink.com" <br /> ]` | The person's professional email addresses.   <br /> Field type: text |
-| `profileImageURLs` | ` "profileImageURLs": "<https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg">` | The person's professional profile picture on their social network.   <br /> FIeld type: text |
-| `propertyKeys` | `"propertyKeys": [   <br />                 "us/tx/sugarland/72grantslkcir"   <br />             ],` | The person's generated key from Datafiniti. Can be used to compare in the property search API endpoint.   <br /> Field type: string |
-| `propertiesOwned`- deprecated | `"propertiesOwned": [   <br />                 "us/or/sisters/68885hurtleyrnchrd"   <br />             ],` | This field shows the property keys the person is connected to in Datafiniti's property database.   <br /> Field type: text   <br /> Deprecated as of Jan 8th, 2026 |
-| `propertiesOwnedHistory` | `"propertiesOwnedHistory": \[   <br />                 {   <br />                     "propertyKey": "us/az/phoenix/3327n18thave",   <br />                     "datePurchased": "2024-12-04T00:00:00.000Z"   <br />                 },   <br />                 {   <br />                     "propertyKey": "us/az/phoenix/3327n18thave",   <br />                     "dateSold": "2024-12-04T00:00:00.000Z",   <br />                     "datePurchased": "2024-12-04T00:00:00.000Z"   <br />                 } ` | `propertyKey`: the property data record that corresponds to the homeowner.   <br />    <br /> `datePurchased`: the date the homeowner purchased the property.   <br />    <br /> `dateSold`: the date the property owner sold this property.  |
-| `propertiesRepresented` | `"propertiesRepresented": [   <br />                 "us/ut/ogden/668w4150s"   <br />             ],` | The property the person represents as a broker. Links directly to a key within our property data.   <br /> Field type: keyword |
-| `province` | `"province": "PA"` | The current province/state where this person works.   <br /> Field type: text |
-| `salesCountAllTime` | `"salesCountAllTime": 55` | The total count of properties sold by the broker.   <br /> Field type: integer |
-| `salesCountLastYear` | `"salesCountLastYear": 12` | The total count of properties sold by the broker within the last 365 days.   <br /> Field type: integer |
-| `sourceURLs` | `"sourceURLs": [ <br />   "https://datafiniti.co" <br /> ]` | A list of URLs used to generate data for this business location.  If `https://datafiniti.co` is used, then the data was sourced from our data partners.   <br /> Field type: keyword |
-| `tcpa` | `"tcpa": false` | A flag indicating whether the person is on the TCPA litigators list   <br /> Field type: boolean |
+<ResponseField name="address" field-type="text">
+  The current work address of this person.
 
+  **Example:** `"address": "1125 Lancaster Avenue"`
+</ResponseField>
+
+<ResponseField name="birthDate" field-type="date">
+  The full date of birth of the person in `YYYY-MM-DD` format.
+
+  **Example:** `"birthDate": "1977-10-02"`
+</ResponseField>
+
+<ResponseField name="birthYear" field-type="integer">
+  The birth year of the person in `YYYY` format.
+
+  **Example:** `"birthYear": "1977"`
+</ResponseField>
+
+<ResponseField name="businessCategories" field-type="text">
+  A list of category keywords used for the business the person currently works in. Business Categories for people data can be found [here](/docs/possible-values-for-people-fields).
+
+  **Example:** `"businessCategories": ["Advertising Agencies"]`
+</ResponseField>
+
+<ResponseField name="businessName" field-type="text">
+  The current business where this person works.
+
+  **Example:** `"businessName": "International Direct Response Inc"`
+</ResponseField>
+
+<ResponseField name="city" field-type="text">
+  The current city where this person works.
+
+  **Example:** `"city": "Berwyn"`
+</ResponseField>
+
+<ResponseField name="country" field-type="text">
+  The current country where this person works.
+
+  **Example:** `"country": "US"`
+</ResponseField>
+
+<ResponseField name="dateAdded" field-type="date">
+  The date this person was first added to the people database.
+
+  **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
+</ResponseField>
+
+<ResponseField name="dateOfDeath" field-type="date">
+  The date of death of the person.
+
+  **Example:** `"dateOfDeath": "2020-07-27T00:00:00Z"`
+</ResponseField>
+
+<ResponseField name="dateUpdated" field-type="date">
+  The most recent date this person was updated or seen by our system.
+
+  **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
+</ResponseField>
+
+<ResponseField name="deceased" field-type="boolean">
+  The value to determine if the person is currently deseased.
+
+  **Example:** `"deceased": true`
+</ResponseField>
+
+<ResponseField name="domains" field-type="domain">
+  A list of each unique domain found in the `sourceURLs` field.
+
+  **Example:** `"domains": ["datafiniti.co"]`
+</ResponseField>
+
+<ResponseField name="emails" field-type="text">
+  A list of emails associated with this person.
+
+  **Example:** `"emails": ["doug@idronline.net"]`
+</ResponseField>
+
+<ResponseField name="firstName" field-type="text">
+  The person's first name.
+
+  **Example:** `"firstName": "Doug"`
+</ResponseField>
+
+<ResponseField name="gender" field-type="text">
+  The person's gender.
+
+  **Example:** `"gender": "male"`
+</ResponseField>
+
+<ResponseField name="industries" field-type="text">
+  A list of category keywords used for previous businesses in the person's experience. Industries for people data can be found [here](/docs/possible-values-for-people-fields).
+
+  **Example:** `"industries": ["Advertising Agencies"]`
+</ResponseField>
+
+<ResponseField name="interests" field-type="text">
+  The personal interests of the person.
+
+  **Example:** `"interests": ["disaster and humanitarian relief", "politics", "human rights", "cooking", "startups"]`
+</ResponseField>
+
+<ResponseField name="jobFunction" field-type="text">
+  The person's current job function.  Job function values can be found [here](/docs/possible-values-for-people-fields).
+
+  **Example:** `"jobFunction": "Marketing"`
+</ResponseField>
+
+<ResponseField name="jobLevel" field-type="text">
+  The person's current job level.  Job level values can be found [here](/docs/possible-values-for-people-fields).
+
+  **Example:** `"jobLevel": "C-Team"`
+</ResponseField>
+
+<ResponseField name="jobSkills" field-type="text">
+  The person's job-related skills.
+
+  **Example:** `"jobSkills": ["enterprise software", "start ups", "monetization", "product management", "agile methodologies"]`
+</ResponseField>
+
+<ResponseField name="jobTitle" field-type="text">
+  The person's current job title.
+
+  **Example:** `"jobTitle": "President of New Business Development"`
+</ResponseField>
+
+<ResponseField name="keys" field-type="keyword">
+  A list of internal Datafiniti identifiers for people.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn more about how this works](https://datafiniti.co).
+
+  **Example:** `"keys": ["dougidronlinenet"]`
+</ResponseField>
+
+<ResponseField name="lastName" field-type="text">
+  The person's last name.
+
+  **Example:** `"lastName": "Guyer"`
+</ResponseField>
+
+<ResponseField name="licenses" field-type="nested">
+  A list of licenses associated with this person.
+
+  **Example:** `"licenses": [{"type": "TREC", "value": "123456"}]`
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="licenses.type" field-type="text">
+      The type of license the person value is identified by.
+    </ResponseField>
+    <ResponseField name="licenses.value" field-type="text">
+      The string value of the license identified by the type.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="linkedinURL" field-type="keyword">
+  LinkedIn URL for this person.  [LinkedIn](https://www.linkedin.com/)
+
+  **Example:** `"linkedinURL": "https://linkedin.com/in/some-person-7525231"`
+</ResponseField>
+
+<ResponseField name="mostRecentProfileImageURL" field-type="text">
+  The person's most recent professional profile picture on their social network.
+
+  **Example:** `"mostRecentProfileImageURL": "https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"`
+</ResponseField>
+
+<ResponseField name="mostRecentPropertyPurchaseDate" field-type="date">
+  The most recent purchase date of the owner of the property.
+
+  **Example:** `"mostRecentPropertyPurchaseDate": "2024-12-04T00:00:00.000Z"`
+</ResponseField>
+
+<ResponseField name="mostRecentPropertyPurchaseKey" field-type="keyword">
+  The most recent matching property key to the Datafiniti property database.
+
+  **Example:** `"mostRecentPropertyPurchaseKey": "us/az/phoenix/3327n18thave"`
+</ResponseField>
+
+<ResponseField name="maxRecentSoldPrice" field-type="float">
+  The maximum most recently sold price of a property from the broker.
+
+  **Example:** `"maxRecentSoldPrice": 700000`
+</ResponseField>
+
+<ResponseField name="minRecentSoldPrice" field-type="float">
+  The minimum most recently sold price of a property from the broker.
+
+  **Example:** `"minRecentSoldPrice": 155000`
+</ResponseField>
+
+<ResponseField name="numEmployeesMin" field-type="integer">
+  The minimum number of employees at the business where this person currently works.
+
+  **Example:** `"numEmployeesMin": 20`
+</ResponseField>
+
+<ResponseField name="numEmployeesMax" field-type="integer">
+  The maximum number of employees at the business where this person currently works.
+
+  **Example:** `"numEmployeesMax": 99`
+</ResponseField>
+
+<ResponseField name="personalEmails" field-type="text">
+  The personal email addresses of the person.
+
+  **Example:** `"personalEmails": ["mesheldo@gmail.com"]`
+</ResponseField>
+
+<ResponseField name="phoneNumberHighScoreMobile" field-type="text">
+  The highest scored mobile phone from the phoneNumbers field.
+
+  **Example:** `"phoneNumberHighScoreMobile": "+1 602-571-8454"`
+</ResponseField>
+
+<ResponseField name="phoneNumberHighScoreMobileScore" field-type="integer">
+  The highest score amount of a mobile phone from the phoneNumbers field.
+
+  **Example:** `"phoneNumberHighScoreMobileScore": 90`
+</ResponseField>
+
+<ResponseField name="phoneNumberHighScoreLand" field-type="text">
+  The highest bdscore land line phone from the phoneNumbers field.
+
+  **Example:** `"phoneNumberHighScoreLand": "+1 440-238-1444"`
+</ResponseField>
+
+<ResponseField name="phoneNumberHighScoreLandScore" field-type="integer">
+  The highest score amount of a land line phone from the phoneNumbers field.
+
+  **Example:** `"phoneNumberHighScoreLandScore": 100`
+</ResponseField>
+
+<ResponseField name="phoneNumbers" field-type="nested">
+  A list of verified phone numbers where this person can be reached.
+
+  **Example:**
+  ```json
+  {
+    "number": "+1 205-665-7871",
+    "carrier": "BELLSOUTH TELECOMM INC DBA SOUTH CENTRAL BELL TEL",
+    "type": "Land Line",
+    "tested": false,
+    "reachableStatus": false,
+    "bdscore": 70,
+    "lastDateSeen": "2024-04-11T18:37:01.725Z"
+  }
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="phoneNumbers.bdscore" field-type="float">
+      0-100 (higher the better) score on how likely the person is to pick up the phone.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.carrier" field-type="text">
+      Carrier of the phone number.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.lastDateSeen" field-type="date">
+      Last date seen of the phone number.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.number" field-type="text">
+      The 10 digit plus country code phone number.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.reachableStatus" field-type="boolean">
+      If the person was reachable on this phone number.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.tested" field-type="boolean">
+      Tested status of the phone.
+    </ResponseField>
+    <ResponseField name="phoneNumbers.type" field-type="text">
+      Land line or mobile phone.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="postalCode" field-type="keyword">
+  The current postal/zip code where this person works.
+
+  **Example:** `"postalCode": "19312-1243"`
+</ResponseField>
+
+<ResponseField name="primaryEmail" field-type="text">
+  The person's current professional email address.
+
+  **Example:** `"primaryEmail": "maggie.sheldon@hover.to"`
+</ResponseField>
+
+<ResponseField name="professionalEmails" field-type="text">
+  The person's professional email addresses.
+
+  **Example:** `"professionalEmails": ["maggie.sheldon@hover.to", "msheldon@mavenlink.com"]`
+</ResponseField>
+
+<ResponseField name="profileImageURLs" field-type="text">
+  The person's professional profile picture on their social network.
+
+  **Example:** `"profileImageURLs": "https://storage.googleapis.com/upnest1/upload/realtor/1532839254_3e19998c-d18b-4d98-b4d6-a468c70e0e6c.jpeg"`
+</ResponseField>
+
+<ResponseField name="propertyKeys" field-type="string">
+  The person's generated key from Datafiniti. Can be used to compare in the property search API endpoint.
+
+  **Example:** `"propertyKeys": ["us/tx/sugarland/72grantslkcir"]`
+</ResponseField>
+
+<ResponseField name="propertiesOwned" field-type="text" deprecated="true">
+  This field shows the property keys the person is connected to in Datafiniti's property database.
+
+  Deprecated as of Jan 8th, 2026.
+
+  **Example:** `"propertiesOwned": ["us/or/sisters/68885hurtleyrnchrd"]`
+</ResponseField>
+
+<ResponseField name="propertiesOwnedHistory" field-type="nested">
+  A list of properties owned by this person with purchase and sale dates.
+
+  **Example:**
+  ```json
+  [
+    {
+      "propertyKey": "us/az/phoenix/3327n18thave",
+      "datePurchased": "2024-12-04T00:00:00.000Z"
+    },
+    {
+      "propertyKey": "us/az/phoenix/3327n18thave",
+      "dateSold": "2024-12-04T00:00:00.000Z",
+      "datePurchased": "2024-12-04T00:00:00.000Z"
+    }
+  ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="propertiesOwnedHistory.propertyKey" field-type="keyword">
+      The property data record that corresponds to the homeowner.
+    </ResponseField>
+    <ResponseField name="propertiesOwnedHistory.datePurchased" field-type="date">
+      The date the homeowner purchased the property.
+    </ResponseField>
+    <ResponseField name="propertiesOwnedHistory.dateSold" field-type="date">
+      The date the property owner sold this property.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="propertiesRepresented" field-type="keyword">
+  The property the person represents as a broker. Links directly to a key within our property data.
+
+  **Example:** `"propertiesRepresented": ["us/ut/ogden/668w4150s"]`
+</ResponseField>
+
+<ResponseField name="province" field-type="text">
+  The current province/state where this person works.
+
+  **Example:** `"province": "PA"`
+</ResponseField>
+
+<ResponseField name="salesCountAllTime" field-type="integer">
+  The total count of properties sold by the broker.
+
+  **Example:** `"salesCountAllTime": 55`
+</ResponseField>
+
+<ResponseField name="salesCountLastYear" field-type="integer">
+  The total count of properties sold by the broker within the last 365 days.
+
+  **Example:** `"salesCountLastYear": 12`
+</ResponseField>
+
+<ResponseField name="sourceURLs" field-type="keyword">
+  A list of URLs used to generate data for this business location.  If `https://datafiniti.co` is used, then the data was sourced from our data partners.
+
+  **Example:** `"sourceURLs": ["https://datafiniti.co"]`
+</ResponseField>
+
+<ResponseField name="tcpa" field-type="boolean">
+  A flag indicating whether the person is on the TCPA litigators list.
+
+  **Example:** `"tcpa": false`
+</ResponseField>

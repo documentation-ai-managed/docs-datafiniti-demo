@@ -4,54 +4,695 @@ title: Business Data Schema
 
 The business data schema below lists all available fields in a business record.  Note that actual business records (actually, most of them) may not have every field present.
 
-| Field Name | Example Value (in JSON) | Description |
-| --- | --- | --- |
-| `address` | ``` <br/> "address": "3382 30th St" <br/> ``` | The physical street address for this business location. |
-| `careerPageURL` | ``` <br/> "careerPageURL": "http://www.searocketbistro.com/employment" <br/> ``` | A URL pointing to the career page for the business. |
-| `categories` | ``` <br/> "categories": [ <br/>   "Seafood Restaurant", <br/>   "Fish & Seafood Retail", <br/>   "restaurant" <br/> ] <br/> ``` | A list of category keywords used for this business across multiple sources. |
-| `city` | ``` <br/> "city": "San Diego" <br/> ``` | The city of this business location. |
-| `claimed` | ``` <br/> "claimed": [ <br/>   "http://yellowpages.com/", <br/>   "http://foursquare.com/" <br/> ] <br/> ``` | A list of websites where the business location has been claimed by the business' owner. |
-| `country` | ``` <br/> "country": "US" <br/> ``` | The two-letter country code for the business location's country. |
-| `cuisines` | ``` <br/> "cuisines": [ <br/>   "Seafood Restaurants", <br/>   "Sandwich Shop", <br/>   "Seafood, Vegetarian / Vegan, Mediterranean" <br/> ] <br/> ``` | A list of cuisines offered by this business location.  This field will only show for restaurants or other eating locations. |
-| `dateAdded` | ``` <br/> "dateAdded": "2016-03-24T09:27:02Z" <br/> ``` | The date this business was first added to the business database. |
-| `dateUpdated` | ``` <br/> "dateUpdated": "2017-03-20T20:45:49Z" <br/> ``` | The most recent date this business was updated or seen by our system. |
-| `descriptions` | ``` <br/> "descriptions": [ <br/>   { <br/>     "dateSeen": [ <br/>       "2016-06-18T01:17:41Z" <br/>     ], <br/>     "sourceURLs": [ <br/>       "https://www.zagat.com/r/petes-seafood-and-sandwich-san-diego" <br/>     ], <br/>     "value": "Sizable made-to-order sandwiches, including lobster rolls, meatball Parmesan heroes and a variety of vegetarian options, are served at this East Coast–style sandwich shop nestled in the heart of North Park." <br/>   } <br/> ] <br/> ``` | A list of descriptions for this business from various sources.  Each description contains: <br/>  <br/> * `dateSeen`: A list of dates when this description has been seen for this business. <br/> * `sourceURLs`: A list of source URLs where this specific description was seen. <br/> * `value`: A unique description for this business. |
-| `emails` | ``` <br/> "emails": [ <br/>   "elena@searocketbistro.com" <br/> ] <br/> ``` | A list of emails belonging to the business. |
-| `facebookPageURL` | ``` <br/> "facebookPageURL": "http://www.facebook.com/pages/Sea-Rocket-Bistro/114213985293774" <br/> ``` | A URL pointing to the Facebook page for the business. |
-| `faxes` | ``` <br/> "faxes": [ <br/>   "3135619486" <br/> ] <br/> ``` | A list of fax numbers for the business. |
-| `features` | ``` <br/> "features": [ <br/>   { <br/>     "key": "attire", <br/>     "value": [ <br/>       "Casual Dress" <br/>     ] <br/>   }, <br/>   { <br/>     "key": "parking", <br/>     "value": [ <br/>       "Street Parking", <br/>       "Valet" <br/>     ] <br/>   } <br/> ] <br/> ``` | A list of features associated with this business location.  The feature list can be collected from specific feature sections available on listings for this business.  It can also serve as a catch-all field for miscellaneous characteristics of this business that don't make sense to include as top-level fields. <br/>  <br/> Each feature contains: <br/> * `key`: A label for this feature. <br/> * `value`: A list of possible values for this feature. |
-| `hours` | ``` <br/> "hours": [ <br/>   { <br/>     "day": "Mon - Fri", <br/>     "hour": "11:00 am - 9:00 pm" <br/>   }, <br/>   { <br/>     "day": "Sat - Sun", <br/>     "hour": "11:00 am - 10:00 pm" <br/>   }, <br/> ] <br/> ``` | The hours of operation for this business location. <br/>  <br/> Each hour object may contain: <br/> * `day`: The day(s) for this hour of operation. <br/> * `dept`: The department or business unit related to this hour of operation. <br/> * `hour`: The hours of operation. |
-| `imageURLs` | ``` <br/> "imageURLs": [ <br/>   "https://irs0.4sqi.net/img/general/200x200/118688231_EmfdW9_8FpBrxsa5WDVektvkubj-XpCW5ln6s6pnClo.jpg", <br/>   "https://irs0.4sqi.net/img/general/200x200/1556291_gjOF8nnudHh_ICSWXoTs75_FxtcKt25nZtwbqjaHtKQ.jpg", <br/> ] <br/> ``` | A list of image URLs associated with this business. |
-| `isClosed` | ``` <br/> "isClosed": "false" <br/> ``` | A `true` or `false` value for whether or not the business location is closed. |
-| `keys` | ``` <br/> "keys": [ <br/>   "us/ca/sandiego/338230thst/2075732923" <br/> ] <br/> ``` | A list of internal Datafiniti identifiers for this business.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn more about how this works](https://datafiniti.co). |
-| `languagesSpoken` | ``` <br/> "languagesSpoken: [ <br/>   "English", <br/>   "Spanish" <br/> ] <br/> ``` | A list of the languages spoken at this business. |
-| `latitude` | ``` <br/> "latitude": "32.740654" <br/> ``` | The latitude coordinates for this business location. |
-| `longitude` | ``` <br/> "longitude": "-117.129482" <br/> ``` | The longitude coordinates for this business location. |
-| `menuPageURL` | ``` <br/> "menuPageURL": "http://www.citysearch.com/profile/menu/648254644" <br/> ``` | A URL pointing to the menu for the business.   This field will only show for restaurants or other eating locations. |
-| `menus` | ``` <br/> "menus": [ <br/>   { <br/>     "amountMin": 12, <br/>     "amountMax": 12, <br/>     "category": "sample menu", <br/>     "currency": "USD", <br/>     "dateSeen": [ <br/>       "2017-03-22T01:03:56Z" <br/>     ], <br/>     "name": "Fish Carpaccio", <br/>     "sourceURLs": [ <br/>   "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm" <br/>     ] <br/>   }, <br/>   { <br/>     "amountMin": 7, <br/>     "amountMax": 7, <br/>     "category": "sample menu", <br/>     "currency": "USD", <br/>     "dateSeen": [ <br/>       "2017-03-22T01:03:56Z" <br/>     ], <br/>     "description": "A dense bread pudding recipe served cold with butterscotch sauce", <br/>     "name": "Seasonal Pumpkin Bread Pudding", <br/>     "sourceURLs": [ <br/>   "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm" <br/>     ] <br/>   } <br/> ] <br/> ``` | A list of menu items offered by the business.  This field will only show for restaurants or other eating locations. <br/>  <br/> Each menu item may include: <br/> * `amountMin`: The minimum price value of the item. <br/> * `amountMax`: The maximum price value of the item.  This is typically the same as amountMin, except in cases where a price range is listed. <br/> * `category`: The menu section this item belongs to. <br/> * `currency`: The currency listed for amountMin and amountMax. <br/> * `dateSeen`: A list of dates when this item was seen. <br/> * `description`: A description for the item. <br/> * `name`: The item's name on the menu. <br/> * `sourceURLs`: A list of URLs where this item was seen. |
-| `name` | ``` <br/> "name": "Pete's Seafood & Sandwich" <br/> ``` | The business location's name. |
-| `neighborhoods` | ``` <br/> "neighborhoods": [ <br/>   "North Park, Western San Diego", <br/>   "North Park" <br/> ] <br/> ``` | A list of neighborhoods where this business is located.  Sometimes an area can belong to multiple neighborhoods, which is why this field is a list. |
-| `numEmployeesMin` | ``` <br/> "numEmployeesMin": "5" <br/> ``` | The lower bound on the number of people possibly employed by this business. |
-| `numEmployeesMax` | ``` <br/> "numEmployeesMax": "10" <br/> ``` | The upper bound on the number of people employed by this business. |
-| `numRoom` | ``` <br/> "numRoom": 10 <br/> ``` | The number of rooms available at this business.  This field typically shows for hotels or other similar businesses. |
-| `paymentTypes` | ``` <br/> "paymentTypes":[ <br/>   "American Express", <br/>   "Mastercard", <br/>   "Visa" <br/> ] <br/> ``` | A list of payment options accepted by the business. |
-| `people` | ``` <br/> "people": [ <br/>   { <br/>     "dateSeen": [ <br/>       "2014-08-22T03:48:23Z" <br/>     ], <br/>     "name": "Cody Jones", <br/>     "title": "Owner" <br/>   }, <br/>   { <br/>     "dateSeen": [ <br/>       "2014-08-22T03:48:23Z" <br/>     ], <br/>     "name": "Chaseee Ewing", <br/>     "title": "Head Chef" <br/>   } <br/> ] <br/> ``` | A list of known people associated with or employed by this business. <br/>  <br/> Each person may contain: <br/> * `dateSeen`: A list of dates when this person was seen. <br/> * `name`: The person's name. <br/> * `title`: The person's title. |
-| `phones` | ``` <br/> "phones": [ <br/>   "6192558940", <br/>   "6195734102" <br/> ] <br/> ``` | A list of phone numbers for the business. |
-| `postalCode` | ``` <br/> "postalCode": "92014" <br/> ``` | The postal or zip code of the business' location. |
-| `priceRangeCurrency` | ``` <br/> "priceRangeCurrency": "USD" <br/> ``` | The currency associated with the price range fields. |
-| `priceRangeMin` | ``` <br/> "priceRangeMin": 25 <br/> ``` | The lower bound of the business' price range.  This field is typically used for retail businesses. |
-| `priceRangeMax` | ``` <br/> "priceRangeMax": 40 <br/> ``` | The upper bound of the business' price range.  This field is typically used for retail businesses. |
-| `productsOrServices` | ``` <br/> "productsOrServices": [ <br/>   "Food", <br/>   "Catering" <br/> ] <br/> ``` | A list of products or services offered by this business. |
-| `province` | ``` <br/> "province": "CA" <br/> ``` | The province or state for this business location. |
-| `revenueCurrency` | ``` <br/> "revenueCurrency": "USD" <br/> ``` | The currency associated with the revenue fields. |
-| `revenueMin` | ``` <br/> "revenueMin": 30000 <br/> ``` | The minimum known value of the business' annual revenue. |
-| `revenueMax` | ``` <br/> "revenueMax": 100000 <br/> ``` | The maximum known value of the business' annual revenue. |
-| `reviews` | ``` <br/> "reviews": [ <br/>   { <br/>     "date": "2016-02-27T00:00:00Z", <br/>     "dateAdded": "2017-03-20T20:45:49Z", <br/>     "dateSeen": [ <br/>       "2016-05-17T00:00:00Z", <br/>       "2016-05-13T00:00:00Z", <br/>     ], <br/>     "sourceURLs": [ <br/>     "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63" <br/>     ], <br/>     "text": "best fried ipswich clams in san diego!  large portions- not just the 6-8 clams you get at other local eateries. great service! i will be back!", <br/>     "username": "Colleen Alarcon" <br/>   }, <br/>   { <br/>     "date": "2016-02-15T00:00:00Z", <br/>     "dateAdded": "2017-03-20T20:45:49Z", <br/>     "dateSeen": [ <br/>       "2016-05-17T00:00:00Z", <br/>       "2016-05-13T00:00:00Z", <br/>     ], <br/>     "sourceURLs": [ <br/>    <br/>    <br/>   "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63" <br/>     ], <br/>     "text": "the lobster roll is simply amazing!!!", <br/>     "username": "P. Chunyi Hsu" <br/>   } <br/> ] <br/> ``` | A list of reviews for this business location. <br/>  <br/> Review objects may contain: <br/> * `date`: The date the review was posted. <br/> * `dateAdded`: The date the review was added to Datafiniti.  <br/> * `dateSeen`: A list of dates when the review was seen by Datafiniti. <br/> * `doRecommend`: A true/false for whether or not the reviewer recommends the product. <br/> * `id`: The website ID associated with this review. <br/> * `rating`: A 1 to 5 star value for the review. <br/> * `sourceURLs`: A list of URLs where this review was seen. <br/> * `text`: The full (or available) text of the review. <br/> * `title`: The review's title. <br/> * `userCity`: The reviewer's city. <br/> * `username`: The reviewer's username. <br/> * `userProvince`: The reviewer's province or state. |
-| `rooms` | ``` <br/> "rooms": [ <br/>   { <br/>     "amountMin": 90, <br/>     "amountMax": 90, <br/>     "capacity": 3, <br/>     "currency": "USD", <br/>     "dateSeen": [ <br/>       "2016-05-04T00:00:00Z" <br/>     ], <br/>     "roomType": "Standard Room" <br/>   }, <br/>   { <br/>     "amountMin": 119, <br/>     "amountMax": 119, <br/>     "capacity": 4, <br/>     "currency": "USD", <br/>     "dateSeen": [ <br/>       "2016-05-04T00:00:00Z" <br/>     ], <br/>     "roomType": "Superior Room" <br/>   } <br/> ] <br/> ``` | A list of room types available at the business' location.  This field is typically associated with hotels and other similar businesses. <br/>  <br/> Room objects may contain: <br/> * `amountMin`: The minimum price value listed for the room. <br/> * `amountMax`: The maximum price value listed. <br/> * `capacity`: The maximum number of people that can occupy this room. <br/> * `currency`: The currency listed for amountMin and amountMax. <br/> * `dateSeen`: A list of dates when this room was seen. <br/> * `roomType`: A classification for the type of room. |
-| `sic` | ``` <br/> "sic": "5610" <br/> ``` | The SIC code for the business.  [Learn more about SIC codes](https://en.wikipedia.org/wiki/Standard_Industrial_Classification). |
-| `sourceURLs` | ``` <br/> "sourceURLs": [ <br/>   "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm", <br/>   "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63", <br/>   "https://www.zagat.com/r/petes-seafood-and-sandwich-san-diego", <br/> ] <br/> ``` | A list of URLs used to generate data for this business location. |
-| `twitter` | ``` <br/> "twitter": "sdpark2park" <br/> ``` | The twitter username for the business. |
-| `websites` | ``` <br/> "websites": [ <br/>   "http://www.bostonpetes.com/", <br/>   "http://www.searocketbistro.com" <br/> ] <br/> ``` | A list of websites for the business. |
-| `yearIncorporated` | ``` <br/> "yearIncorporated": 2004  <br/> ``` | The year the business was incorporated. |
-| `yearOpened` | ``` <br/> "yearOpened": 2005 <br/> ``` | The year the business opened. |
+<ResponseField name="address" field-type="text">
+  The physical street address for this business location.
+
+
+  **Example:** `"address": "3382 30th St"`
+</ResponseField>
+
+<ResponseField name="careerPageURL" field-type="text">
+  A URL pointing to the career page for the business.
+
+
+  **Example:** `"careerPageURL": "http://www.searocketbistro.com/employment"`
+</ResponseField>
+
+<ResponseField name="categories" field-type="text">
+  A list of category keywords used for this business across multiple sources.
+
+  **Example:**
+  ```json
+  "categories": [
+     "Seafood Restaurant",
+     "Fish & Seafood Retail",
+     "restaurant"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="city" field-type="text">
+  The city of this business location.
+
+
+  **Example:** `"city": "San Diego"`
+</ResponseField>
+
+<ResponseField name="claimed" field-type="text">
+  A list of websites where the business location has been claimed by the business' owner.
+
+  **Example:**
+  ```json
+  "claimed": [
+     "http://yellowpages.com/",
+     "http://foursquare.com/"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="country" field-type="text">
+  The two-letter country code for the business location's country.
+
+
+  **Example:** `"country": "US"`
+</ResponseField>
+
+<ResponseField name="cuisines" field-type="text">
+  A list of cuisines offered by this business location.  This field will only show for restaurants or other eating locations.
+
+  **Example:**
+  ```json
+  "cuisines": [
+     "Seafood Restaurants",
+     "Sandwich Shop",
+     "Seafood, Vegetarian / Vegan, Mediterranean"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="dateAdded" field-type="text">
+  The date this business was first added to the business database.
+
+
+  **Example:** `"dateAdded": "2016-03-24T09:27:02Z"`
+</ResponseField>
+
+<ResponseField name="dateUpdated" field-type="text">
+  The most recent date this business was updated or seen by our system.
+
+
+  **Example:** `"dateUpdated": "2017-03-20T20:45:49Z"`
+</ResponseField>
+
+<ResponseField name="descriptions" field-type="nested">
+  A list of descriptions for this business from various sources.  Each description contains:
+
+  **Example:**
+  ```json
+  "descriptions": [
+     {
+       "dateSeen": [
+         "2016-06-18T01:17:41Z"
+       ],
+       "sourceURLs": [
+         "https://www.zagat.com/r/petes-seafood-and-sandwich-san-diego"
+       ],
+       "value": "Sizable made-to-order sandwiches, including lobster rolls, meatball Parmesan heroes and a variety of vegetarian options, are served at this East Coast–style sandwich shop nestled in the heart of North Park."
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="descriptions.dateSeen" field-type="text">
+      A list of dates when this description has been seen for this business.
+    </ResponseField>
+    <ResponseField name="descriptions.sourceURLs" field-type="text">
+      A list of source URLs where this specific description was seen.
+    </ResponseField>
+    <ResponseField name="descriptions.value" field-type="text">
+      A unique description for this business.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="emails" field-type="text">
+  A list of emails belonging to the business.
+
+  **Example:**
+  ```json
+  "emails": [
+     "elena@searocketbistro.com"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="facebookPageURL" field-type="text">
+  A URL pointing to the Facebook page for the business.
+
+
+  **Example:** `"facebookPageURL": "http://www.facebook.com/pages/Sea-Rocket-Bistro/114213985293774"`
+</ResponseField>
+
+<ResponseField name="faxes" field-type="text">
+  A list of fax numbers for the business.
+
+  **Example:**
+  ```json
+  "faxes": [
+     "3135619486"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="features" field-type="nested">
+  A list of features associated with this business location.  The feature list can be collected from specific feature sections available on listings for this business.  It can also serve as a catch-all field for miscellaneous characteristics of this business that don't make sense to include as top-level fields.
+  
+   Each feature contains:
+
+  **Example:**
+  ```json
+  "features": [
+     {
+       "key": "attire",
+       "value": [
+         "Casual Dress"
+       ]
+     },
+     {
+       "key": "parking",
+       "value": [
+         "Street Parking",
+         "Valet"
+       ]
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="features.key" field-type="text">
+      A label for this feature.
+    </ResponseField>
+    <ResponseField name="features.value" field-type="text">
+      A list of possible values for this feature.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="hours" field-type="nested">
+  The hours of operation for this business location.
+  
+   Each hour object may contain:
+
+  **Example:**
+  ```json
+  "hours": [
+     {
+       "day": "Mon - Fri",
+       "hour": "11:00 am - 9:00 pm"
+     },
+     {
+       "day": "Sat - Sun",
+       "hour": "11:00 am - 10:00 pm"
+     },
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="hours.day" field-type="text">
+      The day(s) for this hour of operation.
+    </ResponseField>
+    <ResponseField name="hours.dept" field-type="text">
+      The department or business unit related to this hour of operation.
+    </ResponseField>
+    <ResponseField name="hours.hour" field-type="text">
+      The hours of operation.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="imageURLs" field-type="text">
+  A list of image URLs associated with this business.
+
+  **Example:**
+  ```json
+  "imageURLs": [
+     "https://irs0.4sqi.net/img/general/200x200/118688231_EmfdW9_8FpBrxsa5WDVektvkubj-XpCW5ln6s6pnClo.jpg",
+     "https://irs0.4sqi.net/img/general/200x200/1556291_gjOF8nnudHh_ICSWXoTs75_FxtcKt25nZtwbqjaHtKQ.jpg",
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="isClosed" field-type="text">
+  A `true` or `false` value for whether or not the business location is closed.
+
+
+  **Example:** `"isClosed": "false"`
+</ResponseField>
+
+<ResponseField name="keys" field-type="text">
+  A list of internal Datafiniti identifiers for this business.  The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.  [Learn more about how this works](https://datafiniti.co).
+
+  **Example:**
+  ```json
+  "keys": [
+     "us/ca/sandiego/338230thst/2075732923"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="languagesSpoken" field-type="text">
+  A list of the languages spoken at this business.
+
+  **Example:**
+  ```json
+  "languagesSpoken: [
+     "English",
+     "Spanish"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="latitude" field-type="text">
+  The latitude coordinates for this business location.
+
+
+  **Example:** `"latitude": "32.740654"`
+</ResponseField>
+
+<ResponseField name="longitude" field-type="text">
+  The longitude coordinates for this business location.
+
+
+  **Example:** `"longitude": "-117.129482"`
+</ResponseField>
+
+<ResponseField name="menuPageURL" field-type="text">
+  A URL pointing to the menu for the business.   This field will only show for restaurants or other eating locations.
+
+
+  **Example:** `"menuPageURL": "http://www.citysearch.com/profile/menu/648254644"`
+</ResponseField>
+
+<ResponseField name="menus" field-type="nested">
+  A list of menu items offered by the business.  This field will only show for restaurants or other eating locations.
+  
+   Each menu item may include:
+
+  **Example:**
+  ```json
+  "menus": [
+     {
+       "amountMin": 12,
+       "amountMax": 12,
+       "category": "sample menu",
+       "currency": "USD",
+       "dateSeen": [
+         "2017-03-22T01:03:56Z"
+       ],
+       "name": "Fish Carpaccio",
+       "sourceURLs": [
+     "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm"
+       ]
+     },
+     {
+       "amountMin": 7,
+       "amountMax": 7,
+       "category": "sample menu",
+       "currency": "USD",
+       "dateSeen": [
+         "2017-03-22T01:03:56Z"
+       ],
+       "description": "A dense bread pudding recipe served cold with butterscotch sauce",
+       "name": "Seasonal Pumpkin Bread Pudding",
+       "sourceURLs": [
+     "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm"
+       ]
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="menus.amountMin" field-type="text">
+      The minimum price value of the item.
+    </ResponseField>
+    <ResponseField name="menus.amountMax" field-type="text">
+      The maximum price value of the item.  This is typically the same as amountMin, except in cases where a price range is listed.
+    </ResponseField>
+    <ResponseField name="menus.category" field-type="text">
+      The menu section this item belongs to.
+    </ResponseField>
+    <ResponseField name="menus.currency" field-type="text">
+      The currency listed for amountMin and amountMax.
+    </ResponseField>
+    <ResponseField name="menus.dateSeen" field-type="text">
+      A list of dates when this item was seen.
+    </ResponseField>
+    <ResponseField name="menus.description" field-type="text">
+      A description for the item.
+    </ResponseField>
+    <ResponseField name="menus.name" field-type="text">
+      The item's name on the menu.
+    </ResponseField>
+    <ResponseField name="menus.sourceURLs" field-type="text">
+      A list of URLs where this item was seen.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="name" field-type="text">
+  The business location's name.
+
+
+  **Example:** `"name": "Pete's Seafood & Sandwich"`
+</ResponseField>
+
+<ResponseField name="neighborhoods" field-type="text">
+  A list of neighborhoods where this business is located.  Sometimes an area can belong to multiple neighborhoods, which is why this field is a list.
+
+  **Example:**
+  ```json
+  "neighborhoods": [
+     "North Park, Western San Diego",
+     "North Park"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="numEmployeesMin" field-type="text">
+  The lower bound on the number of people possibly employed by this business.
+
+
+  **Example:** `"numEmployeesMin": "5"`
+</ResponseField>
+
+<ResponseField name="numEmployeesMax" field-type="text">
+  The upper bound on the number of people employed by this business.
+
+
+  **Example:** `"numEmployeesMax": "10"`
+</ResponseField>
+
+<ResponseField name="numRoom" field-type="text">
+  The number of rooms available at this business.  This field typically shows for hotels or other similar businesses.
+
+
+  **Example:** `"numRoom": 10`
+</ResponseField>
+
+<ResponseField name="paymentTypes" field-type="text">
+  A list of payment options accepted by the business.
+
+  **Example:**
+  ```json
+  "paymentTypes":[
+     "American Express",
+     "Mastercard",
+     "Visa"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="people" field-type="nested">
+  A list of known people associated with or employed by this business.
+  
+   Each person may contain:
+
+  **Example:**
+  ```json
+  "people": [
+     {
+       "dateSeen": [
+         "2014-08-22T03:48:23Z"
+       ],
+       "name": "Cody Jones",
+       "title": "Owner"
+     },
+     {
+       "dateSeen": [
+         "2014-08-22T03:48:23Z"
+       ],
+       "name": "Chaseee Ewing",
+       "title": "Head Chef"
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="people.dateSeen" field-type="text">
+      A list of dates when this person was seen.
+    </ResponseField>
+    <ResponseField name="people.name" field-type="text">
+      The person's name.
+    </ResponseField>
+    <ResponseField name="people.title" field-type="text">
+      The person's title.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="phones" field-type="text">
+  A list of phone numbers for the business.
+
+  **Example:**
+  ```json
+  "phones": [
+     "6192558940",
+     "6195734102"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="postalCode" field-type="text">
+  The postal or zip code of the business' location.
+
+
+  **Example:** `"postalCode": "92014"`
+</ResponseField>
+
+<ResponseField name="priceRangeCurrency" field-type="text">
+  The currency associated with the price range fields.
+
+
+  **Example:** `"priceRangeCurrency": "USD"`
+</ResponseField>
+
+<ResponseField name="priceRangeMin" field-type="text">
+  The lower bound of the business' price range.  This field is typically used for retail businesses.
+
+
+  **Example:** `"priceRangeMin": 25`
+</ResponseField>
+
+<ResponseField name="priceRangeMax" field-type="text">
+  The upper bound of the business' price range.  This field is typically used for retail businesses.
+
+
+  **Example:** `"priceRangeMax": 40`
+</ResponseField>
+
+<ResponseField name="productsOrServices" field-type="text">
+  A list of products or services offered by this business.
+
+  **Example:**
+  ```json
+  "productsOrServices": [
+     "Food",
+     "Catering"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="province" field-type="text">
+  The province or state for this business location.
+
+
+  **Example:** `"province": "CA"`
+</ResponseField>
+
+<ResponseField name="revenueCurrency" field-type="text">
+  The currency associated with the revenue fields.
+
+
+  **Example:** `"revenueCurrency": "USD"`
+</ResponseField>
+
+<ResponseField name="revenueMin" field-type="text">
+  The minimum known value of the business' annual revenue.
+
+
+  **Example:** `"revenueMin": 30000`
+</ResponseField>
+
+<ResponseField name="revenueMax" field-type="text">
+  The maximum known value of the business' annual revenue.
+
+
+  **Example:** `"revenueMax": 100000`
+</ResponseField>
+
+<ResponseField name="reviews" field-type="nested">
+  A list of reviews for this business location.
+  
+   Review objects may contain:
+
+  **Example:**
+  ```json
+  "reviews": [
+     {
+       "date": "2016-02-27T00:00:00Z",
+       "dateAdded": "2017-03-20T20:45:49Z",
+       "dateSeen": [
+         "2016-05-17T00:00:00Z",
+         "2016-05-13T00:00:00Z",
+       ],
+       "sourceURLs": [
+       "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63"
+       ],
+       "text": "best fried ipswich clams in san diego!  large portions- not just the 6-8 clams you get at other local eateries. great service! i will be back!",
+       "username": "Colleen Alarcon"
+     },
+     {
+       "date": "2016-02-15T00:00:00Z",
+       "dateAdded": "2017-03-20T20:45:49Z",
+       "dateSeen": [
+         "2016-05-17T00:00:00Z",
+         "2016-05-13T00:00:00Z",
+       ],
+       "sourceURLs": [
+  
+  
+     "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63"
+       ],
+       "text": "the lobster roll is simply amazing!!!",
+       "username": "P. Chunyi Hsu"
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="reviews.date" field-type="text">
+      The date the review was posted.
+    </ResponseField>
+    <ResponseField name="reviews.dateAdded" field-type="text">
+      The date the review was added to Datafiniti.
+    </ResponseField>
+    <ResponseField name="reviews.dateSeen" field-type="text">
+      A list of dates when the review was seen by Datafiniti.
+    </ResponseField>
+    <ResponseField name="reviews.doRecommend" field-type="text">
+      A true/false for whether or not the reviewer recommends the product.
+    </ResponseField>
+    <ResponseField name="reviews.id" field-type="text">
+      The website ID associated with this review.
+    </ResponseField>
+    <ResponseField name="reviews.rating" field-type="text">
+      A 1 to 5 star value for the review.
+    </ResponseField>
+    <ResponseField name="reviews.sourceURLs" field-type="text">
+      A list of URLs where this review was seen.
+    </ResponseField>
+    <ResponseField name="reviews.text" field-type="text">
+      The full (or available) text of the review.
+    </ResponseField>
+    <ResponseField name="reviews.title" field-type="text">
+      The review's title.
+    </ResponseField>
+    <ResponseField name="reviews.userCity" field-type="text">
+      The reviewer's city.
+    </ResponseField>
+    <ResponseField name="reviews.username" field-type="text">
+      The reviewer's username.
+    </ResponseField>
+    <ResponseField name="reviews.userProvince" field-type="text">
+      The reviewer's province or state.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="rooms" field-type="nested">
+  A list of room types available at the business' location.  This field is typically associated with hotels and other similar businesses.
+  
+   Room objects may contain:
+
+  **Example:**
+  ```json
+  "rooms": [
+     {
+       "amountMin": 90,
+       "amountMax": 90,
+       "capacity": 3,
+       "currency": "USD",
+       "dateSeen": [
+         "2016-05-04T00:00:00Z"
+       ],
+       "roomType": "Standard Room"
+     },
+     {
+       "amountMin": 119,
+       "amountMax": 119,
+       "capacity": 4,
+       "currency": "USD",
+       "dateSeen": [
+         "2016-05-04T00:00:00Z"
+       ],
+       "roomType": "Superior Room"
+     }
+   ]
+  ```
+
+  <Expandable title="Sub-fields">
+    <ResponseField name="rooms.amountMin" field-type="text">
+      The minimum price value listed for the room.
+    </ResponseField>
+    <ResponseField name="rooms.amountMax" field-type="text">
+      The maximum price value listed.
+    </ResponseField>
+    <ResponseField name="rooms.capacity" field-type="text">
+      The maximum number of people that can occupy this room.
+    </ResponseField>
+    <ResponseField name="rooms.currency" field-type="text">
+      The currency listed for amountMin and amountMax.
+    </ResponseField>
+    <ResponseField name="rooms.dateSeen" field-type="text">
+      A list of dates when this room was seen.
+    </ResponseField>
+    <ResponseField name="rooms.roomType" field-type="text">
+      A classification for the type of room.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="sic" field-type="text">
+  The SIC code for the business.  [Learn more about SIC codes](https://en.wikipedia.org/wiki/Standard_Industrial_Classification).
+
+
+  **Example:** `"sic": "5610"`
+</ResponseField>
+
+<ResponseField name="sourceURLs" field-type="text">
+  A list of URLs used to generate data for this business location.
+
+  **Example:**
+  ```json
+  "sourceURLs": [
+     "http://www.superpages.com/bp/san-diego-ca/petes-seafood-sandwich-L2615943735.htm",
+     "https://foursquare.com/v/petes-seafood--sandwich/56391bfacd105fac6c403c63",
+     "https://www.zagat.com/r/petes-seafood-and-sandwich-san-diego",
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="twitter" field-type="text">
+  The twitter username for the business.
+
+
+  **Example:** `"twitter": "sdpark2park"`
+</ResponseField>
+
+<ResponseField name="websites" field-type="text">
+  A list of websites for the business.
+
+  **Example:**
+  ```json
+  "websites": [
+     "http://www.bostonpetes.com/",
+     "http://www.searocketbistro.com"
+   ]
+  ```
+</ResponseField>
+
+<ResponseField name="yearIncorporated" field-type="text">
+  The year the business was incorporated.
+
+
+  **Example:** `"yearIncorporated": 2004`
+</ResponseField>
+
+<ResponseField name="yearOpened" field-type="text">
+  The year the business opened.
+
+
+  **Example:** `"yearOpened": 2005`
+</ResponseField>
+
 
