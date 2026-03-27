@@ -9,7 +9,13 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "absenteeOwner": [{"absent": false, "firstDateSeen": "2024-04-11T17:17:53.270Z", "lastDateSeen": "2024-04-11T17:17:53.270Z"}]
+  "absenteeOwner": [
+      {
+        "absent": false,
+        "firstDateSeen": "2024-04-11T17:17:53.270Z",
+        "lastDateSeen": "2024-04-11T17:17:53.270Z"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -60,7 +66,14 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "assessedValues": [{"totalAmount": 1745400.0, "improvementsAmount": 1745400.0, "landAmount": 1745400.0, "year": 1985}]
+  "assessedValues": [
+      {
+        "totalAmount": 1745400.0,
+        "improvementsAmount": 1745400.0,
+        "landAmount": 1745400.0,
+        "year": 1985
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -94,7 +107,29 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "brokers": {"emails": ["tomatterson@realtracs.com"], "licenseNumber": "1059280", "websites": ["http://www.fridrichandclark.com/"], "phones": ["6153511737", "6153274800"], "agent": "Tom Atterson", "firstName": "Tom", "lastName": "Atterson", "sourceURLs": ["https://datafiniti.co/bd-datafiniti", "https://www.redfin.com/TN/Arrington/4301-Union-Springs-Ln-37014/home/109775697"], "dateSeen": "2025-03-28T17:18:49.715Z", "company": "Frich & Clare Realty", "people_key": "tom/atterson/1364043647"}
+  "brokers": {
+      "emails": [
+        "tomatterson@realtracs.com"
+      ],
+      "licenseNumber": "1059280",
+      "websites": [
+        "http://www.fridrichandclark.com/"
+      ],
+      "phones": [
+        "6153511737",
+        "6153274800"
+      ],
+      "agent": "Tom Atterson",
+      "firstName": "Tom",
+      "lastName": "Atterson",
+      "sourceURLs": [
+        "https://datafiniti.co/bd-datafiniti",
+        "https://www.redfin.com/TN/Arrington/4301-Union-Springs-Ln-37014/home/109775697"
+      ],
+      "dateSeen": "2025-03-28T17:18:49.715Z",
+      "company": "Frich & Clare Realty",
+      "people_key": "tom/atterson/1364043647"
+    }
   ```
 
   <Expandable title="Sub-fields">
@@ -276,7 +311,18 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "companies": [{"companies.dateSeen": "2024-01-20", "companies.email": "bankairport@gmail.com", "companies.equity": 432000, "companies.equityPercent": 40, "companies.landline": true, "companies.name": "Bank Airport Clark", "companies.phone": "+19364029634", "companies.title": "Resident"}]
+  "companies": [
+      {
+        "companies.dateSeen": "2024-01-20",
+        "companies.email": "bankairport@gmail.com",
+        "companies.equity": 432000,
+        "companies.equityPercent": 40,
+        "companies.landline": true,
+        "companies.name": "Bank Airport Clark",
+        "companies.phone": "+19364029634",
+        "companies.title": "Resident"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -391,7 +437,15 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "deposits": [{"amount": 104, "currency": "USD", "dateSeen": ["2016-08-07T18:07:05Z"]}]
+  "deposits": [
+      {
+        "amount": 104,
+        "currency": "USD",
+        "dateSeen": [
+          "2016-08-07T18:07:05Z"
+        ]
+      }
+    ]
   ```
   <Expandable title="Sub-fields">
     <ParamField body="deposits.amount" param-type="float" showLocation="false">
@@ -411,7 +465,12 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "descriptions": [{"dateSeen": "2016-08-07T18:07:05Z", "value": "charming starter home priced to sell. full finished basement with bath and with separate entrance."}]
+  "descriptions": [
+      {
+        "dateSeen": "2016-08-07T18:07:05Z",
+        "value": "charming starter home priced to sell. full finished basement with bath and with separate entrance."
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -449,7 +508,17 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "estimatedPrices": [{"amountMax": 295000, "amountMin": 295000, "currency": "USD", "dateSeen": ["2023-10-20T16:53:37.235Z"], "pricePerSquareFoot": 112.51}]
+  "estimatedPrices": [
+      {
+        "amountMax": 295000,
+        "amountMin": 295000,
+        "currency": "USD",
+        "dateSeen": [
+          "2023-10-20T16:53:37.235Z"
+        ],
+        "pricePerSquareFoot": 112.51
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -499,7 +568,15 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "features": [{"key": "Community District", "replace": "true", "value": ["318"]}]
+  "features": [
+      {
+        "key": "Community District",
+        "replace": "true",
+        "value": [
+          "318"
+        ]
+      }
+    ]
   ```
   <Expandable title="Sub-fields">
     <ParamField body="features.key" param-type="text" showLocation="false">
@@ -519,7 +596,17 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "fees": [{"amountMax": 11, "amountMin": 11, "currency": "USD", "dateSeen": ["2016-08-07T18:07:05Z"], "type": "Cleaning Fee"}]
+  "fees": [
+      {
+        "amountMax": 11,
+        "amountMin": 11,
+        "currency": "USD",
+        "dateSeen": [
+          "2016-08-07T18:07:05Z"
+        ],
+        "type": "Cleaning Fee"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -546,7 +633,15 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "floorPlans": [{"name": "2x2", "type": "2 beds", "numBedrooms": 2, "numBathrooms": 2, "floorSize": "960 sqft"}]
+  "floorPlans": [
+      {
+        "name": "2x2",
+        "type": "2 beds",
+        "numBedrooms": 2,
+        "numBathrooms": 2,
+        "floorSize": "960 sqft"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -684,7 +779,14 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "involuntaryLienJudgement": [{"judgement": true, "lien": true, "lastDateSeen": "2024-04-11T18:37:01.751Z", "firstDateSeen": "2024-04-11T18:37:01.751Z"}]
+  "involuntaryLienJudgement": [
+      {
+        "judgement": true,
+        "lien": true,
+        "lastDateSeen": "2024-04-11T18:37:01.751Z",
+        "firstDateSeen": "2024-04-11T18:37:01.751Z"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -749,7 +851,12 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "leasingTerms": [{"dateSeen": "2016-07-30T20:41:01Z", "value": "12 Months"}]
+  "leasingTerms": [
+      {
+        "dateSeen": "2016-07-30T20:41:01Z",
+        "value": "12 Months"
+      }
+    ]
   ```
   <Expandable title="Sub-fields">
     <ParamField body="leasingTerms.dateSeen" param-type="date" showLocation="false">
@@ -865,7 +972,14 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "managedBy": [{"dateSeen": ["2016-03-03T15:02:13Z"], "value": "ROM Investments"}]
+  "managedBy": [
+      {
+        "dateSeen": [
+          "2016-03-03T15:02:13Z"
+        ],
+        "value": "ROM Investments"
+      }
+    ]
   ```
   <Expandable title="Sub-fields">
     <ParamField body="managedBy.dateSeen" param-type="date" showLocation="false">
@@ -1515,7 +1629,16 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "owners": [{"transactionDate": "2025-05-27T00:00:00.000Z", "firstName": "Jeffrey", "lastName": "Allback", "peopleKey": "jeffrey/allback/us/az/85255/3114epatrickst", "firstDateSeen": "2025-11-23T14:06:01Z", "lastDateSeen": "2025-12-09T20:01:56Z"}]
+  "owners": [
+      {
+        "transactionDate": "2025-05-27T00:00:00.000Z",
+        "firstName": "Jeffrey",
+        "lastName": "Allback",
+        "peopleKey": "jeffrey/allback/us/az/85255/3114epatrickst",
+        "firstDateSeen": "2025-11-23T14:06:01Z",
+        "lastDateSeen": "2025-12-09T20:01:56Z"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1554,7 +1677,12 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "ownerOccupiedStatus": {"status": true, "firstDateSeen": "2023-12-01T13:35:16.399Z", "lastDateSeen": "2023-12-01T13:35:16.399Z", "startDate": "2017-07-21T00:00:00.000Z"}
+  "ownerOccupiedStatus": {
+      "status": true,
+      "firstDateSeen": "2023-12-01T13:35:16.399Z",
+      "lastDateSeen": "2023-12-01T13:35:16.399Z",
+      "startDate": "2017-07-21T00:00:00.000Z"
+    }
   ```
 
   <Expandable title="Sub-fields">
@@ -1599,7 +1727,13 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "parcelNumbers": [{"number": "29-29-22-12-0015", "account": "394308", "year": 1985}]
+  "parcelNumbers": [
+      {
+        "number": "29-29-22-12-0015",
+        "account": "394308",
+        "year": 1985
+      }
+    ]
   ```
   <Expandable title="Sub-fields">
     <ParamField body="parcelNumbers.account" param-type="string" showLocation="false">
@@ -1631,7 +1765,19 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "people": [{"equity": 1065556, "equityPercent": 100, "name": "Luci Weinsein", "firstName": "Luci", "lastName": "Weinsein", "landline": true, "people_key": "luci/weinsein/1080154715", "dateSeen": "2024-04-11T16:57:22.618Z", "title": "Owner"}]
+  "people": [
+      {
+        "equity": 1065556,
+        "equityPercent": 100,
+        "name": "Luci Weinsein",
+        "firstName": "Luci",
+        "lastName": "Weinsein",
+        "landline": true,
+        "people_key": "luci/weinsein/1080154715",
+        "dateSeen": "2024-04-11T16:57:22.618Z",
+        "title": "Owner"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1717,7 +1863,35 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "prices": [{"amountMax": 289000, "amountMin": 289000, "availability": "true", "comment": "Listed by Awaye Realty Management", "currency": "USD", "date": "2017-10-21T00:00:00Z", "dateSeen": ["2017-10-09T00:00:00Z"], "domain": "www.redfin.com", "isSale": "false", "isSold": "false", "pricePerSquareFoot": 197, "status": "For Sale"}, {"amountMax": 817, "amountMin": 817, "currency": "USD", "dateSeen": ["2016-01-20T00:00:00Z"], "type": "sale list", "minStay": "7 nights", "period": "Per week"}]
+  "prices": [
+      {
+        "amountMax": 289000,
+        "amountMin": 289000,
+        "availability": "true",
+        "comment": "Listed by Awaye Realty Management",
+        "currency": "USD",
+        "date": "2017-10-21T00:00:00Z",
+        "dateSeen": [
+          "2017-10-09T00:00:00Z"
+        ],
+        "domain": "www.redfin.com",
+        "isSale": "false",
+        "isSold": "false",
+        "pricePerSquareFoot": 197,
+        "status": "For Sale"
+      },
+      {
+        "amountMax": 817,
+        "amountMin": 817,
+        "currency": "USD",
+        "dateSeen": [
+          "2016-01-20T00:00:00Z"
+        ],
+        "type": "sale list",
+        "minStay": "7 nights",
+        "period": "Per week"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1790,7 +1964,16 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "propertyTaxes": [{"amount": 1582, "currency": "USD", "dateSeen": ["2016-08-09T09:34:15Z"], "year": 2010}]
+  "propertyTaxes": [
+      {
+        "amount": 1582,
+        "currency": "USD",
+        "dateSeen": [
+          "2016-08-09T09:34:15Z"
+        ],
+        "year": 2010
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1846,7 +2029,32 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "rentalStatuses": [{"date": "2025-08-14T21:53:01.982Z", "dateSeen": ["2025-08-14T21:53:00.000Z"], "firstDateSeen": "2025-08-14T21:53:00.000Z", "lastDateSeen": "2025-08-14T21:53:00.000Z", "sourceURLs": ["https://www.airbnb.com/rooms/738825344801518115"], "type": "Short Term Rental"}, {"date": "2003-08-18T00:00:00.000Z", "dateSeen": ["2025-06-05T23:32:16.983Z"], "firstDateSeen": "2025-06-05T23:32:16.983Z", "lastDateSeen": "2025-06-05T23:32:16.983Z", "sourceURLs": ["https://datafiniti.co/"], "type": "Rental"}]
+  "rentalStatuses": [
+      {
+        "date": "2025-08-14T21:53:01.982Z",
+        "dateSeen": [
+          "2025-08-14T21:53:00.000Z"
+        ],
+        "firstDateSeen": "2025-08-14T21:53:00.000Z",
+        "lastDateSeen": "2025-08-14T21:53:00.000Z",
+        "sourceURLs": [
+          "https://www.airbnb.com/rooms/738825344801518115"
+        ],
+        "type": "Short Term Rental"
+      },
+      {
+        "date": "2003-08-18T00:00:00.000Z",
+        "dateSeen": [
+          "2025-06-05T23:32:16.983Z"
+        ],
+        "firstDateSeen": "2025-06-05T23:32:16.983Z",
+        "lastDateSeen": "2025-06-05T23:32:16.983Z",
+        "sourceURLs": [
+          "https://datafiniti.co/"
+        ],
+        "type": "Rental"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1888,7 +2096,13 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "reviews": [{"dateSeen": "2016-08-17T00:00:00Z", "text": "We love this place a lot!", "username": "Yuwei"}]
+  "reviews": [
+      {
+        "dateSeen": "2016-08-17T00:00:00Z",
+        "text": "We love this place a lot!",
+        "username": "Yuwei"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -1987,7 +2201,44 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "sourceURLsPerField": [{"field": "country", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}, {"field": "mostRecentPriceDomain", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}, {"field": "city", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}, {"field": "latitude", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}, {"field": "postalCode", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}, {"field": "yearBuilt", "sourceURLs": ["https://mcassessor.maricopa.gov/119-16-052"]}]
+  "sourceURLsPerField": [
+      {
+        "field": "country",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      },
+      {
+        "field": "mostRecentPriceDomain",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      },
+      {
+        "field": "city",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      },
+      {
+        "field": "latitude",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      },
+      {
+        "field": "postalCode",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      },
+      {
+        "field": "yearBuilt",
+        "sourceURLs": [
+          "https://mcassessor.maricopa.gov/119-16-052"
+        ]
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -2008,7 +2259,18 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "statuses": [{"date": "2023-03-10T00:00:00.000Z", "dateSeen": ["2023-07-10T06:46:31.387Z", "2023-07-01T02:58:12.456Z"], "firstDateSeen": "2023-07-01T02:58:12.456Z", "lastDateSeen": "2023-07-10T06:46:31.387Z", "type": "Sold"}]
+  "statuses": [
+      {
+        "date": "2023-03-10T00:00:00.000Z",
+        "dateSeen": [
+          "2023-07-10T06:46:31.387Z",
+          "2023-07-01T02:58:12.456Z"
+        ],
+        "firstDateSeen": "2023-07-01T02:58:12.456Z",
+        "lastDateSeen": "2023-07-10T06:46:31.387Z",
+        "type": "Sold"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -2040,7 +2302,33 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "statusHistory": [{"dateSeen": ["2024-03-08T07:24:15.145Z", "2024-04-16T08:50:21.971Z"], "type": "Off Market", "sourceURLs": ["https://www.xome.com/realestate/1530-n-smith-cir-601-wichita-ks-67212-46005393"], "firstDateSeen": "2024-03-08T07:24:15.145Z", "lastDateSeen": "2024-04-16T08:50:21.971Z"}, {"type": "For Sale", "date": "2026-01-13T00:00:00.000Z", "dateSeen": ["2026-01-14T17:18:01.076Z", "2026-01-14T21:25:24.946Z"], "sourceURLs": ["https://www.redfin.com/KS/Wichita/1530-N-Smith-Cir-67212/unit-601/home/120152524"], "firstDateSeen": "2026-01-14T17:18:01.076Z", "lastDateSeen": "2026-01-14T21:25:24.946Z"}]
+  "statusHistory": [
+      {
+        "dateSeen": [
+          "2024-03-08T07:24:15.145Z",
+          "2024-04-16T08:50:21.971Z"
+        ],
+        "type": "Off Market",
+        "sourceURLs": [
+          "https://www.xome.com/realestate/1530-n-smith-cir-601-wichita-ks-67212-46005393"
+        ],
+        "firstDateSeen": "2024-03-08T07:24:15.145Z",
+        "lastDateSeen": "2024-04-16T08:50:21.971Z"
+      },
+      {
+        "type": "For Sale",
+        "date": "2026-01-13T00:00:00.000Z",
+        "dateSeen": [
+          "2026-01-14T17:18:01.076Z",
+          "2026-01-14T21:25:24.946Z"
+        ],
+        "sourceURLs": [
+          "https://www.redfin.com/KS/Wichita/1530-N-Smith-Cir-67212/unit-601/home/120152524"
+        ],
+        "firstDateSeen": "2026-01-14T17:18:01.076Z",
+        "lastDateSeen": "2026-01-14T21:25:24.946Z"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -2161,7 +2449,31 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "transactions": [{"saleDate": "2023-01-04T12:00:00Z", "firstDateSeen": "2023-01-04T12:00:00Z", "lastDateSeen": "2023-01-04T12:00:00Z", "documentNumber": "1HORTICULTURE, ORNAMENTAL (AGRICULTURAL)98", "documentType": "Warranty Deed", "price": 112900.00, "sellerFirstName": "Anita", "sellerMiddleName": "Brian", "sellerLastName": "Powell", "buyerFirstName": "Ben", "buyerMiddleName": "Cherelle", "buyerLastName": "Emaline", "lenderName": "Ameris Bank", "loanType": "Conventional", "loanAmount": 10725.00, "mortgageTerm": 360, "interestType": "Adjustable", "parcelNumber": "17-07-26-0-001-005.000", "ownerType": "Company", "contactOwnerMailAddressFull": "2337 JULIAN DR", "transactionID": "841789370"}]
+  "transactions": [
+      {
+        "saleDate": "2023-01-04T12:00:00Z",
+        "firstDateSeen": "2023-01-04T12:00:00Z",
+        "lastDateSeen": "2023-01-04T12:00:00Z",
+        "documentNumber": "1HORTICULTURE, ORNAMENTAL (AGRICULTURAL)98",
+        "documentType": "Warranty Deed",
+        "price": 112900.0,
+        "sellerFirstName": "Anita",
+        "sellerMiddleName": "Brian",
+        "sellerLastName": "Powell",
+        "buyerFirstName": "Ben",
+        "buyerMiddleName": "Cherelle",
+        "buyerLastName": "Emaline",
+        "lenderName": "Ameris Bank",
+        "loanType": "Conventional",
+        "loanAmount": 10725.0,
+        "mortgageTerm": 360,
+        "interestType": "Adjustable",
+        "parcelNumber": "17-07-26-0-001-005.000",
+        "ownerType": "Company",
+        "contactOwnerMailAddressFull": "2337 JULIAN DR",
+        "transactionID": "841789370"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
@@ -2249,7 +2561,13 @@ The property data schema below lists all available fields in a property record. 
 
   **Example:**
   ```json
-  "vacancy": [{"vacant": false, "lastDateSeen": "2024-04-11T16:57:22.603Z", "firstDateSeen": "2024-04-11T16:57:22.603Z"}]
+  "vacancy": [
+      {
+        "vacant": false,
+        "lastDateSeen": "2024-04-11T16:57:22.603Z",
+        "firstDateSeen": "2024-04-11T16:57:22.603Z"
+      }
+    ]
   ```
 
   <Expandable title="Sub-fields">
