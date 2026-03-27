@@ -1,0 +1,36 @@
+---
+title: "November 2023 — DR4 & DR5 — 31 New Property Fields"
+---
+
+
+### DR4: 31 New Property Schema Fields
+
+Three new data sources added — MLS data, refinancing data, and commercial properties.
+
+**MLS Data Fields:** `appliances`, `assessedValues` (with `improvementsAmount`, `landAmount`, `totalAmount`, `year`), `categories`, `estimatedPrices` (with `amountMax`, `amountMin`, `currency`, `dateSeen`, `pricePerSquareFoot`), `geoQuality`, `hvacTypes`, `price.status`, `roofing`, `subdivision`
+
+**Parcel Data:** `parcelNumbers` (with `number`, `year`, `account`)
+
+**Commercial Data:** `architecturalStyles`, `ownerOccupied`, `topographyCode`, `zoning`, `msaCode`, `msaName`, `cbsaCode`, `cbsaName`
+
+**Refinance Data:** `taxExemptions`, `title`, `transactions.documentNumber`, `transactions.transactionID`, `trustDescription`
+
+### DR5: Standardization
+
+Standardizing field values, moving semi-structured data from features to top-level fields, and adding additional types to some fields.
+
+### Bug Fixes
+
+- Converted all "sqft" to "sq ft" in unit values
+
+- Lowercased all emails; removed agent names with "non" from brokers
+
+- Added max limit to prices for price range functionality
+
+- Status and prices cleanup — ensured `firstDateSeen`/`lastDateSeen` filled out
+
+- Transactions now create status objects; converted "Rental Unit" to "Rental"
+
+### Source Updates
+
+Added Foreclosure.com, Land.com, Renthop.com, LA County tax records, California DRE people source. Changed BrightMLS to Nestfully.com. Rebuilt Apartmentguide.com. Updated 16+ existing crawlers.
