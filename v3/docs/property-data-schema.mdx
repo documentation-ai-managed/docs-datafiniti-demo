@@ -10,7 +10,10 @@ For a list of possible values for specific property fields, see the [Possible Va
   The physical street address for this property.
 
 
-  **Example:** `"address": "7206 Walling Ln"`
+  **Example:**
+  ```json
+  "address": "7206 Walling Ln"
+  ```
 </ParamField>
 
 <ParamField body="availableDates" param-type="nested" showLocation="false">
@@ -35,35 +38,50 @@ For a list of possible values for specific property fields, see the [Possible Va
   The name of the building where this property is located. This field is specific to apartments, condos, and similar property types.
 
 
-  **Example:** `"buildingName": "The Grand"`
+  **Example:**
+  ```json
+  "buildingName": "The Grand"
+  ```
 </ParamField>
 
 <ParamField body="city" param-type="text" showLocation="false">
   The city where the property is located.
 
 
-  **Example:** `"city": "Dallas"`
+  **Example:**
+  ```json
+  "city": "Dallas"
+  ```
 </ParamField>
 
 <ParamField body="country" param-type="text" showLocation="false">
   The two-letter country code for the property location's country.
 
 
-  **Example:** `"country": "US"`
+  **Example:**
+  ```json
+  "country": "US"
+  ```
 </ParamField>
 
 <ParamField body="dateAdded" param-type="text" showLocation="false">
   The date this property was first added to the property database.
 
 
-  **Example:** `"dateAdded": "2017-01-08T19:12:13Z"`
+  **Example:**
+  ```json
+  "dateAdded": "2017-01-08T19:12:13Z"
+  ```
 </ParamField>
 
 <ParamField body="dateUpdated" param-type="text" showLocation="false">
   The most recent date this property was updated or seen by our system.
 
 
-  **Example:** `"dateUpdated": "2017-01-08T19:12:13Z"`
+  **Example:**
+  ```json
+  "dateUpdated": "2017-01-08T19:12:13Z"
+  ```
 </ParamField>
 
 <ParamField body="deposits" param-type="nested" showLocation="false">
@@ -79,14 +97,20 @@ For a list of possible values for specific property fields, see the [Possible Va
   A list of descriptions for this property from various sources. Each description contains: `dateSeen`, `sourceURLs`, `value`.
 
 
-  **Example:** `"descriptions": [{"sourceURLs": ["http://..."], "value": "charming starter home priced to sell..."}]`
+  **Example:**
+  ```json
+  "descriptions": [{"sourceURLs": ["http://..."], "value": "charming starter home priced to sell..."}]
+  ```
 </ParamField>
 
 <ParamField body="features" param-type="nested" showLocation="false">
   A list of features associated with this property. Each feature contains: `key` (label) and `value` (list of possible values).
 
 
-  **Example:** `"features": [{"key": "Community District", "value": ["318"]}]`
+  **Example:**
+  ```json
+  "features": [{"key": "Community District", "value": ["318"]}]
+  ```
 </ParamField>
 
 <ParamField body="fees" param-type="nested" showLocation="false">
@@ -102,49 +126,70 @@ For a list of possible values for specific property fields, see the [Possible Va
   The size of the walkable area of the property. For apartments and condos, this is the size of the property. For homes and buildings, this is the combined size of each floor and does not include lot size.
 
 
-  **Example:** `"floorSizeValue": 1000`
+  **Example:**
+  ```json
+  "floorSizeValue": 1000
+  ```
 </ParamField>
 
 <ParamField body="floorSizeUnit" param-type="text" showLocation="false">
   The units of measurement for `floorSizeValue`.
 
 
-  **Example:** `"floorSizeUnit": "Sq. ft"`
+  **Example:**
+  ```json
+  "floorSizeUnit": "Sq. ft"
+  ```
 </ParamField>
 
 <ParamField body="hours" param-type="nested" showLocation="false">
   The hours of operation for property. Each hour object contains: `day` and `hour`.
 
 
-  **Example:** `"hours": [{"day": "Saturday", "hour": "10:00am-5:00pm"}]`
+  **Example:**
+  ```json
+  "hours": [{"day": "Saturday", "hour": "10:00am-5:00pm"}]
+  ```
 </ParamField>
 
 <ParamField body="imageURLs" param-type="text" showLocation="false">
   A list of image URLs for this property.
 
 
-  **Example:** `"imageURLs": ["http://image.rent.com/..."]`
+  **Example:**
+  ```json
+  "imageURLs": ["http://image.rent.com/..."]
+  ```
 </ParamField>
 
 <ParamField body="keys" param-type="text" showLocation="false">
   A list of internal Datafiniti identifiers for this property. The `keys` field is used to merge raw data from individual sources into the master Datafiniti record.
 
 
-  **Example:** `"keys": ["us/ca/nhills/9411brightwoodct"]`
+  **Example:**
+  ```json
+  "keys": ["us/ca/nhills/9411brightwoodct"]
+  ```
 </ParamField>
 
 <ParamField body="languagesSpoken" param-type="text" showLocation="false">
   A list of the languages spoken at this property.
 
 
-  **Example:** `"languagesSpoken": ["French", "English"]`
+  **Example:**
+  ```json
+  "languagesSpoken": ["French", "English"]
+  ```
 </ParamField>
 
 <ParamField body="latitude" param-type="text" showLocation="false">
   The latitude coordinates for this property.
 
 
-  **Example:** `"latitude": "32.860858"`
+  **Example:**
+  ```json
+  "latitude": "32.860858"
+  ```
 </ParamField>
 
 <ParamField body="leasingTerms" param-type="nested" showLocation="false">
@@ -160,28 +205,40 @@ For a list of possible values for specific property fields, see the [Possible Va
   The name of the property listing. This isn't the name of the building. It's a descriptive name supplied for the listing itself.
 
 
-  **Example:** `"listingName": "Antico Appartamento"`
+  **Example:**
+  ```json
+  "listingName": "Antico Appartamento"
+  ```
 </ParamField>
 
 <ParamField body="longitude" param-type="text" showLocation="false">
   The longitude coordinates for this property.
 
 
-  **Example:** `"longitude": "-96.735808"`
+  **Example:**
+  ```json
+  "longitude": "-96.735808"
+  ```
 </ParamField>
 
 <ParamField body="lotSizeValue" param-type="text" showLocation="false">
   The lot size for the property. This is the ground area covered by the property.
 
 
-  **Example:** `"lotSizeValue": 2219`
+  **Example:**
+  ```json
+  "lotSizeValue": 2219
+  ```
 </ParamField>
 
 <ParamField body="lotSizeUnit" param-type="text" showLocation="false">
   The units of measurement for `lotSizeValue`.
 
 
-  **Example:** `"lotSizeUnit": "Sq. ft"`
+  **Example:**
+  ```json
+  "lotSizeUnit": "Sq. ft"
+  ```
 </ParamField>
 
 <ParamField body="managedBy" param-type="nested" showLocation="false">
@@ -197,7 +254,10 @@ For a list of possible values for specific property fields, see the [Possible Va
   The MLS number for the property. [Learn more about MLS numbers](https://en.wikipedia.org/wiki/Multiple_listing_service).
 
 
-  **Example:** `"mlsNumber": "16177277"`
+  **Example:**
+  ```json
+  "mlsNumber": "16177277"
+  ```
 </ParamField>
 
 <ParamField body="nearbySchools" param-type="nested" showLocation="false">
@@ -213,91 +273,130 @@ For a list of possible values for specific property fields, see the [Possible Va
   A list of neighborhoods where this property is located. Sometimes an area can belong to multiple neighborhoods, which is why this field is a list.
 
 
-  **Example:** `"neighborhoods": ["Canarsie"]`
+  **Example:**
+  ```json
+  "neighborhoods": ["Canarsie"]
+  ```
 </ParamField>
 
 <ParamField body="numBathroom" param-type="text" showLocation="false">
   The number of bathrooms in this property.
 
 
-  **Example:** `"numBathroom": 2`
+  **Example:**
+  ```json
+  "numBathroom": 2
+  ```
 </ParamField>
 
 <ParamField body="numBedroom" param-type="text" showLocation="false">
   The number of bedrooms in this property.
 
 
-  **Example:** `"numBedroom": 3`
+  **Example:**
+  ```json
+  "numBedroom": 3
+  ```
 </ParamField>
 
 <ParamField body="numFloor" param-type="text" showLocation="false">
   The number of floors or stories in this property.
 
 
-  **Example:** `"numFloor": 2`
+  **Example:**
+  ```json
+  "numFloor": 2
+  ```
 </ParamField>
 
 <ParamField body="numPeople" param-type="text" showLocation="false">
   The number of people that can occupy this property.
 
 
-  **Example:** `"numPeople": 6`
+  **Example:**
+  ```json
+  "numPeople": 6
+  ```
 </ParamField>
 
 <ParamField body="numRoom" param-type="text" showLocation="false">
   The number of rooms in this property.
 
 
-  **Example:** `"numRoom": 5`
+  **Example:**
+  ```json
+  "numRoom": 5
+  ```
 </ParamField>
 
 <ParamField body="numUnit" param-type="text" showLocation="false">
   The number of units available in this property.
 
 
-  **Example:** `"numUnit": 1`
+  **Example:**
+  ```json
+  "numUnit": 1
+  ```
 </ParamField>
 
 <ParamField body="parking" param-type="text" showLocation="false">
   A list of details regarding parking at this property.
 
 
-  **Example:** `"parking": ["Garage"]`
+  **Example:**
+  ```json
+  "parking": ["Garage"]
+  ```
 </ParamField>
 
 <ParamField body="paymentTypes" param-type="text" showLocation="false">
   A list of payment options accepted by the property.
 
 
-  **Example:** `"paymentTypes": ["Visa"]`
+  **Example:**
+  ```json
+  "paymentTypes": ["Visa"]
+  ```
 </ParamField>
 
 <ParamField body="people" param-type="nested" showLocation="false">
   A list of known people associated with or employed by this property. Each person may contain: `dateSeen`, `email`, `name`, `phone`, `title`.
 
 
-  **Example:** `"people": [{"name": "Pulcano Yvonne", "title": "Owner"}]`
+  **Example:**
+  ```json
+  "people": [{"name": "Pulcano Yvonne", "title": "Owner"}]
+  ```
 </ParamField>
 
 <ParamField body="petPolicy" param-type="text" showLocation="false">
   The pet policy for the property.
 
 
-  **Example:** `"petPolicy": "Pets are not allowed."`
+  **Example:**
+  ```json
+  "petPolicy": "Pets are not allowed."
+  ```
 </ParamField>
 
 <ParamField body="phones" param-type="text" showLocation="false">
   A list of phone numbers for the property.
 
 
-  **Example:** `"phones": ["5058982700"]`
+  **Example:**
+  ```json
+  "phones": ["5058982700"]
+  ```
 </ParamField>
 
 <ParamField body="postalCode" param-type="text" showLocation="false">
   The postal or zip code of the property.
 
 
-  **Example:** `"postalCode": "75231"`
+  **Example:**
+  ```json
+  "postalCode": "75231"
+  ```
 </ParamField>
 
 <ParamField body="prices" param-type="nested" showLocation="false">
@@ -322,14 +421,20 @@ For a list of possible values for specific property fields, see the [Possible Va
   A classification for the property type.
 
 
-  **Example:** `"propertyType": "Condo"`
+  **Example:**
+  ```json
+  "propertyType": "Condo"
+  ```
 </ParamField>
 
 <ParamField body="province" param-type="text" showLocation="false">
   The province or state for this property.
 
 
-  **Example:** `"province": "TX"`
+  **Example:**
+  ```json
+  "province": "TX"
+  ```
 </ParamField>
 
 <ParamField body="reviews" param-type="nested" showLocation="false">
@@ -345,14 +450,20 @@ For a list of possible values for specific property fields, see the [Possible Va
   A list of rules for living or staying at this property.
 
 
-  **Example:** `"rules": ["No smoking"]`
+  **Example:**
+  ```json
+  "rules": ["No smoking"]
+  ```
 </ParamField>
 
 <ParamField body="sourceURLs" param-type="text" showLocation="false">
   A list of URLs used to generate data for this property.
 
 
-  **Example:** `"sourceURLs": ["https://www.airbnb.com/rooms/13392408"]`
+  **Example:**
+  ```json
+  "sourceURLs": ["https://www.airbnb.com/rooms/13392408"]
+  ```
 </ParamField>
 
 <ParamField body="statuses" param-type="nested" showLocation="false">
@@ -368,7 +479,10 @@ For a list of possible values for specific property fields, see the [Possible Va
   The tax ID for the property.
 
 
-  **Example:** `"taxID": "12345678"`
+  **Example:**
+  ```json
+  "taxID": "12345678"
+  ```
 </ParamField>
 
 <ParamField body="unavailableDates" param-type="nested" showLocation="false">
@@ -384,7 +498,10 @@ For a list of possible values for specific property fields, see the [Possible Va
   A list of website IDs for this property. Website IDs are tied to a specific online listing source and are the unique identifier used by that website.
 
 
-  **Example:** `"websiteIDs": ["domain.com-123", "website.com-4567"]`
+  **Example:**
+  ```json
+  "websiteIDs": ["domain.com-123", "website.com-4567"]
+  ```
 </ParamField>
 
 

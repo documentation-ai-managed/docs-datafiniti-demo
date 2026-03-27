@@ -8,7 +8,10 @@ The business data schema below lists all available fields in a business record. 
   The physical street address for this business location.
 
 
-  **Example:** `"address": "3382 30th St"`
+  **Example:**
+  ```json
+  "address": "3382 30th St"
+  ```
 </ParamField>
 
 <ParamField body="categories" param-type="text" showLocation="false">
@@ -29,7 +32,10 @@ The business data schema below lists all available fields in a business record. 
   The city of this business location.
 
 
-  **Example:** `"city": "San Diego"`
+  **Example:**
+  ```json
+  "city": "San Diego"
+  ```
 </ParamField>
 
 <ParamField body="claimed" param-type="keyword" showLocation="false">
@@ -48,7 +54,10 @@ The business data schema below lists all available fields in a business record. 
   The two-letter country code for the business location's country.
 
 
-  **Example:** `"country": "US"`
+  **Example:**
+  ```json
+  "country": "US"
+  ```
 </ParamField>
 
 <ParamField body="cuisines" param-type="text" showLocation="false">
@@ -68,14 +77,20 @@ The business data schema below lists all available fields in a business record. 
   The date this business was first added to the business database.
 
 
-  **Example:** `"dateAdded": "2016-03-24T09:27:02Z"`
+  **Example:**
+  ```json
+  "dateAdded": "2016-03-24T09:27:02Z"
+  ```
 </ParamField>
 
 <ParamField body="dateUpdated" param-type="date" showLocation="false">
   The most recent date this business was updated or seen by our system.
 
 
-  **Example:** `"dateUpdated": "2017-03-20T20:45:49Z"`
+  **Example:**
+  ```json
+  "dateUpdated": "2017-03-20T20:45:49Z"
+  ```
 </ParamField>
 
 <ParamField body="descriptions" param-type="nested" showLocation="false">
@@ -135,7 +150,10 @@ The business data schema below lists all available fields in a business record. 
   A URL pointing to the Facebook page for the business.
 
 
-  **Example:** `"facebookPageURL": "http://www.facebook.com/pages/Sea-Rocket-Bistro/114213985293774"`
+  **Example:**
+  ```json
+  "facebookPageURL": "http://www.facebook.com/pages/Sea-Rocket-Bistro/114213985293774"
+  ```
 </ParamField>
 
 <ParamField body="faxes" param-type="text" showLocation="false">
@@ -193,7 +211,10 @@ The business data schema below lists all available fields in a business record. 
    The value is stored as Well-Known Text format, which resembles an (x, y) value, i.e. (longitude latitude).
 
 
-  **Example:** `"geoLocation": "POINT (-119.5094 37.229366)"`
+  **Example:**
+  ```json
+  "geoLocation": "POINT (-119.5094 37.229366)"
+  ```
 </ParamField>
 
 <ParamField body="hours" param-type="nested" showLocation="false">
@@ -249,7 +270,10 @@ The business data schema below lists all available fields in a business record. 
   A `true` or `false` value for whether or not the business location is closed.
 
 
-  **Example:** `"isClosed": "false"`
+  **Example:**
+  ```json
+  "isClosed": "false"
+  ```
 </ParamField>
 
 <ParamField body="keys" param-type="keyword" showLocation="false">
@@ -279,21 +303,30 @@ The business data schema below lists all available fields in a business record. 
   The latitude coordinates for this business location.
 
 
-  **Example:** `"latitude": "32.740654"`
+  **Example:**
+  ```json
+  "latitude": "32.740654"
+  ```
 </ParamField>
 
 <ParamField body="longitude" param-type="text" showLocation="false">
   The longitude coordinates for this business location.
 
 
-  **Example:** `"longitude": "-117.129482"`
+  **Example:**
+  ```json
+  "longitude": "-117.129482"
+  ```
 </ParamField>
 
 <ParamField body="menuPageURL" param-type="keyword" showLocation="false">
   A URL pointing to the menu for the business.   This field will only show for restaurants or other eating locations.
 
 
-  **Example:** `"menuPageURL": "http://www.citysearch.com/profile/menu/648254644"`
+  **Example:**
+  ```json
+  "menuPageURL": "http://www.citysearch.com/profile/menu/648254644"
+  ```
 </ParamField>
 
 <ParamField body="menus" param-type="nested" showLocation="false">
@@ -364,7 +397,10 @@ The business data schema below lists all available fields in a business record. 
   The business location's name.
 
 
-  **Example:** `"name": "Pete's Seafood & Sandwich"`
+  **Example:**
+  ```json
+  "name": "Pete's Seafood & Sandwich"
+  ```
 </ParamField>
 
 <ParamField body="neighborhoods" param-type="text" showLocation="false">
@@ -383,21 +419,30 @@ The business data schema below lists all available fields in a business record. 
   The lower bound on the number of people possibly employed by this business.
 
 
-  **Example:** `"numEmployeesMin": "5"`
+  **Example:**
+  ```json
+  "numEmployeesMin": "5"
+  ```
 </ParamField>
 
 <ParamField body="numEmployeesMax" param-type="integer" showLocation="false">
   The upper bound on the number of people employed by this business.
 
 
-  **Example:** `"numEmployeesMax": "10"`
+  **Example:**
+  ```json
+  "numEmployeesMax": "10"
+  ```
 </ParamField>
 
 <ParamField body="numRoom" param-type="integer" showLocation="false">
   The number of rooms available at this business.  This field typically shows for hotels or other similar businesses.
 
 
-  **Example:** `"numRoom": 10`
+  **Example:**
+  ```json
+  "numRoom": 10
+  ```
 </ParamField>
 
 <ParamField body="paymentTypes" param-type="text" showLocation="false">
@@ -468,28 +513,40 @@ The business data schema below lists all available fields in a business record. 
   The postal or zip code of the business' location.
 
 
-  **Example:** `"postalCode": "92014"`
+  **Example:**
+  ```json
+  "postalCode": "92014"
+  ```
 </ParamField>
 
 <ParamField body="priceRangeCurrency" param-type="keyword" showLocation="false">
   The currency associated with the price range fields.
 
 
-  **Example:** `"priceRangeCurrency": "USD"`
+  **Example:**
+  ```json
+  "priceRangeCurrency": "USD"
+  ```
 </ParamField>
 
 <ParamField body="priceRangeMin" param-type="float" showLocation="false">
   The lower bound of the business' price range.  This field is typically used for retail businesses.
 
 
-  **Example:** `"priceRangeMin": 25`
+  **Example:**
+  ```json
+  "priceRangeMin": 25
+  ```
 </ParamField>
 
 <ParamField body="priceRangeMax" param-type="float" showLocation="false">
   The upper bound of the business' price range.  This field is typically used for retail businesses.
 
 
-  **Example:** `"priceRangeMax": 40`
+  **Example:**
+  ```json
+  "priceRangeMax": 40
+  ```
 </ParamField>
 
 <ParamField body="primaryCategories" param-type="text" showLocation="false">
@@ -519,28 +576,40 @@ The business data schema below lists all available fields in a business record. 
   The province or state for this business location.
 
 
-  **Example:** `"province": "CA"`
+  **Example:**
+  ```json
+  "province": "CA"
+  ```
 </ParamField>
 
 <ParamField body="revenueCurrency" param-type="keyword" showLocation="false">
   The currency associated with the revenue fields.
 
 
-  **Example:** `"revenueCurrency": "USD"`
+  **Example:**
+  ```json
+  "revenueCurrency": "USD"
+  ```
 </ParamField>
 
 <ParamField body="revenueMin" param-type="integer" showLocation="false">
   The minimum known value of the business' annual revenue.
 
 
-  **Example:** `"revenueMin": 30000`
+  **Example:**
+  ```json
+  "revenueMin": 30000
+  ```
 </ParamField>
 
 <ParamField body="revenueMax" param-type="integer" showLocation="false">
   The maximum known value of the business' annual revenue.
 
 
-  **Example:** `"revenueMax": 100000`
+  **Example:**
+  ```json
+  "revenueMax": 100000
+  ```
 </ParamField>
 
 <ParamField body="reviews" param-type="nested" showLocation="false">
@@ -670,7 +739,10 @@ The business data schema below lists all available fields in a business record. 
   The SIC code for the business.  [Learn more about SIC codes](https://en.wikipedia.org/wiki/Standard_Industrial_Classification).
 
 
-  **Example:** `"sic": "5610"`
+  **Example:**
+  ```json
+  "sic": "5610"
+  ```
 </ParamField>
 
 <ParamField body="sourceURLs" param-type="keyword" showLocation="false">
@@ -690,7 +762,10 @@ The business data schema below lists all available fields in a business record. 
   The twitter username for the business.
 
 
-  **Example:** `"twitter": "sdpark2park"`
+  **Example:**
+  ```json
+  "twitter": "sdpark2park"
+  ```
 </ParamField>
 
 <ParamField body="websites" param-type="keyword" showLocation="false">
@@ -709,14 +784,20 @@ The business data schema below lists all available fields in a business record. 
   The year the business was incorporated.
 
 
-  **Example:** `"yearIncorporated": 2004 `
+  **Example:**
+  ```json
+  "yearIncorporated": 2004 
+  ```
 </ParamField>
 
 <ParamField body="yearOpened" param-type="integer" showLocation="false">
   The year the business opened.
 
 
-  **Example:** `"yearOpened": 2005`
+  **Example:**
+  ```json
+  "yearOpened": 2005
+  ```
 </ParamField>
 
 
