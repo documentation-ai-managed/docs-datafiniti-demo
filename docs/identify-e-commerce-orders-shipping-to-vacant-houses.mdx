@@ -8,44 +8,44 @@ One of the more creative uses of Datafiniti is using our property data to track 
 
 Here's a brief overview of how this process works.
 
-## Step 1: Collect a list of recent shipping addresses
+<Steps>
+  <Step title="Collect a list of recent shipping addresses">
+    As new orders come in, collect the shipping addresses on each order.  That list might look something like:
 
-As new orders come in, collect the shipping addresses on each order.  That list might look something like:
+    ```text
+    Address, City, State, Zip
+    1023 Jollyville Rd, Houston, TX, 77079
+    451 Webber Ln, Austin, TX 78721
+    200 Tennyson Ave, Pittsburgh, PA, 15213
+    ```
 
-Address, City, State, Zip
-1023 Jollyville Rd, Houston, TX, 77079
-451 Webber Ln, Austin, TX 78721
-200 Tennyson Ave, Pittsburgh, PA, 15213
+    <Callout kind="info">
+      **Address normalization**
 
-<Callout kind="info">
-  **Address normalization**
+    Datafiniti uses standardized street name normalization. Converting `street` to `st`, `drive` to `dr`, etc, you can learn more about our address normalization here: [Normalized Property Addresses](/docs/normalized-address-data)\
+    If you wish to exactly match addresses to Datafiniti's property data, you will need to use this normalization method.
+    </Callout>
+  </Step>
+  <Step title="Check an MLS address against Datafiniti">
+    Pass each address (provided by your or an MLS network) to the Datafiniti Property API and check the status of the property.  Your query will look like:
 
-Datafiniti uses standardized street name normalization. Converting `street` to `st`, `drive` to `dr`, etc, you can learn more about our address normalization here: [Normalized Property Addresses](/docs/normalized-address-data)\
-If you wish to exactly match addresses to Datafiniti's property data, you will need to use this normalization method.
-</Callout>
+    ```json
+    {
+      "query": "address:\"200 Tennyson Ave\" AND city:Pittsburgh AND province:PA AND postalCode:15213"
+    }
+    ```
 
-<br />
+    If there's a match, you'll get data back on the most recent status of the property.  The data in the returned property record will look like:
 
-## Step 2: Check an MLS address against Datafiniti
-
-Pass each address (provided by your or an MLS network) to the Datafiniti Property API and check the status of the property.  Your query will look like:
-
-```json
-{
-  "query": "address:\"200 Tennyson Ave\" AND city:Pittsburgh AND province:PA AND postalCode:15213"
-}
-```
-
-If there's a match, you'll get data back on the most recent status of the property.  The data in the returned property record will look like:
-
-```json
-"mostRecentStatus": "For Sale",
-"mostRecentStatusDate": "2023-03-28T15:34:20.727Z",
-```
-
-## Step 3: Flag properties recently listed or sold
-
-If the address matches a property that is recently listed (`For Sale`) or sold (`Sold`), then you can decide to flag that corresponding order as potentially fraudulent.
+    ```json
+    "mostRecentStatus": "For Sale",
+    "mostRecentStatusDate": "2023-03-28T15:34:20.727Z",
+    ```
+  </Step>
+  <Step title="Flag properties recently listed or sold">
+    If the address matches a property that is recently listed (`For Sale`) or sold (`Sold`), then you can decide to flag that corresponding order as potentially fraudulent.
+  </Step>
+</Steps>
 
 ### Example Records
 

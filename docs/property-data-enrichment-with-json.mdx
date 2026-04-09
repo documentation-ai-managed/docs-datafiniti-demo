@@ -2,15 +2,10 @@
 title: Property Data Enrichment with JSON
 ---
 
-For this guide, we're going to assume the following you're interested in using Datafiniti's property data enrichment to enrich an existing line separated json file of commercial addresses in Texas, US. There are 5 steps to run a property data enrichment using a json:
+For this guide, we're going to assume the following you're interested in using Datafiniti's property data enrichment to enrich an existing line separated json file of commercial addresses in Texas, US.
 
-1. Select your enrichment file
-2. Set your field_parameter(s)
-3. Configure your query
-4. Configure your format & view
-5. Start your download
-
-## select your enrichment file
+<Steps>
+  <Step title="Select your enrichment file">
 
 Shown here is an example of an acceptable line separated json file with the correct header to match *address* & *postalCode*. We will be using this file for the example in this guide.
 
@@ -41,7 +36,8 @@ Set your enrichment file as the field_parameter file.
 
 <Image src="https://blob-cdn.documentation.ai/org-a829270c-4408-45aa-90cb-a8cad2967955/doc-82f0e261-4f6b-45af-9f00-b0b805bf07d2/1775452559397-1lw77hehgrp-1fcfd13-fileJSONselect.png?fm=auto&auto=compress%2Cformat" width="1920" height="1080" alt="Selecting the JSON enrichment file" noCaption />
 
-## Set Your field_parameter
+  </Step>
+  <Step title="Set your field_parameter(s)">
 
 For the field parameter, we want to make sure that the Datafiniti schema field is selected and matches inside the txt file. This will allow the enrichment API to target submitted addresses plus postalCodes in our case here.
 You can read more about other property schema fields [here](/docs/property-data-schema).
@@ -58,7 +54,8 @@ You can read more about other property schema fields [here](/docs/property-data-
 
 </Callout>
 
-## Configure your query
+  </Step>
+  <Step title="Configure your query">
 
 The query is essential to target the specific group of data you are trying to enrich from. Datafiniti has a very large dataset, and in most cases, you will not need to search through the entire database. Your query can be built using the same logic from our search API [here](/docs/constructing-property-queries).
 
@@ -80,7 +77,8 @@ address:* AND postalCode:* AND country:US AND province:(TX) AND propertyType:"co
 
 </Callout>
 
-## Configure your format & view
+  </Step>
+  <Step title="Configure your format & view">
 
 Your format will determine the output file type of the enrichment download you wish to start. This can be set to either of *csv* or *json*. For this example, we will set it to *json*.
 
@@ -102,7 +100,8 @@ curl --location 'https://api.datafiniti.co/v4/properties/search/enrichment' \
 --form 'view="default"'
 ```
 
-## Start your download
+  </Step>
+  <Step title="Start your download">
 
 Once you send your Postman request for the enrichment download you will not be charged credits immediately. It will create a download response. We recommend holding on to the download ID for that will allow your to access the data once the status is complete. For more on how to manage your downloads, you can visit [here](/docs/postman-downloading-result-files).
 
@@ -145,4 +144,6 @@ An example enrichment download response:
     "id": "186861"
 }
 ```
+  </Step>
+</Steps>
 
